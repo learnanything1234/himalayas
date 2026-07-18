@@ -264,7 +264,8 @@
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.5 0.02 255);">{{ batchFileName }}</span>
           </sc-if>
         </div>
-        <p style="margin: 16px 0 0; font-size: 12.5px; color: oklch(0.55 0.02 255); font-family: 'IBM Plex Mono', monospace; text-align: center;">Columns: Name · GCSE Grades · Subject 1–4 · Disadvantaged · EAL · Birth Month · Attendance</p>
+        <p style="margin: 16px 0 0; font-size: 12.5px; color: oklch(0.55 0.02 255); font-family: 'IBM Plex Mono', monospace; text-align: center;">Columns: Name · a GCSE column per subject (GCSE Maths, GCSE Geography …) · Subject 1–4 · Disadvantaged · EAL · Birth Month · Attendance</p>
+        <p style="margin: 8px 0 0; font-size: 12.5px; color: oklch(0.5 0.13 190); font-family: 'IBM Plex Mono', monospace; text-align: center;">◎ Subject-specific: fill the matching GCSE column and that A-level is predicted from it.</p>
 
         <sc-if value="{{ batchLoading }}" hint-placeholder-val="{{ false }}">
           <div style="margin-top: 22px; display: flex; align-items: center; gap: 12px; color: oklch(0.5 0.02 255); font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
@@ -824,16 +825,34 @@ class Component extends DCLogic {
     const header = rows[0].map(h => h.trim().toLowerCase().replace(/[\s-]+/g, '_'));
     const at = (cells, name) => { const i = header.indexOf(name); return i >= 0 ? (cells[i] || '').trim() : ''; };
     const truthy = v => /^(y|yes|true|1)$/i.test((v || '').trim());
+    // labelled per-subject GCSE columns (gcse_maths, gcse_geography, …) power the
+    // subject-specific predictions; map each to an internal key.
+    const GKEY = { english_language: 'englang', english_literature: 'englit', english_lit: 'englit', englit: 'englit',
+      maths: 'maths', mathematics: 'maths', math: 'maths', biology: 'biology', bio: 'biology',
+      chemistry: 'chemistry', chem: 'chemistry', physics: 'physics', history: 'history',
+      geography: 'geography', geog: 'geography', french: 'french', art: 'art', art_and_design: 'art', art_design: 'art' };
+    const gcseCols = header.map((h, i) => ({ h, i }))
+      .filter(x => x.h.startsWith('gcse_') && x.h !== 'gcse_grades' && x.h !== 'gcse_aps')
+      .map(x => ({ idx: x.i, key: GKEY[x.h.slice(5)] || null }));
     const out = [];
     for (let li = 1; li < rows.length; li++) {
       const cells = rows[li];
       const name = at(cells, 'name') || `Student ${li}`;
+      const gcseBySubject = {};
+      for (const c of gcseCols) {
+        if (!c.key) continue;
+        const v = parseFloat((cells[c.idx] || '').trim());
+        if (!isNaN(v) && v > 0) gcseBySubject[c.key] = v;
+      }
       const gradesRaw = at(cells, 'gcse_grades');
       const apsRaw = at(cells, 'gcse_aps');
+      const labelled = Object.values(gcseBySubject);
       let gcses, gcseAps;
       if (gradesRaw) {
         const nums = gradesRaw.split(/[ ;|/]+/).map(x => parseFloat(x)).filter(x => !isNaN(x));
         if (nums.length === 1) gcseAps = nums[0]; else if (nums.length) gcses = nums;
+      } else if (labelled.length) {
+        gcses = labelled; // overall mean comes from the labelled GCSE grades
       }
       if (gcseAps == null && !gcses && apsRaw) gcseAps = parseFloat(apsRaw);
       const subjects = ['subject_1', 'subject_2', 'subject_3', 'subject_4', 'subject_5']
@@ -849,6 +868,7 @@ class Component extends DCLogic {
         },
       };
       if (gcses) s.gcses = gcses; else if (gcseAps != null) s.gcseAps = gcseAps;
+      if (Object.keys(gcseBySubject).length) s.gcseBySubject = gcseBySubject;
       out.push(s);
     }
     return out;
@@ -877,6 +897,7 @@ class Component extends DCLogic {
       ['Prior Band', "The student's average GCSE grade on the 9–1 scale, used to read the matching national A-level outcomes."],
       ['Best-Guess Profile', 'The single most likely grade in each subject, combined.'],
       ['Average Confidence', "The mean confidence across the student's subjects."],
+      ['Subject-specific', 'Where the spreadsheet included the GCSE grade in the same subject, that A-level is predicted from it (real Cambridge data), not just the mean.'],
       [],
       ['Predictions are statistical estimates for guidance only and are not a substitute for teacher assessment.'],
       ['Built on the DfE 16-18 transition matrices (3.1M results) · Himalayas — free, open-source A-level prediction.'],
@@ -958,11 +979,15 @@ class Component extends DCLogic {
         band: r.prior_band || '—',
         profile: r.best_guess_profile || '—',
         conf: r.average_confidence != null ? r.average_confidence + '%' : '—',
-        subjects: (r.subjects || []).map(s => ({
-          label: s.error ? `${s.subject_display || s.subject || '?'} · no data` : `${s.subject_display || s.subject}: ${s.grade}`,
-          bg: s.error ? 'oklch(0.96 0.03 30)' : 'oklch(0.96 0.02 240)',
-          color: s.error ? 'oklch(0.5 0.12 30)' : 'oklch(0.34 0.05 250)',
-        })),
+        subjects: (r.subjects || []).map(s => {
+          const cognate = s.basis === 'cognate_gcse';
+          return {
+            label: s.error ? `${s.subject_display || s.subject || '?'} · no data`
+              : `${cognate ? '◎ ' : ''}${s.subject_display || s.subject}: ${s.grade}`,
+            bg: s.error ? 'oklch(0.96 0.03 30)' : (cognate ? 'oklch(0.95 0.03 190)' : 'oklch(0.96 0.02 240)'),
+            color: s.error ? 'oklch(0.5 0.12 30)' : (cognate ? 'oklch(0.4 0.11 190)' : 'oklch(0.34 0.05 250)'),
+          };
+        }),
       })),
       computed: st.computed,
       loading: st.loading,

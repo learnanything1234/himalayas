@@ -1,11 +1,11 @@
-Name,GCSE Grades,Subject 1,Subject 2,Subject 3,Subject 4,Disadvantaged,EAL,Birth Month,Attendance
-Ava Thompson,8 8 7 9 8 7 7 8,Mathematics,Physics,Chemistry,,no,no,3,97
-Ben Carter,6 5 6 5 6 5 4,Business Studies,Media Studies,Physical Education,,yes,no,7,89
-Chloe Ahmed,9 9 8 9 9 8 9 8,Further Maths,Physics,Chemistry,Mathematics,no,yes,11,99
-Daniel Okafor,7 6 7 8 6 7 6,Biology,Chemistry,Psychology,,no,no,1,95
-Ella Nowak,5 4 5 6 5 4 5,Sociology,Media Studies,Art & Design,,yes,yes,8,86
-Freya Bennett,8 7 8 7 9 8 7,English Literature,History,Geography,,no,no,4,98
-George Patel,6 6 5 7 6 6,Economics,Business Studies,Mathematics,,no,no,6,92
-Hana Yilmaz,7 8 7 8 8 7 8 7,Chemistry,Biology,Mathematics,Psychology,yes,yes,9,96
-Isla Murray,4 5 4 5 4 4,Law,Sociology,Drama,,yes,no,5,84
-Jacob Reid,9 8 9 8 9 9 8,Further Maths,Mathematics,Physics,Computer Science,no,no,2,99
+Name,GCSE English Language,GCSE English Literature,GCSE Maths,GCSE Biology,GCSE Chemistry,GCSE Physics,GCSE History,GCSE Geography,GCSE French,GCSE Art,Subject 1,Subject 2,Subject 3,Subject 4,Disadvantaged,EAL,Birth Month,Attendance
+Ava Thompson,8,8,8,8,8,7,7,7,7,6,Mathematics,Physics,Chemistry,,no,no,3,97
+Ben Carter,5,5,5,5,4,4,6,6,4,6,Business Studies,Media Studies,Physical Education,,yes,no,7,89
+Chloe Ahmed,9,9,9,8,9,8,8,9,8,7,Further Maths,Physics,Chemistry,Mathematics,no,yes,11,99
+Daniel Okafor,6,6,6,8,7,6,6,7,5,5,Biology,Chemistry,Psychology,,no,no,1,95
+Ella Nowak,5,6,4,4,4,4,5,5,4,8,Sociology,Media Studies,Art & Design,,yes,yes,8,86
+Freya Bennett,8,9,7,7,6,6,8,7,7,6,English Literature,History,Geography,,no,no,4,98
+George Patel,6,6,7,6,6,6,5,6,5,5,Economics,Business Studies,Mathematics,,no,no,6,92
+Hana Yilmaz,7,7,8,8,7,8,6,7,8,6,Chemistry,Biology,Mathematics,Psychology,yes,yes,9,96
+Isla Murray,7,7,6,6,6,6,7,9,6,1,Geography,Art & Design,History,,yes,no,5,84
+Jacob Reid,8,9,9,8,9,8,8,8,7,6,Further Maths,Mathematics,Physics,Computer Science,no,no,2,99

@@ -87,8 +87,10 @@ Design` … all map correctly).
 
 ### `POST /predict/batch`
 
-`{ "students": [ {name, gcses|gcseAps, subjects, context}, … ] }` → one result
-row per student. This backs the spreadsheet upload on the site.
+`{ "students": [ {name, gcses|gcseAps, subjects, context, gcseBySubject}, … ] }` →
+one result row per student. This backs the spreadsheet upload on the site. Give a
+`gcseBySubject` map (or, in the CSV, labelled `GCSE <subject>` columns) and the
+matching A-levels get the subject-specific prediction too.
 
 ## Run it
 

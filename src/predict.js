@@ -187,7 +187,7 @@ export class Predictor {
     };
   }
 
-  predictSubject(subjectInput, band, { delta = 0, cognateGrade = null, ...opts } = {}) {
+  predictSubject(subjectInput, band, { delta = 0, cognateGrade = null, gcseBySubject = null, ...opts } = {}) {
     const r = resolveSubject(subjectInput, this.knownSubjects);
     if (!r.subject) {
       return { input: subjectInput, error: 'subject_not_found', candidates: r.candidates || [] };
@@ -196,18 +196,26 @@ export class Predictor {
       || this._distribution(r.subject, 'All', opts);
     if (!got) return { input: subjectInput, subject: r.subject, error: 'no_data_for_band' };
 
+    // Resolve the cognate GCSE grade: explicit value wins, otherwise look up the
+    // subject's cognate GCSE key in the student's gcseBySubject map (batch path).
+    let cg = cognateGrade;
+    if (cg == null && gcseBySubject && COGNATE[r.subject]) {
+      const v = gcseBySubject[COGNATE[r.subject].gcse];
+      if (v != null) cg = v;
+    }
+
     // If we know the student's GCSE grade in this same subject, blend the real
     // Cambridge cognate distribution with the DfE mean-GCSE distribution.
     let dist = got.dist;
     let basis = 'mean_gcse';
     let cognate = null;
-    const cog = cognateGroups(r.subject, cognateGrade);
+    const cog = cognateGroups(r.subject, cg);
     if (cog) {
       dist = blendCognate(got.dist, cog, COGNATE_WEIGHT);
       basis = 'cognate_gcse';
       cognate = {
         gcse_subject: COGNATE[r.subject].gcse,
-        gcse_grade: Number(cognateGrade),
+        gcse_grade: Number(cg),
         weight: COGNATE_WEIGHT,
         source: 'Cambridge Assessment, Progression from GCSE to A Level 2021-23',
       };
@@ -229,7 +237,7 @@ export class Predictor {
   }
 
   predict(payload = {}) {
-    const { gcses, gcseAps, priorBand, subjects = [], context, year, pool = true } = payload;
+    const { gcses, gcseAps, priorBand, subjects = [], context, year, pool = true, gcseBySubject = null } = payload;
 
     // 1. prior attainment -> band
     let aps = null, apsInfo = null, band = priorBand || null;
@@ -251,7 +259,7 @@ export class Predictor {
     const predictions = subjects.map((s) => {
       const name = typeof s === 'string' ? s : s.name;
       const cognateGrade = (s && typeof s === 'object') ? s.cognateGrade : undefined;
-      return this.predictSubject(name, band, { ...opts, cognateGrade });
+      return this.predictSubject(name, band, { ...opts, cognateGrade, gcseBySubject });
     });
 
     // 4. aggregate
@@ -305,6 +313,8 @@ export class Predictor {
           grade: pr.error ? null : pr.grade,
           range: pr.error ? null : pr.band.range_label,
           confidence: pr.error ? null : pr.confidence,
+          basis: pr.prediction_basis,
+          cognate_grade: pr.cognate ? pr.cognate.gcse_grade : null,
           error: pr.error,
         })),
         best_guess_profile: p.summary.best_guess_profile,
