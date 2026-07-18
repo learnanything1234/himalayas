@@ -251,17 +251,17 @@
       </div>
 
       <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 18px; padding: 26px; box-shadow: 0 1px 2px oklch(0.5 0.02 250 / 0.04);">
-        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center;">
           <a href="{{ sampleUrl }}" download style="display: inline-flex; align-items: center; gap: 9px; background: oklch(0.995 0.003 245); color: oklch(0.3 0.02 255); border: 1px solid oklch(0.85 0.02 250); padding: 12px 20px; border-radius: 11px; font-weight: 600; font-size: 15px;">⬇ Download sample spreadsheet</a>
           <label style="display: inline-flex; align-items: center; gap: 9px; background: oklch(0.5 0.14 250); color: oklch(0.99 0.005 250); padding: 12px 22px; border-radius: 11px; font-weight: 600; font-size: 15px; cursor: pointer; box-shadow: 0 6px 18px oklch(0.5 0.14 250 / 0.28);">
-            📄 Upload spreadsheet (CSV)
-            <input type="file" accept=".csv,text/csv" onChange="{{ onBatchFile }}" style="position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden;" />
+            📄 Upload spreadsheet (CSV or Excel)
+            <input type="file" accept=".csv,.xls,.xlsx,text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" onChange="{{ onBatchFile }}" style="position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden;" />
           </label>
           <sc-if value="{{ batchFileName }}" hint-placeholder-val="{{ false }}">
             <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.5 0.02 255);">{{ batchFileName }}</span>
           </sc-if>
         </div>
-        <p style="margin: 16px 0 0; font-size: 12.5px; color: oklch(0.55 0.02 255); font-family: 'IBM Plex Mono', monospace;">columns: name · gcse_grades · subject_1…4 · disadvantaged · eal · birth_month · attendance</p>
+        <p style="margin: 16px 0 0; font-size: 12.5px; color: oklch(0.55 0.02 255); font-family: 'IBM Plex Mono', monospace; text-align: center;">Columns: Name · GCSE Grades · Subject 1–4 · Disadvantaged · EAL · Birth Month · Attendance</p>
 
         <sc-if value="{{ batchLoading }}" hint-placeholder-val="{{ false }}">
           <div style="margin-top: 22px; display: flex; align-items: center; gap: 12px; color: oklch(0.5 0.02 255); font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
@@ -708,12 +708,33 @@ class Component extends DCLogic {
   }
 
   // ---- Bulk upload (spreadsheet -> many predictions) ----
+  // Lazily load the SheetJS reader (only when an Excel file is uploaded).
+  loadXlsx() {
+    if (window.XLSX) return Promise.resolve(window.XLSX);
+    if (this._xlsxPromise) return this._xlsxPromise;
+    this._xlsxPromise = new Promise((resolve, reject) => {
+      const s = document.createElement('script');
+      s.src = 'https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js';
+      s.onload = () => resolve(window.XLSX);
+      s.onerror = () => reject(new Error('could not load the Excel reader'));
+      document.head.appendChild(s);
+    });
+    return this._xlsxPromise;
+  }
+
   async onBatchFile(e) {
     const file = e.target.files && e.target.files[0];
     if (!file) return;
     this.setState({ batchLoading: true, batchError: '', batchRows: null, batchFileName: file.name });
     try {
-      const text = await file.text();
+      let text;
+      if (/\.(xlsx?|xlsm)$/i.test(file.name)) {
+        const XLSX = await this.loadXlsx();
+        const wb = XLSX.read(await file.arrayBuffer(), { type: 'array' });
+        text = XLSX.utils.sheet_to_csv(wb.Sheets[wb.SheetNames[0]]);
+      } else {
+        text = await file.text();
+      }
       const students = this.parseStudentsCsv(text);
       if (!students.length) throw new Error('No student rows found in that file.');
       const resp = await fetch(`${API_BASE}/predict/batch`, {
@@ -730,15 +751,38 @@ class Component extends DCLogic {
     e.target.value = ''; // allow re-uploading the same file
   }
 
+  // Quote-aware CSV -> array of row arrays.
+  parseCsvRows(text) {
+    const rows = [];
+    for (const line of text.split(/\r?\n/)) {
+      if (line.trim() === '') continue;
+      const cells = [];
+      let cur = '', inQ = false;
+      for (let i = 0; i < line.length; i++) {
+        const ch = line[i];
+        if (inQ) {
+          if (ch === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else inQ = false; }
+          else cur += ch;
+        } else if (ch === '"') { inQ = true; }
+        else if (ch === ',') { cells.push(cur); cur = ''; }
+        else cur += ch;
+      }
+      cells.push(cur);
+      rows.push(cells);
+    }
+    return rows;
+  }
+
   parseStudentsCsv(text) {
-    const lines = text.replace(/^﻿/, '').trim().split(/\r?\n/).filter(l => l.trim());
-    if (lines.length < 2) return [];
-    const header = lines[0].split(',').map(h => h.trim().toLowerCase());
+    const rows = this.parseCsvRows(text.replace(/^﻿/, ''));
+    if (rows.length < 2) return [];
+    // normalise headers so "GCSE Grades", "Birth Month", "Subject 1" all work
+    const header = rows[0].map(h => h.trim().toLowerCase().replace(/[\s-]+/g, '_'));
     const at = (cells, name) => { const i = header.indexOf(name); return i >= 0 ? (cells[i] || '').trim() : ''; };
     const truthy = v => /^(y|yes|true|1)$/i.test((v || '').trim());
     const out = [];
-    for (let li = 1; li < lines.length; li++) {
-      const cells = lines[li].split(',');
+    for (let li = 1; li < rows.length; li++) {
+      const cells = rows[li];
       const name = at(cells, 'name') || `Student ${li}`;
       const gradesRaw = at(cells, 'gcse_grades');
       const apsRaw = at(cells, 'gcse_aps');
@@ -769,13 +813,31 @@ class Component extends DCLogic {
   downloadBatch() {
     const rows = this.state.batchRows || [];
     const esc = (v) => { v = v == null ? '' : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
-    const head = ['name', 'gcse_aps', 'prior_band', 'best_guess_profile', 'average_confidence', 'predictions'];
-    const lines = [head.join(',')];
+    const head = ['Name', 'GCSE APS', 'Prior Band', 'Best-Guess Profile', 'Average Confidence', 'Predictions'];
+    const lines = [head.map(esc).join(',')];
     for (const r of rows) {
-      const preds = (r.subjects || []).map(s => s.error ? `${s.subject_display || s.subject}: no data` : `${s.subject_display || s.subject}: ${s.grade} (${s.range})`).join('; ');
-      lines.push([r.name, r.gcse_aps, r.prior_band, r.best_guess_profile, r.average_confidence, preds].map(esc).join(','));
+      const preds = (r.subjects || []).map(s => {
+        const name = s.subject_display || s.subject;
+        if (s.error) return `${name}: no data`;
+        const conf = s.confidence != null ? `, ${s.confidence}%` : '';
+        return `${name}: ${s.grade} (${s.range}${conf})`;
+      }).join('; ');
+      const avg = r.average_confidence != null ? `${r.average_confidence}%` : '';
+      lines.push([r.name, r.gcse_aps, r.prior_band, r.best_guess_profile, avg, preds].map(esc).join(','));
     }
-    const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+    // explanation block at the bottom of the sheet
+    const notes = [
+      [],
+      ['How to read this spreadsheet'],
+      ['Predictions', 'Each subject reads  Grade (Low–High, Confidence%).  Example: "Biology: B (D–A, 72%)" = most likely a B; realistically anywhere from D to A; a 72% chance of landing within one grade of B.'],
+      ['Prior Band', "The student's average GCSE grade on the 9–1 scale, used to read the matching national A-level outcomes."],
+      ['Best-Guess Profile', 'The single most likely grade in each subject, combined.'],
+      ['Average Confidence', "The mean confidence across the student's subjects."],
+      [],
+      ['Predictions are statistical estimates for guidance only and are not a substitute for teacher assessment. Built on the DfE 16-18 transition matrices (3.1M results). himalayas'],
+    ];
+    for (const n of notes) lines.push(n.map(esc).join(','));
+    const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url; a.download = 'himalayas-predictions.csv'; a.click();
