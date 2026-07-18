@@ -726,6 +726,7 @@ class Component extends DCLogic {
     const file = e.target.files && e.target.files[0];
     if (!file) return;
     this.setState({ batchLoading: true, batchError: '', batchRows: null, batchFileName: file.name });
+    const started = Date.now();
     try {
       let text;
       if (/\.(xlsx?|xlsm)$/i.test(file.name)) {
@@ -744,6 +745,9 @@ class Component extends DCLogic {
       if (!resp.ok) throw new Error(`API ${resp.status}`);
       const data = await resp.json();
       if (data.error) throw new Error(data.message || data.error);
+      // keep the spinner up for at least 5s so processing is clearly visible
+      const elapsed = Date.now() - started;
+      if (elapsed < 5000) await new Promise(r => setTimeout(r, 5000 - elapsed));
       this.setState({ batchRows: data.results, batchLoading: false });
     } catch (err) {
       this.setState({ batchLoading: false, batchError: `Couldn't process that spreadsheet: ${err.message}` });
