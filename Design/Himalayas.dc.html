@@ -834,7 +834,8 @@ class Component extends DCLogic {
       ['Best-Guess Profile', 'The single most likely grade in each subject, combined.'],
       ['Average Confidence', "The mean confidence across the student's subjects."],
       [],
-      ['Predictions are statistical estimates for guidance only and are not a substitute for teacher assessment. Built on the DfE 16-18 transition matrices (3.1M results). himalayas'],
+      ['Predictions are statistical estimates for guidance only and are not a substitute for teacher assessment.'],
+      ['Built on the DfE 16-18 transition matrices (3.1M results) · Himalayas — free, open-source A-level prediction.'],
     ];
     for (const n of notes) lines.push(n.map(esc).join(','));
     const blob = new Blob(['﻿' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' });
