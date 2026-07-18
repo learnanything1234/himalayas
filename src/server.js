@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join, normalize } from 'node:path';
 import { Predictor, CONTEXT_MODEL } from './predict.js';
+import { COGNATE_SUBJECTS, COGNATE_WEIGHT } from './cognate.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const WEB_DIR = process.env.WEB_DIR || join(__dirname, '..', 'web');
@@ -101,6 +102,13 @@ const server = createServer(async (req, res) => {
         prior_bands: ['<1', '1-<2', '2-<3', '3-<4', '4-<5', '5-<6', '6-<7', '7-<8', '8-<9', '9>='],
         prior_band_measure: 'mean GCSE grade (9-1 scale); band = floor(mean) unless <1 or >=9',
         grade_scale: { 'A*': 6, A: 5, B: 4, C: 3, D: 2, E: 1, U: 0 },
+        subject_specific: {
+          description: 'Where the student\'s GCSE grade in the SAME subject is known, the real Cambridge cognate distribution is blended with the DfE mean-GCSE distribution.',
+          weight_on_cognate: COGNATE_WEIGHT,
+          subjects: COGNATE_SUBJECTS,
+          source: 'Cambridge Assessment, Progression from GCSE to A Level 2021-23 (Report 144)',
+          source_url: 'https://www.cambridgeassessment.org.uk/Images/735630-144.-progression-from-gcse-to-a-level-2021-2023.pdf',
+        },
         confidence: 'empirical probability of landing within one grade of the modal outcome',
         tolerance_band: 'expected grade ± 1 standard deviation of the empirical distribution',
         context_model: CONTEXT_MODEL,

@@ -3,6 +3,7 @@ import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 import { resolveSubject, displayName } from './subjects.js';
 import { averagePointScore, apsToBand } from './grades.js';
+import { COGNATE, cognateGroups, COGNATE_WEIGHT } from './cognate.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DB_PATH = process.env.PREDICTOR_DB || join(__dirname, '..', 'data', 'predictor.db');
@@ -186,7 +187,7 @@ export class Predictor {
     };
   }
 
-  predictSubject(subjectInput, band, { delta = 0, ...opts } = {}) {
+  predictSubject(subjectInput, band, { delta = 0, cognateGrade = null, ...opts } = {}) {
     const r = resolveSubject(subjectInput, this.knownSubjects);
     if (!r.subject) {
       return { input: subjectInput, error: 'subject_not_found', candidates: r.candidates || [] };
@@ -195,16 +196,35 @@ export class Predictor {
       || this._distribution(r.subject, 'All', opts);
     if (!got) return { input: subjectInput, subject: r.subject, error: 'no_data_for_band' };
 
+    // If we know the student's GCSE grade in this same subject, blend the real
+    // Cambridge cognate distribution with the DfE mean-GCSE distribution.
+    let dist = got.dist;
+    let basis = 'mean_gcse';
+    let cognate = null;
+    const cog = cognateGroups(r.subject, cognateGrade);
+    if (cog) {
+      dist = blendCognate(got.dist, cog, COGNATE_WEIGHT);
+      basis = 'cognate_gcse';
+      cognate = {
+        gcse_subject: COGNATE[r.subject].gcse,
+        gcse_grade: Number(cognateGrade),
+        weight: COGNATE_WEIGHT,
+        source: 'Cambridge Assessment, Progression from GCSE to A Level 2021-23',
+      };
+    }
+
     return {
       input: subjectInput,
       subject: r.subject,
       subject_display: displayName(r.subject),
       match: r.method,
       prior_band: band,
+      prediction_basis: basis,
+      cognate,
       cohort_n: got.n,
       years_used: got.years,
       data_confidence: Predictor._cohortConfidence(got.n),
-      ...Predictor._summarise(got.dist, delta),
+      ...Predictor._summarise(dist, delta),
     };
   }
 
@@ -226,9 +246,13 @@ export class Predictor {
     // 2. context shift
     const ctx = contextDelta(context);
 
-    // 3. per-subject prediction
+    // 3. per-subject prediction (subjects may be strings or {name, cognateGrade})
     const opts = { year: year ? Number(year) : undefined, pool, delta: ctx.delta };
-    const predictions = subjects.map((s) => this.predictSubject(s, band, opts));
+    const predictions = subjects.map((s) => {
+      const name = typeof s === 'string' ? s : s.name;
+      const cognateGrade = (s && typeof s === 'object') ? s.cognateGrade : undefined;
+      return this.predictSubject(name, band, { ...opts, cognateGrade });
+    });
 
     // 4. aggregate
     const ok = predictions.filter((p) => !p.error);
@@ -308,3 +332,25 @@ function round(x, dp = 2) {
   return Math.round(x * f) / f;
 }
 function clamp(x, lo, hi) { return Math.max(lo, Math.min(hi, x)); }
+
+// Blend the cognate grade-group signal (Cambridge) with the DfE mean-GCSE
+// distribution, then re-expand to a full 7-grade distribution using the DfE
+// distribution's within-group shape. `cog` = {AA,B,C,DEU} fractions.
+function blendCognate(dfe, cog, w) {
+  const dfeGroups = { AA: dfe.Astar + dfe.A, B: dfe.B, C: dfe.C, DEU: dfe.D + dfe.E + dfe.U };
+  const bl = {};
+  let s = 0;
+  for (const k of ['AA', 'B', 'C', 'DEU']) { bl[k] = w * cog[k] + (1 - w) * dfeGroups[k]; s += bl[k]; }
+  for (const k in bl) bl[k] /= (s || 1);
+
+  const aa = dfeGroups.AA, deu = dfeGroups.DEU;
+  return {
+    Astar: aa > 0 ? bl.AA * (dfe.Astar / aa) : 0,
+    A: aa > 0 ? bl.AA * (dfe.A / aa) : bl.AA,
+    B: bl.B,
+    C: bl.C,
+    D: deu > 0 ? bl.DEU * (dfe.D / deu) : bl.DEU,
+    E: deu > 0 ? bl.DEU * (dfe.E / deu) : 0,
+    U: deu > 0 ? bl.DEU * (dfe.U / deu) : 0,
+  };
+}

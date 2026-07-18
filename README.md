@@ -32,7 +32,13 @@ and four years (2022–2025).
 4. **Forecast** — the distribution's mean is the predicted grade; ±1 standard
    deviation is the tolerance band; the probability of landing within one grade
    of the mode is the confidence.
-5. **Context (optional)** — four adjustments, each anchored to published research
+5. **Subject-specific (when available)** — mean GCSE alone can't tell that a
+   student is strong in Geography and weak in Art. Where the site knows the GCSE
+   grade in the *same* subject, it blends in real national data on how those
+   students actually did at A-level (Cambridge Assessment, *Progression from GCSE
+   to A Level 2021–23*) — live for Maths, Further Maths, the sciences, Geography,
+   History, English Literature, French and Art. Others use the mean.
+6. **Context (optional)** — four adjustments, each anchored to published research
    (see below).
 
 ### Context factors — every one sourced

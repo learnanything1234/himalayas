@@ -77,6 +77,26 @@ test('predictor: context lowers the expected value', () => {
   } finally { p.close(); }
 });
 
+test('predictor: cognate GCSE makes predictions subject-specific', () => {
+  const p = new Predictor();
+  try {
+    // same overall mean, opposite subject strengths
+    const strongGeo = p.predict({ gcseAps: 8, subjects: [{ name: 'Geography', cognateGrade: 9 }] });
+    const weakGeo = p.predict({ gcseAps: 8, subjects: [{ name: 'Geography', cognateGrade: 4 }] });
+    assert.equal(strongGeo.predictions[0].prediction_basis, 'cognate_gcse');
+    assert.ok(strongGeo.predictions[0].grade_value > weakGeo.predictions[0].grade_value,
+      'GCSE 9 should beat GCSE 4 in the same subject at equal mean');
+    // the Art/Geography inversion is fixed
+    const r = p.predict({ gcseAps: 6.2, subjects: [
+      { name: 'Geography', cognateGrade: 9 }, { name: 'Art & Design', cognateGrade: 1 }] });
+    const [geo, art] = r.predictions;
+    assert.ok(geo.grade_value > art.grade_value, 'Geography(9) should now beat Art(1)');
+    // subjects without a cognate GCSE fall back cleanly to the mean model
+    const eco = p.predict({ gcseAps: 6.2, subjects: [{ name: 'Economics', cognateGrade: 9 }] });
+    assert.equal(eco.predictions[0].prediction_basis, 'mean_gcse');
+  } finally { p.close(); }
+});
+
 test('predictor: unknown subject returns a clear error, not a crash', () => {
   const p = new Predictor();
   try {

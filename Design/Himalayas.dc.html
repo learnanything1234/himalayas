@@ -212,6 +212,9 @@
                   <div>
                     <div style="font-size: 18px; font-weight: 600; color: oklch(0.24 0.02 255);">{{ r.name }}</div>
                     <div style="font-size: 13px; color: oklch(0.52 0.02 255); font-family: 'IBM Plex Mono', monospace;">likely range {{ r.rangeLabel }} · {{ r.conf }}% confidence</div>
+                    <sc-if value="{{ r.cognateNote }}" hint-placeholder-val="{{ false }}">
+                      <div style="display: inline-flex; align-items: center; gap: 6px; margin-top: 7px; font-size: 12px; font-weight: 500; color: oklch(0.42 0.11 190); background: oklch(0.95 0.03 190); border: 1px solid oklch(0.84 0.05 190); padding: 3px 9px; border-radius: 999px;">◎ {{ r.cognateNote }}</div>
+                    </sc-if>
                   </div>
                   <div style="display: flex; align-items: center; gap: 4px;">
                     <span style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 700; font-size: 46px; line-height: 1; color: {{ r.gradeColor }}; animation: pop 0.4s ease both;">{{ r.grade }}</span>
@@ -329,8 +332,8 @@
         </div>
         <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 24px;">
           <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: oklch(0.55 0.13 250); margin-bottom: 14px;">03</div>
-          <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: oklch(0.24 0.02 255);">Empirical lookup</h3>
-          <p style="margin: 0; font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">For each subject, read the real grade distribution for students who started in that band — pooled over four years, cohort-weighted.</p>
+          <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: oklch(0.24 0.02 255);">Subject-specific lookup</h3>
+          <p style="margin: 0; font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">Read the real grade distribution for that band — then, where we know the GCSE in the <em>same</em> subject, blend in how those students actually did (real Cambridge data).</p>
         </div>
         <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 24px;">
           <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: oklch(0.55 0.13 250); margin-bottom: 14px;">04</div>
@@ -420,6 +423,24 @@
           </div>
           <div style="margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: oklch(0.55 0.02 255); text-align: center;">A-level Biology · % achieving each grade, by GCSE prior-attainment band · DfE 2025</div>
         </div>
+      </div>
+
+      <!-- SUBJECT-SPECIFIC -->
+      <div style="margin-top: 22px; background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 20px; padding: 32px; box-shadow: 0 1px 3px oklch(0.5 0.02 250 / 0.05);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.5 0.13 190); margin-bottom: 12px;">Subject-specific</div>
+        <h3 style="margin: 0 0 12px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; color: oklch(0.21 0.03 258);">It reads your GCSE in the actual subject</h3>
+        <p style="margin: 0 0 18px; font-size: 15px; color: oklch(0.44 0.02 255); line-height: 1.6; max-width: 760px;">Mean GCSE alone can't tell that a student is brilliant at Geography and weak at Art. So for the subjects where you enter the matching GCSE, we blend in <strong style="color: oklch(0.3 0.02 255);">real national data on how students with that exact GCSE grade went on to do at A-level</strong> — from Cambridge Assessment's <em>Progression from GCSE to A Level</em> study.</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 620px;">
+          <div style="background: oklch(0.97 0.02 155); border: 1px solid oklch(0.86 0.05 155); border-radius: 12px; padding: 16px 18px;">
+            <div style="font-size: 13px; color: oklch(0.4 0.03 250);">GCSE Geography <strong>9</strong></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.4 0.1 155); margin-top: 4px;">→ 42% of these students get A*/A</div>
+          </div>
+          <div style="background: oklch(0.97 0.02 30); border: 1px solid oklch(0.87 0.05 30); border-radius: 12px; padding: 16px 18px;">
+            <div style="font-size: 13px; color: oklch(0.4 0.03 250);">GCSE Art <strong>1</strong></div>
+            <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.5 0.12 30); margin-top: 4px;">→ ~half get D/E/U</div>
+          </div>
+        </div>
+        <p style="margin: 16px 0 0; font-size: 13.5px; color: oklch(0.5 0.02 255); line-height: 1.6; max-width: 760px;">So this student is now correctly forecast higher in Geography than Art — the opposite of a mean-only model. Live for Maths, Further Maths, the sciences, Geography, History, English Literature, French and Art; other subjects use the mean until we can add their data. Source: <a href="https://www.cambridgeassessment.org.uk/Images/735630-144.-progression-from-gcse-to-a-level-2021-2023.pdf" target="_blank" rel="noopener" style="font-family: 'IBM Plex Mono', monospace;">Cambridge Assessment 2021–23</a>.</p>
       </div>
 
       <!-- CONTEXT CALIBRATION -->
@@ -599,6 +620,15 @@ const MONTHS = ['January','February','March','April','May','June','July','August
 // ---------------------------------------------------------------------------
 const API_BASE = (typeof window !== 'undefined' && window.HIMALAYAS_API) || 'https://himalayas.learnanything.com';
 
+// A-level id -> the GCSE key we collect for the SAME subject. When the student
+// has that GCSE grade, the model uses real cognate data (Cambridge) for a
+// subject-specific prediction instead of just the mean.
+const COGNATE_GCSE = {
+  maths: 'maths', furthermaths: 'maths', physics: 'physics', chemistry: 'chemistry',
+  biology: 'biology', geography: 'geography', history: 'history', french: 'french',
+  englishlit: 'englit', art: 'art',
+};
+
 class Component extends DCLogic {
   state = {
     grades: {},
@@ -665,7 +695,12 @@ class Component extends DCLogic {
     }
     const body = {
       gcses,
-      subjects: chosen.map(id => (SUBJECTS.find(x => x.id === id) || {}).name || id),
+      subjects: chosen.map(id => {
+        const s = SUBJECTS.find(x => x.id === id) || {};
+        const gkey = COGNATE_GCSE[id];
+        const cg = gkey ? (st.grades[gkey] || 0) : 0;
+        return cg > 0 ? { name: s.name || id, cognateGrade: cg } : { name: s.name || id };
+      }),
       context: { disadvantaged: st.dis, eal: st.eal, birthMonth: st.month, attendance: st.att },
     };
     try {
@@ -684,6 +719,8 @@ class Component extends DCLogic {
             rangeLabel: 'no data', conf: 0, markerLeft: '0', bandLeft: '0', bandWidth: '0' };
         }
         const gi = Math.round(p.grade_value);
+        const GCSE_NAME = { maths: 'Maths', englit: 'English Lit', art: 'Art', biology: 'Biology',
+          chemistry: 'Chemistry', physics: 'Physics', geography: 'Geography', history: 'History', french: 'French' };
         return {
           name: p.subject_display || p.subject,
           grade: p.grade,
@@ -693,6 +730,9 @@ class Component extends DCLogic {
           markerLeft: String(p.marker_pct),
           bandLeft: String(p.band_left_pct),
           bandWidth: String(p.band_width_pct),
+          cognateNote: p.cognate
+            ? `Subject-specific · uses your GCSE ${GCSE_NAME[p.cognate.gcse_subject] || p.cognate.gcse_subject} (grade ${p.cognate.gcse_grade})`
+            : '',
           _gi: gi,
         };
       });
