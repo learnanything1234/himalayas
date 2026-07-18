@@ -1,0 +1,22 @@
+# systemd unit for the A-level predictor API on a Hetzner VPS.
+# Install:
+#   sudo cp deploy/himalayas-api.service /etc/systemd/system/
+#   sudo systemctl daemon-reload && sudo systemctl enable --now himalayas-api
+[Unit]
+Description=Himalayas A-level predictor API
+After=network.target
+
+[Service]
+Type=simple
+# Adjust User and WorkingDirectory to wherever you clone the repo
+User=www-data
+WorkingDirectory=/opt/alevel-predictor
+Environment=PORT=3000
+Environment=NODE_ENV=production
+ExecStartPre=/usr/bin/node scripts/build-db.mjs
+ExecStart=/usr/bin/node src/server.js
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

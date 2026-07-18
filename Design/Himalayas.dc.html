@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  a { color: oklch(0.52 0.14 250); text-decoration: none; }
+  a:hover { color: oklch(0.42 0.14 250); }
+  ::selection { background: oklch(0.88 0.06 200); }
+  select, button, input { font-family: inherit; }
+  @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes bandgrow { from { transform: scaleX(0.02); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
+  @keyframes pop { from { transform: scale(0.7); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  /* Responsive header */
+  @media (max-width: 720px) {
+    .site-nav { padding: 11px 18px !important; }
+    .nav-logo span.wordmark { font-size: 17px !important; }
+    .os-badge { display: none !important; }
+    .nav-links { gap: 16px !important; font-size: 14px !important; }
+    .nav-section-link { display: none !important; }
+    .nav-github { padding: 8px 14px !important; }
+  }
+  @media (max-width: 380px) {
+    .site-nav { padding: 10px 14px !important; }
+    .nav-github { padding: 7px 12px !important; font-size: 14px !important; }
+  }
+</style>
+</helmet>
+<div id="top" style="font-family: 'IBM Plex Sans', system-ui, sans-serif; color: oklch(0.23 0.02 255); background: oklch(0.98 0.006 245); overflow-x: hidden; line-height: 1.55;">
+
+  <!-- NAV -->
+  <nav class="site-nav" style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 15px 40px; background: oklch(0.98 0.006 245 / 0.82); backdrop-filter: blur(14px); border-bottom: 1px solid oklch(0.91 0.01 250);">
+    <a href="#top" class="nav-logo" style="display: flex; align-items: center; gap: 11px; color: oklch(0.23 0.02 255);">
+      <svg width="27" height="27" viewBox="0 0 32 32" aria-hidden="true"><polygon points="1,29 12,7 18,18 22,10 31,29" fill="oklch(0.58 0.13 250)"></polygon><polygon points="12,7 15.5,14 8.5,14" fill="oklch(0.97 0.01 250)"></polygon><polygon points="22,10 25.5,17 18.5,17" fill="oklch(0.97 0.01 250)"></polygon></svg>
+      <span class="wordmark" style="font-weight: 600; font-size: 19px; letter-spacing: -0.02em;">Himalayas</span>
+      <span class="os-badge" style="font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: oklch(0.48 0.13 190); border: 1px solid oklch(0.82 0.06 190); padding: 3px 7px; border-radius: 999px;">open source</span>
+    </a>
+    <div class="nav-links" style="display: flex; align-items: center; gap: 28px; font-size: 15px; font-weight: 500;">
+      <a href="#predictor" class="nav-section-link" style="color: oklch(0.36 0.02 255);">Predictor</a>
+      <a href="#batch" class="nav-section-link" style="color: oklch(0.36 0.02 255);">Bulk upload</a>
+      <a href="#how" class="nav-section-link" style="color: oklch(0.36 0.02 255);">How it works</a>
+      <a href="#roadmap" class="nav-section-link" style="color: oklch(0.36 0.02 255);">Roadmap</a>
+      <a href="https://github.com/learnanything1234/himalayas" target="_blank" rel="noopener" class="nav-github" style="display: inline-flex; align-items: center; gap: 7px; background: oklch(0.23 0.02 255); color: oklch(0.98 0.006 245); padding: 9px 16px; border-radius: 8px; font-weight: 500;">GitHub ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header style="position: relative; padding: 96px 40px 80px; text-align: center; background: linear-gradient(180deg, oklch(0.96 0.02 240) 0%, oklch(0.98 0.006 245) 100%); border-bottom: 1px solid oklch(0.92 0.01 250); overflow: hidden;">
+    <svg viewBox="0 0 1440 260" preserveAspectRatio="none" style="position: absolute; left: 0; right: 0; bottom: -1px; width: 100%; height: 260px; opacity: 0.5;" aria-hidden="true">
+      <polygon points="0,260 220,90 340,180 520,40 700,190 860,70 1040,200 1220,80 1440,220 1440,260" fill="oklch(0.9 0.03 240)"></polygon>
+      <polygon points="0,260 300,150 470,220 640,110 820,230 1010,130 1200,240 1440,150 1440,260" fill="oklch(0.85 0.05 245)"></polygon>
+    </svg>
+    <div style="position: relative; max-width: 880px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; color: oklch(0.45 0.1 240); background: oklch(0.99 0.005 245); border: 1px solid oklch(0.88 0.03 240); padding: 7px 14px; border-radius: 999px; margin-bottom: 28px;">
+        <span style="width: 7px; height: 7px; border-radius: 50%; background: oklch(0.7 0.15 155);"></span>
+        The free, open-source alternative to ALPs
+      </div>
+      <h1 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(44px, 6.5vw, 82px); line-height: 1.02; letter-spacing: -0.01em; margin: 0 0 22px; color: oklch(0.21 0.03 258);">
+        See where your students can reach — <span style="color: oklch(0.5 0.13 250);">long before results day.</span>
+      </h1>
+      <p style="max-width: 640px; margin: 0 auto 34px; font-size: 19px; color: oklch(0.42 0.02 255); font-weight: 300;">
+        Himalayas turns prior GCSE attainment into fast, evidence-based A-level predictions — a clear grade and tolerance band for every subject, drawn from 3.1 million real results. Built for teachers, heads of department and senior leaders. Free forever, with every formula published in the open.
+      </p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#predictor" style="background: oklch(0.5 0.14 250); color: oklch(0.99 0.005 250); padding: 14px 26px; border-radius: 10px; font-weight: 600; font-size: 16px; box-shadow: 0 8px 24px oklch(0.5 0.14 250 / 0.28);">Predict my grades →</a>
+      </div>
+      <div style="display: flex; gap: 34px; justify-content: center; flex-wrap: wrap; margin-top: 42px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.48 0.02 255);">
+        <span>✓ 100% free</span>
+        <span>✓ No sign-up</span>
+        <span>✓ Runs in your browser</span>
+        <span>✓ MIT licensed</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- PREDICTOR -->
+  <section id="predictor" style="padding: 84px 24px; scroll-margin-top: 70px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 46px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.5 0.13 190); margin-bottom: 12px;">The Predictor</div>
+        <h2 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 50px); margin: 0 0 12px; letter-spacing: -0.02em; color: oklch(0.21 0.03 258);">Enter a student, get their forecast</h2>
+        <p style="max-width: 580px; margin: 0 auto; color: oklch(0.44 0.02 255); font-size: 17px; font-weight: 300;">Add a student's prior attainment to model their likely A-level outcomes. Nothing you type leaves your device — want to explore first? Load a random student in one click.</p>
+      </div>
+
+      <div style="display: flex; justify-content: center; margin-bottom: 26px;">
+        <button onClick="{{ prefill }}" style="background: oklch(0.995 0.003 245); color: oklch(0.3 0.02 255); border: 1px solid oklch(0.85 0.02 250); padding: 12px 22px; border-radius: 11px; font-weight: 600; font-size: 15.5px; cursor: pointer; display: inline-flex; align-items: center; gap: 9px; box-shadow: 0 1px 2px oklch(0.5 0.02 250 / 0.05);">🎲 Fill with a random example</button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start;">
+
+        <!-- LEFT: GCSE -->
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 18px; padding: 26px; box-shadow: 0 1px 2px oklch(0.5 0.02 250 / 0.04);">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 6px;">
+            <h3 style="margin: 0; font-size: 17px; font-weight: 600;">1 · GCSE prior attainment</h3>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: oklch(0.5 0.02 255);">9 = top · 1 = low</span>
+          </div>
+          <p style="margin: 0 0 18px; font-size: 13px; color: oklch(0.5 0.02 255);">Tap +/− to set a grade. Leave subjects you didn't take blank.</p>
+          <div style="display: flex; flex-direction: column; gap: 9px;">
+            <sc-for list="{{ gcseRows }}" as="g" hint-placeholder-count="10">
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 9px 12px; border-radius: 11px; background: {{ g.bg }}; border: 1px solid {{ g.border }};">
+                <span style="font-size: 14.5px; font-weight: 500; color: oklch(0.28 0.02 255);">{{ g.name }}</span>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <button onClick="{{ g.dec }}" aria-label="lower" style="width: 30px; height: 30px; border-radius: 8px; border: 1px solid oklch(0.87 0.02 250); background: oklch(0.99 0.005 245); color: oklch(0.35 0.02 255); font-size: 18px; line-height: 1; cursor: pointer;">−</button>
+                  <span style="font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 18px; width: 26px; text-align: center; color: {{ g.color }};">{{ g.label }}</span>
+                  <button onClick="{{ g.inc }}" aria-label="raise" style="width: 30px; height: 30px; border-radius: 8px; border: 1px solid oklch(0.87 0.02 250); background: oklch(0.99 0.005 245); color: oklch(0.35 0.02 255); font-size: 18px; line-height: 1; cursor: pointer;">+</button>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          <div style="margin-top: 18px; display: flex; align-items: center; justify-content: space-between; padding: 14px 16px; border-radius: 12px; background: oklch(0.96 0.02 240);">
+            <span style="font-size: 13.5px; font-weight: 500; color: oklch(0.36 0.03 250);">Mean GCSE score</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 20px; font-weight: 600; color: oklch(0.44 0.13 250);">{{ meanLabel }}</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: A-levels + demographics -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 18px; padding: 26px; box-shadow: 0 1px 2px oklch(0.5 0.02 250 / 0.04);">
+            <h3 style="margin: 0 0 6px; font-size: 17px; font-weight: 600;">2 · A-level choices</h3>
+            <p style="margin: 0 0 18px; font-size: 13px; color: oklch(0.5 0.02 255);">Select the subjects the student is taking.</p>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <sc-for list="{{ alevelRows }}" as="row" hint-placeholder-count="3">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <select value="{{ row.value }}" onChange="{{ row.onChange }}" style="flex: 1; padding: 11px 13px; font-size: 15px; border-radius: 10px; border: 1px solid oklch(0.87 0.02 250); background: oklch(0.99 0.005 245); color: oklch(0.26 0.02 255); appearance: none; cursor: pointer;">
+                    <option value="">Choose a subject…</option>
+                    <sc-for list="{{ alevelOptions }}" as="opt"><option value="{{ opt.id }}">{{ opt.name }}</option></sc-for>
+                  </select>
+                  <button onClick="{{ row.remove }}" aria-label="remove" style="width: 40px; height: 42px; border-radius: 10px; border: 1px solid oklch(0.87 0.02 250); background: oklch(0.99 0.005 245); color: oklch(0.55 0.08 25); font-size: 17px; cursor: pointer; flex-shrink: 0;">×</button>
+                </div>
+              </sc-for>
+            </div>
+            <sc-if value="{{ canAddAlevel }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ addAlevel }}" style="margin-top: 12px; width: 100%; padding: 11px; border-radius: 10px; border: 1px dashed oklch(0.8 0.03 250); background: transparent; color: oklch(0.46 0.08 250); font-size: 14px; font-weight: 500; cursor: pointer;">+ Add another subject</button>
+            </sc-if>
+          </div>
+
+          <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 18px; padding: 26px; box-shadow: 0 1px 2px oklch(0.5 0.02 250 / 0.04);">
+            <div style="display: flex; align-items: baseline; justify-content: space-between;">
+              <h3 style="margin: 0 0 6px; font-size: 17px; font-weight: 600;">3 · Context <span style="font-weight: 400; color: oklch(0.55 0.02 255); font-size: 14px;">— optional</span></h3>
+            </div>
+            <p style="margin: 0 0 18px; font-size: 13px; color: oklch(0.5 0.02 255);">Contextual factors nudge the model, exactly as published.</p>
+            <div style="display: flex; flex-direction: column; gap: 14px;">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 14.5px; color: oklch(0.3 0.02 255);">Disadvantaged / Pupil Premium</span>
+                <button onClick="{{ toggleDis }}" style="width: 52px; height: 30px; border-radius: 999px; border: none; cursor: pointer; position: relative; background: {{ disBg }}; transition: background .2s;"><span style="position: absolute; top: 3px; left: {{ disKnob }}; width: 24px; height: 24px; border-radius: 50%; background: white; box-shadow: 0 1px 3px oklch(0 0 0 / 0.25); transition: left .2s;"></span></button>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="font-size: 14.5px; color: oklch(0.3 0.02 255);">English as an Additional Language</span>
+                <button onClick="{{ toggleEal }}" style="width: 52px; height: 30px; border-radius: 999px; border: none; cursor: pointer; position: relative; background: {{ ealBg }}; transition: background .2s;"><span style="position: absolute; top: 3px; left: {{ ealKnob }}; width: 24px; height: 24px; border-radius: 50%; background: white; box-shadow: 0 1px 3px oklch(0 0 0 / 0.25); transition: left .2s;"></span></button>
+              </div>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                <span style="font-size: 14.5px; color: oklch(0.3 0.02 255);">Month of birth</span>
+                <select value="{{ monthVal }}" onChange="{{ setMonth }}" style="padding: 9px 12px; font-size: 14px; border-radius: 9px; border: 1px solid oklch(0.87 0.02 250); background: oklch(0.99 0.005 245); color: oklch(0.26 0.02 255); appearance: none; cursor: pointer;">
+                  <option value="0">—</option>
+                  <sc-for list="{{ months }}" as="m"><option value="{{ m.num }}">{{ m.name }}</option></sc-for>
+                </select>
+              </div>
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                  <span style="font-size: 14.5px; color: oklch(0.3 0.02 255);">Prior attendance</span>
+                  <span style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: oklch(0.44 0.13 250);">{{ attLabel }}</span>
+                </div>
+                <input type="range" min="80" max="100" step="1" value="{{ attVal }}" onChange="{{ setAtt }}" onInput="{{ setAtt }}" style="width: 100%; accent-color: oklch(0.5 0.14 250);" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACTIONS -->
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 30px;">
+        <button onClick="{{ predict }}" style="background: oklch(0.5 0.14 250); color: oklch(0.99 0.005 250); padding: 15px 34px; border: none; border-radius: 11px; font-weight: 600; font-size: 16.5px; cursor: pointer; box-shadow: 0 8px 24px oklch(0.5 0.14 250 / 0.3);">Predict grades</button>
+        <button onClick="{{ reset }}" style="background: transparent; color: oklch(0.5 0.02 255); border: none; padding: 15px 14px; font-weight: 500; font-size: 15px; cursor: pointer;">Reset</button>
+      </div>
+      <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+        <p style="text-align: center; margin: 16px 0 0; color: oklch(0.55 0.12 25); font-size: 14px;">{{ errorMsg }}</p>
+      </sc-if>
+
+      <!-- LOADING -->
+      <sc-if value="{{ loading }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 46px; text-align: center; animation: rise 0.3s ease both;">
+          <div style="width: 48px; height: 48px; margin: 0 auto 16px; border: 4px solid oklch(0.9 0.02 250); border-top-color: oklch(0.5 0.14 250); border-radius: 50%; animation: spin 0.8s linear infinite;"></div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.5 0.02 255); letter-spacing: 0.04em;">Running the model…</div>
+        </div>
+      </sc-if>
+
+      <!-- RESULTS -->
+      <sc-if value="{{ computed }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 44px; animation: rise 0.5s ease both;">
+          <div style="display: flex; align-items: center; gap: 14px; margin-bottom: 8px;">
+            <h3 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: 30px; margin: 0; letter-spacing: -0.02em; color: oklch(0.21 0.03 258);">The forecast</h3>
+            <span style="flex: 1; height: 1px; background: oklch(0.9 0.01 250);"></span>
+          </div>
+          <p style="margin: 0 0 26px; color: oklch(0.46 0.02 255); font-size: 15px;">Based on a mean GCSE of <strong style="color: oklch(0.44 0.13 250);">{{ meanLabel }}</strong>. Bands show the range within which each grade is most likely to land — a guide for target-setting, not a guarantee.</p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <sc-for list="{{ results }}" as="r" hint-placeholder-count="3">
+              <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 22px 26px; box-shadow: 0 1px 2px oklch(0.5 0.02 250 / 0.04); animation: rise 0.5s ease both;">
+                <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px;">
+                  <div>
+                    <div style="font-size: 18px; font-weight: 600; color: oklch(0.24 0.02 255);">{{ r.name }}</div>
+                    <div style="font-size: 13px; color: oklch(0.52 0.02 255); font-family: 'IBM Plex Mono', monospace;">likely range {{ r.rangeLabel }} · {{ r.conf }}% confidence</div>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 4px;">
+                    <span style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 700; font-size: 46px; line-height: 1; color: {{ r.gradeColor }}; animation: pop 0.4s ease both;">{{ r.grade }}</span>
+                  </div>
+                </div>
+                <div style="position: relative; height: 40px;">
+                  <div style="position: absolute; top: 15px; left: 0; right: 0; height: 10px; border-radius: 999px; background: oklch(0.93 0.01 250);"></div>
+                  <div style="position: absolute; top: 15px; left: {{ r.bandLeft }}%; width: {{ r.bandWidth }}%; height: 10px; border-radius: 999px; background: linear-gradient(90deg, oklch(0.7 0.12 190), oklch(0.55 0.14 250)); transform-origin: left center; animation: bandgrow 0.7s ease both;"></div>
+                  <div style="position: absolute; top: 8px; left: {{ r.markerLeft }}%; transform: translateX(-50%); width: 4px; height: 24px; border-radius: 3px; background: oklch(0.25 0.03 258); box-shadow: 0 0 0 3px oklch(0.99 0.005 245);"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: oklch(0.6 0.02 255);">
+                  <span>U</span><span>E</span><span>D</span><span>C</span><span>B</span><span>A</span><span>A*</span>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+
+          <div style="margin-top: 20px; display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; padding: 22px 26px; border-radius: 16px; background: linear-gradient(120deg, oklch(0.25 0.04 258), oklch(0.32 0.07 250)); color: oklch(0.96 0.01 250);">
+            <div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7;">Best-guess A-level profile</div>
+              <div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 700; font-size: 36px; letter-spacing: 0.08em; margin-top: 4px;">{{ summaryGrades }}</div>
+            </div>
+            <div style="text-align: right; font-size: 14px; opacity: 0.85; max-width: 340px;">Roughly <strong>{{ overallConf }}% </strong>average confidence across the subjects. Predictions update the moment you tweak an input — recalculate any time.</div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- BATCH / SPREADSHEET -->
+  <section id="batch" style="padding: 20px 24px 84px; scroll-margin-top: 70px;">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 34px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.5 0.13 190); margin-bottom: 12px;">Whole class</div>
+        <h2 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(30px, 4vw, 46px); margin: 0 0 12px; letter-spacing: -0.02em; color: oklch(0.21 0.03 258);">Predict a whole cohort at once</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: oklch(0.44 0.02 255); font-size: 17px; font-weight: 300;">Upload a spreadsheet of students and get every forecast in one table. Download the sample, replace the rows with your own, and drop it back in.</p>
+      </div>
+
+      <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 18px; padding: 26px; box-shadow: 0 1px 2px oklch(0.5 0.02 250 / 0.04);">
+        <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+          <a href="{{ sampleUrl }}" download style="display: inline-flex; align-items: center; gap: 9px; background: oklch(0.995 0.003 245); color: oklch(0.3 0.02 255); border: 1px solid oklch(0.85 0.02 250); padding: 12px 20px; border-radius: 11px; font-weight: 600; font-size: 15px;">⬇ Download sample spreadsheet</a>
+          <label style="display: inline-flex; align-items: center; gap: 9px; background: oklch(0.5 0.14 250); color: oklch(0.99 0.005 250); padding: 12px 22px; border-radius: 11px; font-weight: 600; font-size: 15px; cursor: pointer; box-shadow: 0 6px 18px oklch(0.5 0.14 250 / 0.28);">
+            📄 Upload spreadsheet (CSV)
+            <input type="file" accept=".csv,text/csv" onChange="{{ onBatchFile }}" style="position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden;" />
+          </label>
+          <sc-if value="{{ batchFileName }}" hint-placeholder-val="{{ false }}">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.5 0.02 255);">{{ batchFileName }}</span>
+          </sc-if>
+        </div>
+        <p style="margin: 16px 0 0; font-size: 12.5px; color: oklch(0.55 0.02 255); font-family: 'IBM Plex Mono', monospace;">columns: name · gcse_grades · subject_1…4 · disadvantaged · eal · birth_month · attendance</p>
+
+        <sc-if value="{{ batchLoading }}" hint-placeholder-val="{{ false }}">
+          <div style="margin-top: 22px; display: flex; align-items: center; gap: 12px; color: oklch(0.5 0.02 255); font-family: 'IBM Plex Mono', monospace; font-size: 13px;">
+            <span style="width: 22px; height: 22px; border: 3px solid oklch(0.9 0.02 250); border-top-color: oklch(0.5 0.14 250); border-radius: 50%; animation: spin 0.8s linear infinite; display: inline-block;"></span>
+            Running the model on your cohort…
+          </div>
+        </sc-if>
+        <sc-if value="{{ batchError }}" hint-placeholder-val="{{ false }}">
+          <p style="margin: 16px 0 0; color: oklch(0.55 0.12 25); font-size: 14px;">{{ batchError }}</p>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ hasBatch }}" hint-placeholder-val="{{ false }}">
+        <div style="margin-top: 24px; animation: rise 0.4s ease both;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 14px;">
+            <h3 style="margin: 0; font-size: 20px; font-weight: 600; color: oklch(0.24 0.02 255);">{{ batchCount }} students forecast</h3>
+            <button onClick="{{ downloadBatch }}" style="background: oklch(0.23 0.02 255); color: oklch(0.98 0.006 245); border: none; padding: 11px 18px; border-radius: 10px; font-weight: 600; font-size: 14px; cursor: pointer;">⬇ Download results</button>
+          </div>
+          <div style="overflow-x: auto; border: 1px solid oklch(0.91 0.01 250); border-radius: 14px; background: oklch(0.995 0.003 245);">
+            <div style="min-width: 720px;">
+              <div style="display: grid; grid-template-columns: 1.5fr 0.8fr 2.6fr 1fr 0.7fr; gap: 12px; padding: 12px 18px; border-bottom: 1px solid oklch(0.92 0.01 250); font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: oklch(0.5 0.02 255);">
+                <div>Student</div><div>Prior band</div><div>Predicted grades</div><div>Profile</div><div>Conf.</div>
+              </div>
+              <sc-for list="{{ batchTable }}" as="r" hint-placeholder-count="4">
+                <div style="display: grid; grid-template-columns: 1.5fr 0.8fr 2.6fr 1fr 0.7fr; gap: 12px; padding: 13px 18px; border-bottom: 1px solid oklch(0.94 0.008 250); align-items: center;">
+                  <div style="font-size: 14.5px; font-weight: 500; color: oklch(0.26 0.02 255);">{{ r.name }}</div>
+                  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.45 0.03 250);">{{ r.band }}</div>
+                  <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                    <sc-for list="{{ r.subjects }}" as="s">
+                      <span style="font-size: 12.5px; font-weight: 500; padding: 4px 9px; border-radius: 7px; background: {{ s.bg }}; color: {{ s.color }};">{{ s.label }}</span>
+                    </sc-for>
+                  </div>
+                  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.06em; color: oklch(0.3 0.03 250);">{{ r.profile }}</div>
+                  <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: oklch(0.5 0.02 255);">{{ r.conf }}</div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" style="padding: 84px 24px; scroll-margin-top: 70px; background: linear-gradient(180deg, oklch(0.98 0.006 245) 0%, oklch(0.965 0.014 240) 100%); border-top: 1px solid oklch(0.92 0.01 250); border-bottom: 1px solid oklch(0.92 0.01 250);">
+    <div style="max-width: 1080px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 52px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.5 0.13 190); margin-bottom: 12px;">The method</div>
+        <h2 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 50px); margin: 0 0 14px; letter-spacing: -0.02em; color: oklch(0.21 0.03 258);">How the forecast is built</h2>
+        <p style="max-width: 640px; margin: 0 auto; color: oklch(0.44 0.02 255); font-size: 17px; font-weight: 300;">No black box, no proprietary score. Every prediction is read straight from real national results — here's the whole pipeline, start to finish.</p>
+      </div>
+
+      <!-- STEPS -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 30px;">
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 24px; position: relative; overflow: hidden;">
+          <svg viewBox="0 0 60 22" style="position: absolute; top: 16px; right: 14px; width: 54px; height: 20px; opacity: 0.5;" aria-hidden="true"><polygon points="0,22 16,4 26,14 38,2 52,16 60,8 60,22" fill="none" stroke="oklch(0.7 0.1 200)" stroke-width="1.4"></polygon></svg>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: oklch(0.55 0.13 250); margin-bottom: 14px;">01</div>
+          <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: oklch(0.24 0.02 255);">Prior attainment</h3>
+          <p style="margin: 0; font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">Average the student's GCSEs into one 9–1 score — the same measure Ofqual uses as the A-level starting point.</p>
+        </div>
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: oklch(0.55 0.13 250); margin-bottom: 14px;">02</div>
+          <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: oklch(0.24 0.02 255);">Attainment band</h3>
+          <p style="margin: 0; font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">That score drops the student into a national band — from <span style="font-family: 'IBM Plex Mono', monospace;">&lt;1</span> up to <span style="font-family: 'IBM Plex Mono', monospace;">9+</span> — the rows of the matrix below.</p>
+        </div>
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: oklch(0.55 0.13 250); margin-bottom: 14px;">03</div>
+          <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: oklch(0.24 0.02 255);">Empirical lookup</h3>
+          <p style="margin: 0; font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">For each subject, read the real grade distribution for students who started in that band — pooled over four years, cohort-weighted.</p>
+        </div>
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 24px;">
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; font-weight: 600; color: oklch(0.55 0.13 250); margin-bottom: 14px;">04</div>
+          <h3 style="margin: 0 0 8px; font-size: 16px; font-weight: 600; color: oklch(0.24 0.02 255);">Forecast</h3>
+          <p style="margin: 0; font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">The distribution's centre is the predicted grade; its spread sets the tolerance band and confidence. Context factors nudge the result.</p>
+        </div>
+      </div>
+
+      <!-- DATA PANEL -->
+      <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 20px; padding: 32px; display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 40px; align-items: center; box-shadow: 0 1px 3px oklch(0.5 0.02 250 / 0.05);">
+        <div>
+          <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.5 0.13 190); margin-bottom: 12px;">The data</div>
+          <h3 style="margin: 0 0 12px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; color: oklch(0.21 0.03 258);">Built on 3.1 million real results</h3>
+          <p style="margin: 0 0 18px; font-size: 15px; color: oklch(0.44 0.02 255); line-height: 1.6;">Every forecast is read from <strong style="color: oklch(0.3 0.02 255);">3,113,847 real A-level results</strong> in the DfE's official <strong style="color: oklch(0.3 0.02 255);">16–18 transition matrices</strong> — the grades actually achieved across England over four years, grouped by the level students started from. The grid shows one real slice: A-level Biology. Read across a row for the likely spread of grades in that band; the bright diagonal is prior attainment carrying through to results.</p>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px;">
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.4 0.11 250); background: oklch(0.95 0.03 240); border: 1px solid oklch(0.84 0.06 240); padding: 6px 11px; border-radius: 999px;">3.1M results</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; color: oklch(0.36 0.03 250); background: oklch(0.96 0.02 240); border: 1px solid oklch(0.88 0.03 240); padding: 6px 11px; border-radius: 999px;">63 A-level subjects</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; color: oklch(0.36 0.03 250); background: oklch(0.96 0.02 240); border: 1px solid oklch(0.88 0.03 240); padding: 6px 11px; border-radius: 999px;">2022–2025</span>
+            <span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 500; color: oklch(0.36 0.03 250); background: oklch(0.96 0.02 240); border: 1px solid oklch(0.88 0.03 240); padding: 6px 11px; border-radius: 999px;">Official DfE data</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: oklch(0.5 0.02 255);">
+            <span>less likely</span>
+            <span style="flex: 1; height: 8px; border-radius: 999px; background: linear-gradient(90deg, oklch(0.965 0.006 250), oklch(0.72 0.078 218), oklch(0.525 0.136 190));"></span>
+            <span>more likely</span>
+          </div>
+        </div>
+
+        <div>
+          <div style="display: grid; grid-template-columns: 44px repeat(7, 1fr); gap: 5px; align-items: center;">
+            <!-- header row -->
+            <div></div>
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.3 0.02 255); padding-bottom: 4px;">A*</div>
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.3 0.02 255); padding-bottom: 4px;">A</div>
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.3 0.02 255); padding-bottom: 4px;">B</div>
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.3 0.02 255); padding-bottom: 4px;">C</div>
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.3 0.02 255); padding-bottom: 4px;">D</div>
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.3 0.02 255); padding-bottom: 4px;">E</div>
+            <div style="text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.3 0.02 255); padding-bottom: 4px;">U</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.45 0.03 250);">4–5</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.965 0.006 250); color: oklch(0.42 0.02 255);">·</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.959 0.008 249.18); color: oklch(0.42 0.02 255);">0.8</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.940 0.013 246.64); color: oklch(0.42 0.02 255);">3.4</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.883 0.030 238.79); color: oklch(0.42 0.02 255);">11</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.787 0.059 225.75); color: oklch(0.42 0.02 255);">24</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.728 0.076 217.65); color: oklch(0.98 0.01 250);">32</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.760 0.067 221.98); color: oklch(0.98 0.01 250);">28</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.45 0.03 250);">5–6</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.963 0.006 249.79); color: oklch(0.42 0.02 255);">·</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.950 0.010 248); color: oklch(0.42 0.02 255);">2.0</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.894 0.027 240.38); color: oklch(0.42 0.02 255);">9.6</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.789 0.058 225.97); color: oklch(0.42 0.02 255);">24</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.737 0.073 218.85); color: oklch(0.98 0.01 250);">31</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.793 0.057 226.5); color: oklch(0.42 0.02 255);">24</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.895 0.027 240.51); color: oklch(0.42 0.02 255);">9.5</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.45 0.03 250);">6–7</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.960 0.007 249.33); color: oklch(0.42 0.02 255);">0.7</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.905 0.024 241.87); color: oklch(0.42 0.02 255);">8.1</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.789 0.058 226.04); color: oklch(0.42 0.02 255);">24</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.723 0.077 217.06); color: oklch(0.98 0.01 250);">33</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.798 0.055 227.28); color: oklch(0.42 0.02 255);">23</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.896 0.026 240.59); color: oklch(0.42 0.02 255);">9.4</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.949 0.011 247.83); color: oklch(0.42 0.02 255);">2.2</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.45 0.03 250);">7–8</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.924 0.018 244.35); color: oklch(0.42 0.02 255);">5.7</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.748 0.070 220.36); color: oklch(0.98 0.01 250);">30</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.706 0.083 214.62); color: oklch(0.98 0.01 250);">35</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.817 0.050 229.83); color: oklch(0.42 0.02 255);">20</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.913 0.021 242.86); color: oklch(0.42 0.02 255);">7.1</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.952 0.010 248.23); color: oklch(0.42 0.02 255);">1.8</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.963 0.007 249.75); color: oklch(0.42 0.02 255);">·</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.45 0.03 250);">8–9</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.699 0.085 213.67); color: oklch(0.98 0.01 250);">36</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.653 0.098 207.44); color: oklch(0.98 0.01 250);">43</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.844 0.042 233.55); color: oklch(0.42 0.02 255);">16</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.938 0.014 246.35); color: oklch(0.42 0.02 255);">3.6</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.960 0.008 249.25); color: oklch(0.42 0.02 255);">0.8</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.963 0.006 249.79); color: oklch(0.42 0.02 255);">·</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.965 0.006 249.96); color: oklch(0.42 0.02 255);">·</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: oklch(0.45 0.03 250);">9+</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.525 0.136 190); color: oklch(0.98 0.01 250);">69</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.808 0.052 228.56); color: oklch(0.42 0.02 255);">21</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.922 0.019 244.09); color: oklch(0.42 0.02 255);">5.9</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.947 0.011 247.56); color: oklch(0.42 0.02 255);">2.4</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.963 0.007 249.74); color: oklch(0.42 0.02 255);">·</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.960 0.007 249.36); color: oklch(0.42 0.02 255);">0.6</div>
+                <div style="padding: 7px 0; text-align: center; font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; border-radius: 6px; background: oklch(0.964 0.006 249.87); color: oklch(0.42 0.02 255);">·</div>
+          </div>
+          <div style="margin-top: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: oklch(0.55 0.02 255); text-align: center;">A-level Biology · % achieving each grade, by GCSE prior-attainment band · DfE 2025</div>
+        </div>
+      </div>
+
+      <!-- CONTEXT CALIBRATION -->
+      <div style="margin-top: 22px; background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 20px; padding: 32px; box-shadow: 0 1px 3px oklch(0.5 0.02 250 / 0.05);">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: oklch(0.5 0.13 190); margin-bottom: 12px;">The context factors</div>
+        <h3 style="margin: 0 0 12px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 26px; font-weight: 600; letter-spacing: -0.01em; color: oklch(0.21 0.03 258);">Every factor, grounded in published research</h3>
+        <p style="margin: 0 0 8px; font-size: 15px; color: oklch(0.44 0.02 255); line-height: 1.6; max-width: 760px;">The core forecast is built on prior attainment alone. On top, four optional context factors refine it — and unlike the black-box products, <strong style="color: oklch(0.3 0.02 255);">every one is anchored to a published national statistic</strong>, no invented weightings. Here is each factor, with its source:</p>
+
+        <div style="overflow-x: auto; margin: 20px 0 6px;">
+          <div style="min-width: 640px;">
+            <div style="display: grid; grid-template-columns: 1.3fr 0.9fr 3fr; gap: 12px; padding: 10px 14px; border-bottom: 1px solid oklch(0.92 0.01 250); font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: oklch(0.5 0.02 255);">
+              <div>Factor</div><div>Adjustment</div><div>Anchored to</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.3fr 0.9fr 3fr; gap: 12px; padding: 12px 14px; border-bottom: 1px solid oklch(0.94 0.008 250); align-items: baseline;">
+              <div style="font-size: 14.5px; font-weight: 500; color: oklch(0.26 0.02 255);">Disadvantaged / PP</div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: oklch(0.55 0.13 30);">−0.11 grade</div>
+              <div style="font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">DfE 2024/25 A-level disadvantage gap of 4.6 pts (≈0.46 grade). Most of that is prior attainment — already captured — so only the within-band residual is applied.</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.3fr 0.9fr 3fr; gap: 12px; padding: 12px 14px; border-bottom: 1px solid oklch(0.94 0.008 250); align-items: baseline;">
+              <div style="font-size: 14.5px; font-weight: 500; color: oklch(0.26 0.02 255);">EAL</div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: oklch(0.5 0.13 155);">+0.06 grade</div>
+              <div style="font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">FFT: EAL pupils average Progress 8 of +0.55 vs −0.09 for first-language English. Attenuated for A-level to a modest positive.</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.3fr 0.9fr 3fr; gap: 12px; padding: 12px 14px; border-bottom: 1px solid oklch(0.94 0.008 250); align-items: baseline;">
+              <div style="font-size: 14.5px; font-weight: 500; color: oklch(0.26 0.02 255);">Summer-born</div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: oklch(0.5 0.02 255);">−0.02 grade</div>
+              <div style="font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">Near-zero on purpose: the relative-age effect largely washes out by A-level (Cambridge Assessment review), and the DfE prior-attainment measure is already age-standardised.</div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1.3fr 0.9fr 3fr; gap: 12px; padding: 12px 14px; align-items: baseline;">
+              <div style="font-size: 14.5px; font-weight: 500; color: oklch(0.26 0.02 255);">Attendance</div>
+              <div style="font-family: 'IBM Plex Mono', monospace; font-size: 14px; font-weight: 600; color: oklch(0.5 0.13 155);">+0.01 / point</div>
+              <div style="font-size: 13.5px; color: oklch(0.46 0.02 255); line-height: 1.5;">DfE 2025: moving up one 5% attendance band raises the chance of the expected outcome ~10% at KS4. Extrapolated to A-level — the weakest-evidenced of the four.</div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin: 14px 0 0; font-size: 13.5px; color: oklch(0.5 0.02 255); line-height: 1.6; max-width: 760px;">Every coefficient, derivation and source is served openly at <a href="{{ modelUrl }}" style="font-family: 'IBM Plex Mono', monospace;">/model</a> — audit it, question it, improve it. And this is just the foundation: our roadmap takes prediction further with pupil-level research data. <a href="#roadmap" style="font-weight: 600;">See where we're headed →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY OPEN -->
+  <section id="why" style="padding: 84px 24px; scroll-margin-top: 70px;">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 46px;">
+        <h2 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 50px); margin: 0 0 12px; letter-spacing: -0.02em; color: oklch(0.21 0.03 258);">Why open source?</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: oklch(0.44 0.02 255); font-size: 17px; font-weight: 300;">Grade prediction shapes real futures. Teachers deserve to see — and question — the maths behind every target they set.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 26px; margin-bottom: 12px;">🔍</div>
+          <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 600;">Fully transparent</h4>
+          <p style="margin: 0; font-size: 14.5px; color: oklch(0.46 0.02 255);">Every coefficient, benchmark and formula is published. No proprietary scoring, no hidden weightings.</p>
+        </div>
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 26px; margin-bottom: 12px;">🎓</div>
+          <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 600;">Free for everyone</h4>
+          <p style="margin: 0; font-size: 14.5px; color: oklch(0.46 0.02 255);">Students, tutors, teachers and whole schools — no licence fees, no per-seat pricing, no demo calls.</p>
+        </div>
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 28px;">
+          <div style="font-size: 26px; margin-bottom: 12px;">🛠️</div>
+          <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 600;">Yours to improve</h4>
+          <p style="margin: 0; font-size: 14.5px; color: oklch(0.46 0.02 255);">Fork it, audit it, recalibrate it on your own results. Contributions make the model better for all.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" style="padding: 84px 24px; scroll-margin-top: 70px; background: linear-gradient(180deg, oklch(0.98 0.006 245) 0%, oklch(0.965 0.014 240) 100%); border-top: 1px solid oklch(0.92 0.01 250); border-bottom: 1px solid oklch(0.92 0.01 250);">
+    <div style="max-width: 1000px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: 46px;">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: oklch(0.5 0.13 190); margin-bottom: 12px;">The roadmap</div>
+        <h2 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(32px, 4.2vw, 50px); margin: 0 0 12px; letter-spacing: -0.02em; color: oklch(0.21 0.03 258);">From national averages to true personalisation</h2>
+        <p style="max-width: 660px; margin: 0 auto; color: oklch(0.44 0.02 255); font-size: 17px; font-weight: 300;">Today's model reads the best <em>free</em> national data. The next leap comes from pupil-level records — and we have a clear, legitimate path to get there.</p>
+      </div>
+
+      <!-- three steps -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-bottom: 32px;">
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 26px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: oklch(0.5 0.13 155); background: oklch(0.95 0.04 155); border-radius: 999px; padding: 5px 11px; margin-bottom: 14px;">● Live today</div>
+          <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 600; color: oklch(0.24 0.02 255);">Free national data</h4>
+          <p style="margin: 0; font-size: 14px; color: oklch(0.46 0.02 255); line-height: 1.55;">3.1M real A-level results from the DfE transition matrices, plus context factors anchored to published research. Free for every school, forever.</p>
+        </div>
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.88 0.04 250); border-radius: 16px; padding: 26px; box-shadow: 0 6px 22px oklch(0.5 0.14 250 / 0.1);">
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: oklch(0.45 0.13 250); background: oklch(0.94 0.04 250); border-radius: 999px; padding: 5px 11px; margin-bottom: 14px;">◆ Next</div>
+          <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 600; color: oklch(0.24 0.02 255);">University research partnership</h4>
+          <p style="margin: 0; font-size: 14px; color: oklch(0.46 0.02 255); line-height: 1.55;">A public-benefit project with a leading education faculty, analysing the National Pupil Database inside the ONS Secure Research Service — the only legitimate route to pupil-level data.</p>
+        </div>
+        <div style="background: oklch(0.995 0.003 245); border: 1px solid oklch(0.91 0.01 250); border-radius: 16px; padding: 26px;">
+          <div style="display: inline-flex; align-items: center; gap: 8px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: oklch(0.5 0.1 85); background: oklch(0.95 0.04 85); border-radius: 999px; padding: 5px 11px; margin-bottom: 14px;">◇ Then</div>
+          <h4 style="margin: 0 0 8px; font-size: 17px; font-weight: 600; color: oklch(0.24 0.02 255);">Richer, published matrices</h4>
+          <p style="margin: 0; font-size: 14px; color: oklch(0.46 0.02 255); line-height: 1.55;">Predictions conditioned on subject-specific GCSEs, school type and deprivation decile — disclosure-checked, published as open aggregates, and free for anyone to build on.</p>
+        </div>
+      </div>
+
+      <!-- Cambridge / NPD callout -->
+      <div style="background: linear-gradient(120deg, oklch(0.25 0.04 258), oklch(0.32 0.07 250)); border-radius: 20px; padding: 34px 38px; color: oklch(0.96 0.01 250); display: grid; grid-template-columns: auto 1fr; gap: 26px; align-items: center;">
+        <div style="font-size: 42px; line-height: 1;">🎓</div>
+        <div>
+          <h3 style="margin: 0 0 10px; font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 23px; font-weight: 600; letter-spacing: -0.01em;">Our goal: a research partnership with the University of Cambridge</h3>
+          <p style="margin: 0; font-size: 15px; line-height: 1.6; opacity: 0.9;">We aim to work with the University of Cambridge's education researchers on the question that matters most — <em>what predicts A-level outcomes beyond mean GCSE?</em> The National Pupil Database can answer it: GCSE-to-A-level linkage alongside free-school-meals, ethnicity, SEN, deprivation and school type. It can't be used commercially, but a university public-benefit project can study it and <strong>publish the results openly</strong> — so richer predictions reach every school, college and local authority for free. Slower, but legitimate, and built to last.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTE -->
+  <section id="contribute" style="padding: 40px 24px 90px; scroll-margin-top: 70px;">
+    <div style="max-width: 1000px; margin: 0 auto; background: linear-gradient(120deg, oklch(0.22 0.03 258), oklch(0.34 0.08 245)); border-radius: 24px; padding: 56px 48px; text-align: center; color: oklch(0.97 0.01 250); position: relative; overflow: hidden;">
+      <svg viewBox="0 0 1000 200" preserveAspectRatio="none" style="position: absolute; left: 0; bottom: 0; width: 100%; height: 130px; opacity: 0.18;" aria-hidden="true"><polygon points="0,200 180,70 320,140 480,40 640,150 820,60 1000,150 1000,200" fill="white"></polygon></svg>
+      <div style="position: relative;">
+        <h2 style="font-family: 'IBM Plex Sans', system-ui, sans-serif; font-weight: 600; font-size: clamp(30px, 4.2vw, 46px); margin: 0 0 14px; letter-spacing: -0.02em;">Help every school climb higher</h2>
+        <p style="max-width: 560px; margin: 0 auto 28px; font-size: 17px; font-weight: 300; opacity: 0.9;">Himalayas is built and maintained in the open. Star the repo, open an issue, or send a pull request — and if you're a school with historical results, help us calibrate.</p>
+        <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://github.com/learnanything1234/himalayas" target="_blank" rel="noopener" style="background: oklch(0.97 0.01 250); color: oklch(0.24 0.03 258); padding: 14px 26px; border-radius: 10px; font-weight: 600; font-size: 16px;">★ Star on GitHub</a>
+          <a href="https://github.com/learnanything1234/himalayas#readme" target="_blank" rel="noopener" style="background: transparent; color: oklch(0.97 0.01 250); border: 1px solid oklch(0.75 0.03 250 / 0.5); padding: 14px 26px; border-radius: 10px; font-weight: 600; font-size: 16px;">Read the docs</a>
+        </div>
+        <div style="margin-top: 26px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; opacity: 0.7;">git clone https://github.com/learnanything1234/himalayas</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="border-top: 1px solid oklch(0.91 0.01 250); padding: 40px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; max-width: 1080px; margin: 0 auto;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><polygon points="1,29 12,7 18,18 22,10 31,29" fill="oklch(0.58 0.13 250)"></polygon></svg>
+      <span style="font-weight: 600;">Himalayas</span>
+      <span style="color: oklch(0.55 0.02 255); font-size: 14px;">— open-source grade prediction</span>
+    </div>
+    <div style="font-size: 13px; color: oklch(0.55 0.02 255); max-width: 460px; text-align: right;">Predictions are statistical estimates for guidance only and are not a substitute for teacher assessment. MIT licensed · Not affiliated with ALPs Education.</div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const LETTERS = ['U','E','D','C','B','A','A*'];
+const GCSES = [
+  {key:'englang', name:'English Language'},
+  {key:'englit', name:'English Literature'},
+  {key:'maths', name:'Mathematics'},
+  {key:'biology', name:'Biology'},
+  {key:'chemistry', name:'Chemistry'},
+  {key:'physics', name:'Physics'},
+  {key:'history', name:'History'},
+  {key:'geography', name:'Geography'},
+  {key:'french', name:'French'},
+  {key:'art', name:'Art'},
+];
+const SUBJECTS = [
+  {id:'furthermaths', name:'Further Mathematics', adj:-0.55},
+  {id:'physics', name:'Physics', adj:-0.4},
+  {id:'chemistry', name:'Chemistry', adj:-0.35},
+  {id:'compsci', name:'Computer Science', adj:-0.3},
+  {id:'maths', name:'Mathematics', adj:-0.25},
+  {id:'biology', name:'Biology', adj:-0.2},
+  {id:'french', name:'French', adj:-0.15},
+  {id:'economics', name:'Economics', adj:-0.15},
+  {id:'history', name:'History', adj:-0.1},
+  {id:'geography', name:'Geography', adj:-0.05},
+  {id:'englishlit', name:'English Literature', adj:-0.05},
+  {id:'politics', name:'Politics', adj:-0.05},
+  {id:'psychology', name:'Psychology', adj:0},
+  {id:'religiousstudies', name:'Religious Studies', adj:0.05},
+  {id:'sociology', name:'Sociology', adj:0.1},
+  {id:'business', name:'Business Studies', adj:0.1},
+  {id:'drama', name:'Drama', adj:0.1},
+  {id:'pe', name:'Physical Education', adj:0.1},
+  {id:'art', name:'Art & Design', adj:0.15},
+  {id:'media', name:'Media Studies', adj:0.2},
+];
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+// ---------------------------------------------------------------------------
+// Backend predictor API (DfE KS5 transition matrices). Point this at wherever
+// the `alevel-predictor` Node service is hosted (e.g. your Hetzner VPS).
+// Override at runtime with `window.HIMALAYAS_API = 'https://…'` before load.
+// ---------------------------------------------------------------------------
+const API_BASE = (typeof window !== 'undefined' && window.HIMALAYAS_API) || 'http://167.233.166.53:8090';
+
+class Component extends DCLogic {
+  state = {
+    grades: {},
+    alevels: ['', '', ''],
+    dis: false,
+    eal: false,
+    month: 0,
+    att: 95,
+    computed: false,
+    loading: false,
+    results: [],
+    showError: false,
+    errorMsg: '',
+    batchRows: null,
+    batchLoading: false,
+    batchError: '',
+    batchFileName: '',
+  };
+
+  startPredict() {
+    const mean = this.meanGCSE();
+    const chosen = this.state.alevels.filter(Boolean);
+    if (mean === null || !chosen.length) {
+      this.setState({ showError: true, computed: false, loading: false,
+        errorMsg: mean === null ? 'Enter at least one GCSE grade first.' : 'Pick at least one A-level subject.' });
+      return;
+    }
+    this.setState({ loading: true, computed: false, showError: false });
+    this.compute();
+  }
+
+  componentWillUnmount() { clearTimeout(this._timer); }
+
+  gradeColor(v) {
+    if (v === 0) return 'oklch(0.7 0.01 255)';
+    if (v >= 7) return 'oklch(0.5 0.14 155)';
+    if (v >= 5) return 'oklch(0.5 0.14 250)';
+    if (v >= 4) return 'oklch(0.55 0.1 85)';
+    return 'oklch(0.58 0.13 30)';
+  }
+  letterColor(idx) {
+    if (idx >= 5) return 'oklch(0.5 0.14 155)';
+    if (idx >= 4) return 'oklch(0.5 0.14 250)';
+    if (idx >= 3) return 'oklch(0.55 0.12 85)';
+    return 'oklch(0.58 0.13 30)';
+  }
+
+  meanGCSE() {
+    const vals = Object.values(this.state.grades).filter(v => v > 0);
+    if (!vals.length) return null;
+    return vals.reduce((a, b) => a + b, 0) / vals.length;
+  }
+
+  // Calls the DfE-transition-matrix predictor API and maps its response onto
+  // the fields the results template renders.
+  async compute() {
+    const st = this.state;
+    const chosen = st.alevels.filter(Boolean);
+    const gcses = Object.values(st.grades).filter(v => v > 0);
+    if (!gcses.length || !chosen.length) {
+      this.setState({ showError: true, computed: false, loading: false,
+        errorMsg: !gcses.length ? 'Enter at least one GCSE grade first.' : 'Pick at least one A-level subject.' });
+      return;
+    }
+    const body = {
+      gcses,
+      subjects: chosen.map(id => (SUBJECTS.find(x => x.id === id) || {}).name || id),
+      context: { disadvantaged: st.dis, eal: st.eal, birthMonth: st.month, attendance: st.att },
+    };
+    try {
+      const resp = await fetch(`${API_BASE}/predict`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      if (!resp.ok) throw new Error(`API ${resp.status}`);
+      const data = await resp.json();
+      if (data.error) throw new Error(data.message || data.error);
+
+      const results = data.predictions.map((p, i) => {
+        if (p.error) {
+          return { name: body.subjects[i], grade: '?', gradeColor: 'oklch(0.6 0.02 255)',
+            rangeLabel: 'no data', conf: 0, markerLeft: '0', bandLeft: '0', bandWidth: '0' };
+        }
+        const gi = Math.round(p.grade_value);
+        return {
+          name: p.subject_display || p.subject,
+          grade: p.grade,
+          gradeColor: this.letterColor(gi),
+          rangeLabel: p.band.range_label,
+          conf: p.confidence,
+          markerLeft: String(p.marker_pct),
+          bandLeft: String(p.band_left_pct),
+          bandWidth: String(p.band_width_pct),
+          _gi: gi,
+        };
+      });
+      this.setState({
+        computed: true, loading: false, showError: false, results,
+        summaryGrades: data.summary.best_guess_profile,
+        overallConf: data.summary.average_confidence,
+      });
+    } catch (err) {
+      this.setState({ loading: false, computed: false, showError: true,
+        errorMsg: `Couldn't reach the predictor (${err.message}). Check that the API is running at ${API_BASE}.` });
+    }
+  }
+
+  // ---- Bulk upload (spreadsheet -> many predictions) ----
+  async onBatchFile(e) {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    this.setState({ batchLoading: true, batchError: '', batchRows: null, batchFileName: file.name });
+    try {
+      const text = await file.text();
+      const students = this.parseStudentsCsv(text);
+      if (!students.length) throw new Error('No student rows found in that file.');
+      const resp = await fetch(`${API_BASE}/predict/batch`, {
+        method: 'POST', headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ students }),
+      });
+      if (!resp.ok) throw new Error(`API ${resp.status}`);
+      const data = await resp.json();
+      if (data.error) throw new Error(data.message || data.error);
+      this.setState({ batchRows: data.results, batchLoading: false });
+    } catch (err) {
+      this.setState({ batchLoading: false, batchError: `Couldn't process that spreadsheet: ${err.message}` });
+    }
+    e.target.value = ''; // allow re-uploading the same file
+  }
+
+  parseStudentsCsv(text) {
+    const lines = text.replace(/^﻿/, '').trim().split(/\r?\n/).filter(l => l.trim());
+    if (lines.length < 2) return [];
+    const header = lines[0].split(',').map(h => h.trim().toLowerCase());
+    const at = (cells, name) => { const i = header.indexOf(name); return i >= 0 ? (cells[i] || '').trim() : ''; };
+    const truthy = v => /^(y|yes|true|1)$/i.test((v || '').trim());
+    const out = [];
+    for (let li = 1; li < lines.length; li++) {
+      const cells = lines[li].split(',');
+      const name = at(cells, 'name') || `Student ${li}`;
+      const gradesRaw = at(cells, 'gcse_grades');
+      const apsRaw = at(cells, 'gcse_aps');
+      let gcses, gcseAps;
+      if (gradesRaw) {
+        const nums = gradesRaw.split(/[ ;|/]+/).map(x => parseFloat(x)).filter(x => !isNaN(x));
+        if (nums.length === 1) gcseAps = nums[0]; else if (nums.length) gcses = nums;
+      }
+      if (gcseAps == null && !gcses && apsRaw) gcseAps = parseFloat(apsRaw);
+      const subjects = ['subject_1', 'subject_2', 'subject_3', 'subject_4', 'subject_5']
+        .map(k => at(cells, k)).filter(Boolean);
+      const attRaw = at(cells, 'attendance');
+      const s = {
+        name, subjects,
+        context: {
+          disadvantaged: truthy(at(cells, 'disadvantaged')),
+          eal: truthy(at(cells, 'eal')),
+          birthMonth: parseInt(at(cells, 'birth_month'), 10) || 0,
+          attendance: attRaw ? parseFloat(attRaw) : undefined,
+        },
+      };
+      if (gcses) s.gcses = gcses; else if (gcseAps != null) s.gcseAps = gcseAps;
+      out.push(s);
+    }
+    return out;
+  }
+
+  downloadBatch() {
+    const rows = this.state.batchRows || [];
+    const esc = (v) => { v = v == null ? '' : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    const head = ['name', 'gcse_aps', 'prior_band', 'best_guess_profile', 'average_confidence', 'predictions'];
+    const lines = [head.join(',')];
+    for (const r of rows) {
+      const preds = (r.subjects || []).map(s => s.error ? `${s.subject_display || s.subject}: no data` : `${s.subject_display || s.subject}: ${s.grade} (${s.range})`).join('; ');
+      lines.push([r.name, r.gcse_aps, r.prior_band, r.best_guess_profile, r.average_confidence, preds].map(esc).join(','));
+    }
+    const blob = new Blob([lines.join('\n')], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'himalayas-predictions.csv'; a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  renderVals() {
+    const st = this.state;
+    const mean = this.meanGCSE();
+
+    const gcseRows = GCSES.map(g => {
+      const v = st.grades[g.key] || 0;
+      return {
+        name: g.name,
+        label: v === 0 ? '—' : String(v),
+        color: this.gradeColor(v),
+        bg: v > 0 ? 'oklch(0.97 0.02 240)' : 'oklch(0.985 0.004 245)',
+        border: v > 0 ? 'oklch(0.85 0.05 240)' : 'oklch(0.92 0.01 250)',
+        inc: () => this.setState(s => ({ grades: { ...s.grades, [g.key]: Math.min(9, (s.grades[g.key] || 0) + 1) } })),
+        dec: () => this.setState(s => ({ grades: { ...s.grades, [g.key]: Math.max(0, (s.grades[g.key] || 0) - 1) } })),
+      };
+    });
+
+    const alevelRows = st.alevels.map((val, i) => ({
+      value: val,
+      onChange: (e) => this.setState(s => { const a = [...s.alevels]; a[i] = e.target.value; return { alevels: a }; }),
+      remove: () => this.setState(s => {
+        if (s.alevels.length <= 1) { const a = [...s.alevels]; a[i] = ''; return { alevels: a }; }
+        return { alevels: s.alevels.filter((_, j) => j !== i) };
+      }),
+    }));
+
+    return {
+      gcseRows,
+      meanLabel: mean === null ? '—' : mean.toFixed(1),
+      alevelRows,
+      alevelOptions: SUBJECTS.map(s => ({ id: s.id, name: s.name })),
+      canAddAlevel: st.alevels.length < 5,
+      addAlevel: () => this.setState(s => ({ alevels: [...s.alevels, ''] })),
+      months: MONTHS.map((m, i) => ({ num: i + 1, name: m })),
+      monthVal: st.month,
+      setMonth: (e) => this.setState({ month: parseInt(e.target.value, 10) }),
+      disBg: st.dis ? 'oklch(0.55 0.14 250)' : 'oklch(0.88 0.01 250)',
+      disKnob: st.dis ? '25px' : '3px',
+      toggleDis: () => this.setState(s => ({ dis: !s.dis })),
+      ealBg: st.eal ? 'oklch(0.55 0.14 250)' : 'oklch(0.88 0.01 250)',
+      ealKnob: st.eal ? '25px' : '3px',
+      toggleEal: () => this.setState(s => ({ eal: !s.eal })),
+      attVal: st.att,
+      attLabel: st.att + '%',
+      setAtt: (e) => this.setState({ att: parseInt(e.target.value, 10) }),
+      adjTable: SUBJECTS.filter(s => ['furthermaths','physics','chemistry','maths','psychology','sociology','media'].includes(s.id)).map(s => ({
+        name: s.name, val: (s.adj > 0 ? '+' : '') + s.adj.toFixed(2),
+        color: s.adj < 0 ? 'oklch(0.55 0.12 25)' : (s.adj > 0 ? 'oklch(0.5 0.12 155)' : 'oklch(0.5 0.02 255)'),
+      })),
+      predict: () => this.startPredict(),
+      reset: () => { clearTimeout(this._timer); this.setState({ grades: {}, alevels: ['', '', ''], dis: false, eal: false, month: 0, att: 95, computed: false, loading: false, results: [], showError: false }); },
+      prefill: () => this.prefill(),
+
+      // links
+      modelUrl: API_BASE + '/model',
+      // bulk upload
+      sampleUrl: API_BASE + '/sample-students.csv',
+      onBatchFile: (e) => this.onBatchFile(e),
+      downloadBatch: () => this.downloadBatch(),
+      batchLoading: st.batchLoading,
+      batchError: st.batchError,
+      batchFileName: st.batchFileName,
+      hasBatch: !!(st.batchRows && st.batchRows.length),
+      batchCount: st.batchRows ? st.batchRows.length : 0,
+      batchTable: (st.batchRows || []).map(r => ({
+        name: r.name,
+        band: r.prior_band || '—',
+        profile: r.best_guess_profile || '—',
+        conf: r.average_confidence != null ? r.average_confidence + '%' : '—',
+        subjects: (r.subjects || []).map(s => ({
+          label: s.error ? `${s.subject_display || s.subject || '?'} · no data` : `${s.subject_display || s.subject}: ${s.grade}`,
+          bg: s.error ? 'oklch(0.96 0.03 30)' : 'oklch(0.96 0.02 240)',
+          color: s.error ? 'oklch(0.5 0.12 30)' : 'oklch(0.34 0.05 250)',
+        })),
+      })),
+      computed: st.computed,
+      loading: st.loading,
+      results: st.results,
+      summaryGrades: st.summaryGrades,
+      overallConf: st.overallConf,
+      showError: st.showError,
+      errorMsg: st.errorMsg,
+    };
+  }
+
+  prefill() {
+    const pick = () => {
+      const r = Math.random();
+      if (r < 0.5) return 6 + Math.floor(Math.random() * 3);
+      if (r < 0.85) return 4 + Math.floor(Math.random() * 3);
+      return 3 + Math.floor(Math.random() * 2);
+    };
+    const grades = {};
+    GCSES.forEach(g => { if (Math.random() < 0.82) grades[g.key] = pick(); });
+    if (Object.keys(grades).length < 5) { grades.englang = pick(); grades.maths = pick(); grades.biology = pick(); grades.history = pick(); grades.geography = pick(); }
+    const pool = [...SUBJECTS];
+    const chosen = [];
+    const count = 3 + (Math.random() < 0.4 ? 1 : 0);
+    for (let i = 0; i < count && pool.length; i++) {
+      chosen.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0].id);
+    }
+    const months = [1,2,3,4,5,6,7,8,9,10,11,12];
+    this.setState({
+      grades,
+      alevels: chosen,
+      dis: Math.random() < 0.25,
+      eal: Math.random() < 0.15,
+      month: months[Math.floor(Math.random() * 12)],
+      att: 88 + Math.floor(Math.random() * 12),
+    }, () => this.startPredict());
+  }
+}
+</script>
+</body>
+</html>

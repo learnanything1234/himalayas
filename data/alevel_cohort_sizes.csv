@@ -1,0 +1,2566 @@
+year,subject,prior_band,n_students
+2022,Biology,<1,2
+2022,Biology,1-<2,3
+2022,Biology,2-<3,17
+2022,Biology,3-<4,138
+2022,Biology,4-<5,1506
+2022,Biology,5-<6,8165
+2022,Biology,6-<7,17404
+2022,Biology,7-<8,18994
+2022,Biology,8-<9,14105
+2022,Biology,9>=,1201
+2022,Biology,Unknown prior,1474
+2022,Biology,All,63009
+2022,Chemistry,<1,1
+2022,Chemistry,1-<2,1
+2022,Chemistry,2-<3,14
+2022,Chemistry,3-<4,102
+2022,Chemistry,4-<5,799
+2022,Chemistry,5-<6,4847
+2022,Chemistry,6-<7,11568
+2022,Chemistry,7-<8,15863
+2022,Chemistry,8-<9,15420
+2022,Chemistry,9>=,1656
+2022,Chemistry,Unknown prior,1574
+2022,Chemistry,All,51845
+2022,Physics,<1,1
+2022,Physics,1-<2,2
+2022,Physics,2-<3,4
+2022,Physics,3-<4,57
+2022,Physics,4-<5,704
+2022,Physics,5-<6,3901
+2022,Physics,6-<7,8486
+2022,Physics,7-<8,10496
+2022,Physics,8-<9,9505
+2022,Physics,9>=,980
+2022,Physics,Unknown prior,1205
+2022,Physics,All,35341
+2022,Electronics,3-<4,6
+2022,Electronics,4-<5,66
+2022,Electronics,5-<6,119
+2022,Electronics,6-<7,131
+2022,Electronics,7-<8,95
+2022,Electronics,8-<9,60
+2022,Electronics,9>=,12
+2022,Electronics,Unknown prior,5
+2022,Electronics,All,494
+2022,Environmental Science,2-<3,1
+2022,Environmental Science,3-<4,15
+2022,Environmental Science,4-<5,147
+2022,Environmental Science,5-<6,321
+2022,Environmental Science,6-<7,353
+2022,Environmental Science,7-<8,217
+2022,Environmental Science,8-<9,63
+2022,Environmental Science,9>=,7
+2022,Environmental Science,Unknown prior,20
+2022,Environmental Science,All,1144
+2022,Geology,3-<4,9
+2022,Geology,4-<5,83
+2022,Geology,5-<6,198
+2022,Geology,6-<7,269
+2022,Geology,7-<8,207
+2022,Geology,8-<9,102
+2022,Geology,9>=,7
+2022,Geology,Unknown prior,9
+2022,Geology,All,884
+2022,Mathematics,<1,2
+2022,Mathematics,1-<2,2
+2022,Mathematics,2-<3,17
+2022,Mathematics,3-<4,169
+2022,Mathematics,4-<5,1698
+2022,Mathematics,5-<6,8717
+2022,Mathematics,6-<7,19663
+2022,Mathematics,7-<8,24879
+2022,Mathematics,8-<9,22554
+2022,Mathematics,9>=,2582
+2022,Mathematics,Unknown prior,2863
+2022,Mathematics,All,83146
+2022,Mathematics (Statistics),2-<3,1
+2022,Mathematics (Statistics),3-<4,10
+2022,Mathematics (Statistics),4-<5,105
+2022,Mathematics (Statistics),5-<6,284
+2022,Mathematics (Statistics),6-<7,218
+2022,Mathematics (Statistics),7-<8,72
+2022,Mathematics (Statistics),8-<9,24
+2022,Mathematics (Statistics),Unknown prior,11
+2022,Mathematics (Statistics),All,725
+2022,Mathematics (Further),1-<2,2
+2022,Mathematics (Further),2-<3,1
+2022,Mathematics (Further),3-<4,8
+2022,Mathematics (Further),4-<5,72
+2022,Mathematics (Further),5-<6,354
+2022,Mathematics (Further),6-<7,1429
+2022,Mathematics (Further),7-<8,3706
+2022,Mathematics (Further),8-<9,6588
+2022,Mathematics (Further),9>=,980
+2022,Mathematics (Further),Unknown prior,731
+2022,Mathematics (Further),All,13871
+2022,Computer Studies / Computing,1-<2,2
+2022,Computer Studies / Computing,2-<3,3
+2022,Computer Studies / Computing,3-<4,95
+2022,Computer Studies / Computing,4-<5,830
+2022,Computer Studies / Computing,5-<6,2695
+2022,Computer Studies / Computing,6-<7,4147
+2022,Computer Studies / Computing,7-<8,3887
+2022,Computer Studies / Computing,8-<9,2603
+2022,Computer Studies / Computing,9>=,195
+2022,Computer Studies / Computing,Unknown prior,277
+2022,Computer Studies / Computing,All,14734
+2022,Business Studies:Single,1-<2,3
+2022,Business Studies:Single,2-<3,37
+2022,Business Studies:Single,3-<4,598
+2022,Business Studies:Single,4-<5,5343
+2022,Business Studies:Single,5-<6,12765
+2022,Business Studies:Single,6-<7,11706
+2022,Business Studies:Single,7-<8,5381
+2022,Business Studies:Single,8-<9,1264
+2022,Business Studies:Single,9>=,59
+2022,Business Studies:Single,Unknown prior,795
+2022,Business Studies:Single,All,37951
+2022,Art and Design,<1,1
+2022,Art and Design,1-<2,1
+2022,Art and Design,2-<3,23
+2022,Art and Design,3-<4,166
+2022,Art and Design,4-<5,777
+2022,Art and Design,5-<6,1400
+2022,Art and Design,6-<7,1391
+2022,Art and Design,7-<8,972
+2022,Art and Design,8-<9,436
+2022,Art and Design,9>=,30
+2022,Art and Design,Unknown prior,118
+2022,Art and Design,All,5315
+2022,Art and Design (Graphics),1-<2,3
+2022,Art and Design (Graphics),2-<3,21
+2022,Art and Design (Graphics),3-<4,201
+2022,Art and Design (Graphics),4-<5,972
+2022,Art and Design (Graphics),5-<6,1548
+2022,Art and Design (Graphics),6-<7,1362
+2022,Art and Design (Graphics),7-<8,671
+2022,Art and Design (Graphics),8-<9,194
+2022,Art and Design (Graphics),9>=,7
+2022,Art and Design (Graphics),Unknown prior,84
+2022,Art and Design (Graphics),All,5063
+2022,Art and Design (Photography),1-<2,8
+2022,Art and Design (Photography),2-<3,65
+2022,Art and Design (Photography),3-<4,752
+2022,Art and Design (Photography),4-<5,2615
+2022,Art and Design (Photography),5-<6,3612
+2022,Art and Design (Photography),6-<7,2488
+2022,Art and Design (Photography),7-<8,956
+2022,Art and Design (Photography),8-<9,240
+2022,Art and Design (Photography),9>=,13
+2022,Art and Design (Photography),Unknown prior,208
+2022,Art and Design (Photography),All,10957
+2022,Art and Design (Textiles),1-<2,2
+2022,Art and Design (Textiles),2-<3,6
+2022,Art and Design (Textiles),3-<4,109
+2022,Art and Design (Textiles),4-<5,507
+2022,Art and Design (Textiles),5-<6,921
+2022,Art and Design (Textiles),6-<7,830
+2022,Art and Design (Textiles),7-<8,497
+2022,Art and Design (Textiles),8-<9,144
+2022,Art and Design (Textiles),9>=,13
+2022,Art and Design (Textiles),Unknown prior,77
+2022,Art and Design (Textiles),All,3106
+2022,Art and Design (3d Studies),2-<3,8
+2022,Art and Design (3d Studies),3-<4,77
+2022,Art and Design (3d Studies),4-<5,347
+2022,Art and Design (3d Studies),5-<6,528
+2022,Art and Design (3d Studies),6-<7,507
+2022,Art and Design (3d Studies),7-<8,257
+2022,Art and Design (3d Studies),8-<9,77
+2022,Art and Design (3d Studies),9>=,5
+2022,Art and Design (3d Studies),Unknown prior,34
+2022,Art and Design (3d Studies),All,1840
+2022,Art and Design (Critical Studies),3-<4,4
+2022,Art and Design (Critical Studies),4-<5,20
+2022,Art and Design (Critical Studies),5-<6,34
+2022,Art and Design (Critical Studies),6-<7,25
+2022,Art and Design (Critical Studies),7-<8,30
+2022,Art and Design (Critical Studies),8-<9,5
+2022,Art and Design (Critical Studies),Unknown prior,11
+2022,Art and Design (Critical Studies),All,129
+2022,Art and Design (Fine Art),1-<2,3
+2022,Art and Design (Fine Art),2-<3,33
+2022,Art and Design (Fine Art),3-<4,346
+2022,Art and Design (Fine Art),4-<5,1653
+2022,Art and Design (Fine Art),5-<6,3224
+2022,Art and Design (Fine Art),6-<7,3686
+2022,Art and Design (Fine Art),7-<8,2864
+2022,Art and Design (Fine Art),8-<9,1569
+2022,Art and Design (Fine Art),9>=,180
+2022,Art and Design (Fine Art),Unknown prior,331
+2022,Art and Design (Fine Art),All,13889
+2022,History of Art,3-<4,1
+2022,History of Art,4-<5,14
+2022,History of Art,5-<6,81
+2022,History of Art,6-<7,121
+2022,History of Art,7-<8,175
+2022,History of Art,8-<9,151
+2022,History of Art,9>=,27
+2022,History of Art,Unknown prior,34
+2022,History of Art,All,604
+2022,Geography,2-<3,6
+2022,Geography,3-<4,200
+2022,Geography,4-<5,2377
+2022,Geography,5-<6,7875
+2022,Geography,6-<7,10350
+2022,Geography,7-<8,8065
+2022,Geography,8-<9,4144
+2022,Geography,9>=,356
+2022,Geography,Unknown prior,385
+2022,Geography,All,33758
+2022,History,1-<2,2
+2022,History,2-<3,15
+2022,History,3-<4,317
+2022,History,4-<5,3013
+2022,History,5-<6,8991
+2022,History,6-<7,11707
+2022,History,7-<8,10026
+2022,History,8-<9,6506
+2022,History,9>=,787
+2022,History,Unknown prior,637
+2022,History,All,42001
+2022,Economics,<1,1
+2022,Economics,1-<2,3
+2022,Economics,2-<3,10
+2022,Economics,3-<4,165
+2022,Economics,4-<5,1920
+2022,Economics,5-<6,6975
+2022,Economics,6-<7,9803
+2022,Economics,7-<8,8640
+2022,Economics,8-<9,5483
+2022,Economics,9>=,719
+2022,Economics,Unknown prior,1132
+2022,Economics,All,34851
+2022,Religious Studies,1-<2,3
+2022,Religious Studies,2-<3,10
+2022,Religious Studies,3-<4,240
+2022,Religious Studies,4-<5,1648
+2022,Religious Studies,5-<6,3765
+2022,Religious Studies,6-<7,4198
+2022,Religious Studies,7-<8,3035
+2022,Religious Studies,8-<9,1785
+2022,Religious Studies,9>=,273
+2022,Religious Studies,Unknown prior,151
+2022,Religious Studies,All,15108
+2022,Law,1-<2,1
+2022,Law,2-<3,8
+2022,Law,3-<4,256
+2022,Law,4-<5,1975
+2022,Law,5-<6,4391
+2022,Law,6-<7,4022
+2022,Law,7-<8,2020
+2022,Law,8-<9,489
+2022,Law,9>=,14
+2022,Law,Unknown prior,133
+2022,Law,All,13309
+2022,Logic / Philosophy,1-<2,1
+2022,Logic / Philosophy,2-<3,1
+2022,Logic / Philosophy,3-<4,34
+2022,Logic / Philosophy,4-<5,212
+2022,Logic / Philosophy,5-<6,635
+2022,Logic / Philosophy,6-<7,854
+2022,Logic / Philosophy,7-<8,728
+2022,Logic / Philosophy,8-<9,523
+2022,Logic / Philosophy,9>=,54
+2022,Logic / Philosophy,Unknown prior,53
+2022,Logic / Philosophy,All,3095
+2022,Government and Politics,1-<2,1
+2022,Government and Politics,2-<3,19
+2022,Government and Politics,3-<4,226
+2022,Government and Politics,4-<5,1771
+2022,Government and Politics,5-<6,4290
+2022,Government and Politics,6-<7,5022
+2022,Government and Politics,7-<8,4143
+2022,Government and Politics,8-<9,2416
+2022,Government and Politics,9>=,315
+2022,Government and Politics,Unknown prior,396
+2022,Government and Politics,All,18599
+2022,Psychology,<1,1
+2022,Psychology,1-<2,2
+2022,Psychology,2-<3,41
+2022,Psychology,3-<4,615
+2022,Psychology,4-<5,6322
+2022,Psychology,5-<6,20180
+2022,Psychology,6-<7,23956
+2022,Psychology,7-<8,15355
+2022,Psychology,8-<9,5995
+2022,Psychology,9>=,293
+2022,Psychology,Unknown prior,1074
+2022,Psychology,All,73834
+2022,Sociology,1-<2,4
+2022,Sociology,2-<3,63
+2022,Sociology,3-<4,1265
+2022,Sociology,4-<5,8227
+2022,Sociology,5-<6,14833
+2022,Sociology,6-<7,11283
+2022,Sociology,7-<8,4853
+2022,Sociology,8-<9,1177
+2022,Sociology,9>=,20
+2022,Sociology,Unknown prior,398
+2022,Sociology,All,42123
+2022,English Language and Literature,2-<3,6
+2022,English Language and Literature,3-<4,126
+2022,English Language and Literature,4-<5,906
+2022,English Language and Literature,5-<6,1945
+2022,English Language and Literature,6-<7,1869
+2022,English Language and Literature,7-<8,1206
+2022,English Language and Literature,8-<9,447
+2022,English Language and Literature,9>=,12
+2022,English Language and Literature,Unknown prior,72
+2022,English Language and Literature,All,6589
+2022,English Language,1-<2,1
+2022,English Language,2-<3,6
+2022,English Language,3-<4,238
+2022,English Language,4-<5,1795
+2022,English Language,5-<6,4218
+2022,English Language,6-<7,4137
+2022,English Language,7-<8,2514
+2022,English Language,8-<9,792
+2022,English Language,9>=,41
+2022,English Language,Unknown prior,134
+2022,English Language,All,13876
+2022,English Literature,1-<2,1
+2022,English Literature,2-<3,8
+2022,English Literature,3-<4,256
+2022,English Literature,4-<5,2418
+2022,English Literature,5-<6,6517
+2022,English Literature,6-<7,8681
+2022,English Literature,7-<8,7711
+2022,English Literature,8-<9,5321
+2022,English Literature,9>=,638
+2022,English Literature,Unknown prior,507
+2022,English Literature,All,32058
+2022,Drama and Theatre Studies,2-<3,9
+2022,Drama and Theatre Studies,3-<4,147
+2022,Drama and Theatre Studies,4-<5,883
+2022,Drama and Theatre Studies,5-<6,2062
+2022,Drama and Theatre Studies,6-<7,2499
+2022,Drama and Theatre Studies,7-<8,1953
+2022,Drama and Theatre Studies,8-<9,1015
+2022,Drama and Theatre Studies,9>=,116
+2022,Drama and Theatre Studies,Unknown prior,168
+2022,Drama and Theatre Studies,All,8852
+2022,Media/Film/Tv Studies,1-<2,1
+2022,Media/Film/Tv Studies,2-<3,50
+2022,Media/Film/Tv Studies,3-<4,654
+2022,Media/Film/Tv Studies,4-<5,3256
+2022,Media/Film/Tv Studies,5-<6,4758
+2022,Media/Film/Tv Studies,6-<7,3170
+2022,Media/Film/Tv Studies,7-<8,1285
+2022,Media/Film/Tv Studies,8-<9,270
+2022,Media/Film/Tv Studies,9>=,4
+2022,Media/Film/Tv Studies,Unknown prior,154
+2022,Media/Film/Tv Studies,All,13602
+2022,Film Studies,2-<3,19
+2022,Film Studies,3-<4,307
+2022,Film Studies,4-<5,1333
+2022,Film Studies,5-<6,1865
+2022,Film Studies,6-<7,1457
+2022,Film Studies,7-<8,656
+2022,Film Studies,8-<9,226
+2022,Film Studies,9>=,3
+2022,Film Studies,Unknown prior,89
+2022,Film Studies,All,5955
+2022,French,1-<2,1
+2022,French,2-<3,1
+2022,French,3-<4,23
+2022,French,4-<5,213
+2022,French,5-<6,692
+2022,French,6-<7,1440
+2022,French,7-<8,1998
+2022,French,8-<9,2232
+2022,French,9>=,317
+2022,French,Unknown prior,234
+2022,French,All,7151
+2022,German,3-<4,4
+2022,German,4-<5,56
+2022,German,5-<6,197
+2022,German,6-<7,436
+2022,German,7-<8,675
+2022,German,8-<9,936
+2022,German,9>=,123
+2022,German,Unknown prior,94
+2022,German,All,2521
+2022,Italian,2-<3,1
+2022,Italian,3-<4,28
+2022,Italian,4-<5,70
+2022,Italian,5-<6,114
+2022,Italian,6-<7,112
+2022,Italian,7-<8,92
+2022,Italian,8-<9,59
+2022,Italian,9>=,9
+2022,Italian,Unknown prior,43
+2022,Italian,All,528
+2022,Modern Greek,1-<2,1
+2022,Modern Greek,2-<3,1
+2022,Modern Greek,4-<5,7
+2022,Modern Greek,5-<6,8
+2022,Modern Greek,6-<7,5
+2022,Modern Greek,7-<8,2
+2022,Modern Greek,Unknown prior,1
+2022,Modern Greek,All,25
+2022,Portuguese,2-<3,3
+2022,Portuguese,3-<4,5
+2022,Portuguese,4-<5,32
+2022,Portuguese,5-<6,44
+2022,Portuguese,6-<7,34
+2022,Portuguese,7-<8,29
+2022,Portuguese,8-<9,12
+2022,Portuguese,Unknown prior,10
+2022,Portuguese,All,169
+2022,Spanish,2-<3,4
+2022,Spanish,3-<4,53
+2022,Spanish,4-<5,348
+2022,Spanish,5-<6,1123
+2022,Spanish,6-<7,1869
+2022,Spanish,7-<8,2292
+2022,Spanish,8-<9,2004
+2022,Spanish,9>=,282
+2022,Spanish,Unknown prior,240
+2022,Spanish,All,8215
+2022,Arabic,1-<2,1
+2022,Arabic,2-<3,3
+2022,Arabic,3-<4,15
+2022,Arabic,4-<5,54
+2022,Arabic,5-<6,56
+2022,Arabic,6-<7,57
+2022,Arabic,7-<8,44
+2022,Arabic,8-<9,21
+2022,Arabic,9>=,4
+2022,Arabic,Unknown prior,14
+2022,Arabic,All,269
+2022,Chinese,<1,1
+2022,Chinese,1-<2,1
+2022,Chinese,2-<3,4
+2022,Chinese,3-<4,8
+2022,Chinese,4-<5,44
+2022,Chinese,5-<6,61
+2022,Chinese,6-<7,93
+2022,Chinese,7-<8,95
+2022,Chinese,8-<9,34
+2022,Chinese,9>=,9
+2022,Chinese,Unknown prior,294
+2022,Chinese,All,644
+2022,Japanese,3-<4,2
+2022,Japanese,4-<5,2
+2022,Japanese,5-<6,4
+2022,Japanese,6-<7,16
+2022,Japanese,7-<8,12
+2022,Japanese,8-<9,13
+2022,Japanese,9>=,4
+2022,Japanese,Unknown prior,17
+2022,Japanese,All,70
+2022,Modern Hebrew,4-<5,1
+2022,Modern Hebrew,5-<6,4
+2022,Modern Hebrew,6-<7,6
+2022,Modern Hebrew,7-<8,3
+2022,Modern Hebrew,8-<9,4
+2022,Modern Hebrew,All,18
+2022,Punjabi,3-<4,2
+2022,Punjabi,4-<5,13
+2022,Punjabi,5-<6,17
+2022,Punjabi,6-<7,11
+2022,Punjabi,7-<8,9
+2022,Punjabi,8-<9,1
+2022,Punjabi,All,53
+2022,Polish,3-<4,7
+2022,Polish,4-<5,40
+2022,Polish,5-<6,76
+2022,Polish,6-<7,80
+2022,Polish,7-<8,36
+2022,Polish,8-<9,18
+2022,Polish,Unknown prior,18
+2022,Polish,All,275
+2022,Russian,2-<3,2
+2022,Russian,3-<4,5
+2022,Russian,4-<5,19
+2022,Russian,5-<6,45
+2022,Russian,6-<7,64
+2022,Russian,7-<8,78
+2022,Russian,8-<9,76
+2022,Russian,9>=,20
+2022,Russian,Unknown prior,96
+2022,Russian,All,405
+2022,Turkish,1-<2,2
+2022,Turkish,2-<3,4
+2022,Turkish,3-<4,19
+2022,Turkish,4-<5,62
+2022,Turkish,5-<6,79
+2022,Turkish,6-<7,54
+2022,Turkish,7-<8,26
+2022,Turkish,8-<9,8
+2022,Turkish,Unknown prior,12
+2022,Turkish,All,266
+2022,Urdu,1-<2,1
+2022,Urdu,2-<3,1
+2022,Urdu,3-<4,3
+2022,Urdu,4-<5,22
+2022,Urdu,5-<6,24
+2022,Urdu,6-<7,18
+2022,Urdu,7-<8,15
+2022,Urdu,8-<9,2
+2022,Urdu,Unknown prior,4
+2022,Urdu,All,90
+2022,Persian,2-<3,1
+2022,Persian,3-<4,3
+2022,Persian,4-<5,7
+2022,Persian,5-<6,12
+2022,Persian,6-<7,8
+2022,Persian,7-<8,3
+2022,Persian,8-<9,3
+2022,Persian,9>=,1
+2022,Persian,Unknown prior,12
+2022,Persian,All,50
+2022,Ancient History,2-<3,1
+2022,Ancient History,3-<4,8
+2022,Ancient History,4-<5,53
+2022,Ancient History,5-<6,162
+2022,Ancient History,6-<7,173
+2022,Ancient History,7-<8,137
+2022,Ancient History,8-<9,88
+2022,Ancient History,9>=,19
+2022,Ancient History,Unknown prior,6
+2022,Ancient History,All,647
+2022,Classical Civilisation,1-<2,1
+2022,Classical Civilisation,3-<4,28
+2022,Classical Civilisation,4-<5,161
+2022,Classical Civilisation,5-<6,471
+2022,Classical Civilisation,6-<7,675
+2022,Classical Civilisation,7-<8,767
+2022,Classical Civilisation,8-<9,541
+2022,Classical Civilisation,9>=,56
+2022,Classical Civilisation,Unknown prior,54
+2022,Classical Civilisation,All,2754
+2022,Classical Greek,6-<7,5
+2022,Classical Greek,7-<8,13
+2022,Classical Greek,8-<9,114
+2022,Classical Greek,9>=,53
+2022,Classical Greek,Unknown prior,2
+2022,Classical Greek,All,187
+2022,Latin,5-<6,4
+2022,Latin,6-<7,45
+2022,Latin,7-<8,163
+2022,Latin,8-<9,578
+2022,Latin,9>=,218
+2022,Latin,Unknown prior,12
+2022,Latin,All,1020
+2022,Other Classical Languages,5-<6,3
+2022,Other Classical Languages,6-<7,3
+2022,Other Classical Languages,7-<8,3
+2022,Other Classical Languages,8-<9,7
+2022,Other Classical Languages,9>=,1
+2022,Other Classical Languages,All,17
+2022,Music,3-<4,16
+2022,Music,4-<5,169
+2022,Music,5-<6,498
+2022,Music,6-<7,990
+2022,Music,7-<8,1121
+2022,Music,8-<9,992
+2022,Music,9>=,76
+2022,Music,Unknown prior,99
+2022,Music,All,3961
+2022,Music Technology,1-<2,2
+2022,Music Technology,2-<3,2
+2022,Music Technology,3-<4,22
+2022,Music Technology,4-<5,133
+2022,Music Technology,5-<6,307
+2022,Music Technology,6-<7,391
+2022,Music Technology,7-<8,231
+2022,Music Technology,8-<9,95
+2022,Music Technology,9>=,7
+2022,Music Technology,Unknown prior,27
+2022,Music Technology,All,1217
+2022,Physical Education / Sports Studies,2-<3,1
+2022,Physical Education / Sports Studies,3-<4,66
+2022,Physical Education / Sports Studies,4-<5,898
+2022,Physical Education / Sports Studies,5-<6,3241
+2022,Physical Education / Sports Studies,6-<7,4117
+2022,Physical Education / Sports Studies,7-<8,2542
+2022,Physical Education / Sports Studies,8-<9,766
+2022,Physical Education / Sports Studies,9>=,42
+2022,Physical Education / Sports Studies,Unknown prior,155
+2022,Physical Education / Sports Studies,All,11828
+2022,Dance,2-<3,1
+2022,Dance,3-<4,21
+2022,Dance,4-<5,141
+2022,Dance,5-<6,313
+2022,Dance,6-<7,358
+2022,Dance,7-<8,214
+2022,Dance,8-<9,73
+2022,Dance,9>=,2
+2022,Dance,Unknown prior,11
+2022,Dance,All,1134
+2022,Accounting / Finance,2-<3,1
+2022,Accounting / Finance,3-<4,29
+2022,Accounting / Finance,4-<5,267
+2022,Accounting / Finance,5-<6,695
+2022,Accounting / Finance,6-<7,689
+2022,Accounting / Finance,7-<8,356
+2022,Accounting / Finance,8-<9,92
+2022,Accounting / Finance,9>=,2
+2022,Accounting / Finance,Unknown prior,35
+2022,Accounting / Finance,All,2166
+2022,Design and Technology (Textiles Technology),3-<4,10
+2022,Design and Technology (Textiles Technology),4-<5,54
+2022,Design and Technology (Textiles Technology),5-<6,158
+2022,Design and Technology (Textiles Technology),6-<7,148
+2022,Design and Technology (Textiles Technology),7-<8,106
+2022,Design and Technology (Textiles Technology),8-<9,43
+2022,Design and Technology (Textiles Technology),9>=,3
+2022,Design and Technology (Textiles Technology),Unknown prior,6
+2022,Design and Technology (Textiles Technology),All,528
+2022,Design and Technology (Engineering),3-<4,6
+2022,Design and Technology (Engineering),4-<5,63
+2022,Design and Technology (Engineering),5-<6,149
+2022,Design and Technology (Engineering),6-<7,156
+2022,Design and Technology (Engineering),7-<8,104
+2022,Design and Technology (Engineering),8-<9,62
+2022,Design and Technology (Engineering),9>=,12
+2022,Design and Technology (Engineering),Unknown prior,4
+2022,Design and Technology (Engineering),All,556
+2022,Design and Technology (Product Design),<1,1
+2022,Design and Technology (Product Design),1-<2,1
+2022,Design and Technology (Product Design),2-<3,12
+2022,Design and Technology (Product Design),3-<4,234
+2022,Design and Technology (Product Design),4-<5,1302
+2022,Design and Technology (Product Design),5-<6,2467
+2022,Design and Technology (Product Design),6-<7,2297
+2022,Design and Technology (Product Design),7-<8,1374
+2022,Design and Technology (Product Design),8-<9,596
+2022,Design and Technology (Product Design),9>=,50
+2022,Design and Technology (Product Design),Unknown prior,118
+2022,Design and Technology (Product Design),All,8452
+2023,Biology,<1,1
+2023,Biology,1-<2,1
+2023,Biology,2-<3,8
+2023,Biology,3-<4,82
+2023,Biology,4-<5,1118
+2023,Biology,5-<6,6945
+2023,Biology,6-<7,16300
+2023,Biology,7-<8,19965
+2023,Biology,8-<9,17152
+2023,Biology,9>=,1980
+2023,Biology,Unknown prior,1645
+2023,Biology,All,65197
+2023,Chemistry,<1,1
+2023,Chemistry,1-<2,2
+2023,Chemistry,2-<3,5
+2023,Chemistry,3-<4,62
+2023,Chemistry,4-<5,715
+2023,Chemistry,5-<6,4052
+2023,Chemistry,6-<7,10666
+2023,Chemistry,7-<8,16041
+2023,Chemistry,8-<9,17820
+2023,Chemistry,9>=,2608
+2023,Chemistry,Unknown prior,1759
+2023,Chemistry,All,53731
+2023,Physics,<1,1
+2023,Physics,1-<2,2
+2023,Physics,2-<3,1
+2023,Physics,3-<4,55
+2023,Physics,4-<5,509
+2023,Physics,5-<6,3014
+2023,Physics,6-<7,7595
+2023,Physics,7-<8,9991
+2023,Physics,8-<9,10247
+2023,Physics,9>=,1377
+2023,Physics,Unknown prior,1360
+2023,Physics,All,34152
+2023,Electronics,3-<4,2
+2023,Electronics,4-<5,42
+2023,Electronics,5-<6,135
+2023,Electronics,6-<7,158
+2023,Electronics,7-<8,105
+2023,Electronics,8-<9,83
+2023,Electronics,9>=,8
+2023,Electronics,Unknown prior,11
+2023,Electronics,All,544
+2023,Environmental Science,3-<4,7
+2023,Environmental Science,4-<5,137
+2023,Environmental Science,5-<6,405
+2023,Environmental Science,6-<7,520
+2023,Environmental Science,7-<8,341
+2023,Environmental Science,8-<9,143
+2023,Environmental Science,9>=,3
+2023,Environmental Science,Unknown prior,29
+2023,Environmental Science,All,1585
+2023,Geology,2-<3,1
+2023,Geology,3-<4,4
+2023,Geology,4-<5,65
+2023,Geology,5-<6,181
+2023,Geology,6-<7,261
+2023,Geology,7-<8,228
+2023,Geology,8-<9,112
+2023,Geology,9>=,10
+2023,Geology,Unknown prior,14
+2023,Geology,All,876
+2023,Mathematics,<1,1
+2023,Mathematics,1-<2,3
+2023,Mathematics,2-<3,6
+2023,Mathematics,3-<4,136
+2023,Mathematics,4-<5,1259
+2023,Mathematics,5-<6,7040
+2023,Mathematics,6-<7,17723
+2023,Mathematics,7-<8,25148
+2023,Mathematics,8-<9,26384
+2023,Mathematics,9>=,3948
+2023,Mathematics,Unknown prior,3297
+2023,Mathematics,All,84945
+2023,Mathematics (Statistics),3-<4,6
+2023,Mathematics (Statistics),4-<5,97
+2023,Mathematics (Statistics),5-<6,259
+2023,Mathematics (Statistics),6-<7,268
+2023,Mathematics (Statistics),7-<8,118
+2023,Mathematics (Statistics),8-<9,38
+2023,Mathematics (Statistics),9>=,1
+2023,Mathematics (Statistics),Unknown prior,12
+2023,Mathematics (Statistics),All,799
+2023,Mathematics (Further),2-<3,1
+2023,Mathematics (Further),3-<4,13
+2023,Mathematics (Further),4-<5,48
+2023,Mathematics (Further),5-<6,310
+2023,Mathematics (Further),6-<7,1190
+2023,Mathematics (Further),7-<8,3231
+2023,Mathematics (Further),8-<9,6799
+2023,Mathematics (Further),9>=,1367
+2023,Mathematics (Further),Unknown prior,809
+2023,Mathematics (Further),All,13768
+2023,Computer Studies / Computing,<1,1
+2023,Computer Studies / Computing,1-<2,1
+2023,Computer Studies / Computing,2-<3,5
+2023,Computer Studies / Computing,3-<4,86
+2023,Computer Studies / Computing,4-<5,808
+2023,Computer Studies / Computing,5-<6,3004
+2023,Computer Studies / Computing,6-<7,4773
+2023,Computer Studies / Computing,7-<8,4508
+2023,Computer Studies / Computing,8-<9,3161
+2023,Computer Studies / Computing,9>=,264
+2023,Computer Studies / Computing,Unknown prior,409
+2023,Computer Studies / Computing,All,17020
+2023,Business Studies:Single,<1,1
+2023,Business Studies:Single,2-<3,27
+2023,Business Studies:Single,3-<4,466
+2023,Business Studies:Single,4-<5,4699
+2023,Business Studies:Single,5-<6,12484
+2023,Business Studies:Single,6-<7,12668
+2023,Business Studies:Single,7-<8,6876
+2023,Business Studies:Single,8-<9,2045
+2023,Business Studies:Single,9>=,114
+2023,Business Studies:Single,Unknown prior,894
+2023,Business Studies:Single,All,40274
+2023,Art and Design,1-<2,2
+2023,Art and Design,2-<3,13
+2023,Art and Design,3-<4,138
+2023,Art and Design,4-<5,688
+2023,Art and Design,5-<6,1345
+2023,Art and Design,6-<7,1428
+2023,Art and Design,7-<8,1156
+2023,Art and Design,8-<9,597
+2023,Art and Design,9>=,77
+2023,Art and Design,Unknown prior,127
+2023,Art and Design,All,5571
+2023,Art and Design (Graphics),2-<3,15
+2023,Art and Design (Graphics),3-<4,203
+2023,Art and Design (Graphics),4-<5,891
+2023,Art and Design (Graphics),5-<6,1518
+2023,Art and Design (Graphics),6-<7,1348
+2023,Art and Design (Graphics),7-<8,793
+2023,Art and Design (Graphics),8-<9,288
+2023,Art and Design (Graphics),9>=,16
+2023,Art and Design (Graphics),Unknown prior,93
+2023,Art and Design (Graphics),All,5165
+2023,Art and Design (Photography),1-<2,3
+2023,Art and Design (Photography),2-<3,54
+2023,Art and Design (Photography),3-<4,608
+2023,Art and Design (Photography),4-<5,2199
+2023,Art and Design (Photography),5-<6,3048
+2023,Art and Design (Photography),6-<7,2359
+2023,Art and Design (Photography),7-<8,1142
+2023,Art and Design (Photography),8-<9,320
+2023,Art and Design (Photography),9>=,29
+2023,Art and Design (Photography),Unknown prior,204
+2023,Art and Design (Photography),All,9966
+2023,Art and Design (Textiles),2-<3,3
+2023,Art and Design (Textiles),3-<4,111
+2023,Art and Design (Textiles),4-<5,430
+2023,Art and Design (Textiles),5-<6,909
+2023,Art and Design (Textiles),6-<7,927
+2023,Art and Design (Textiles),7-<8,577
+2023,Art and Design (Textiles),8-<9,238
+2023,Art and Design (Textiles),9>=,21
+2023,Art and Design (Textiles),Unknown prior,72
+2023,Art and Design (Textiles),All,3288
+2023,Art and Design (3d Studies),1-<2,1
+2023,Art and Design (3d Studies),2-<3,6
+2023,Art and Design (3d Studies),3-<4,68
+2023,Art and Design (3d Studies),4-<5,324
+2023,Art and Design (3d Studies),5-<6,507
+2023,Art and Design (3d Studies),6-<7,483
+2023,Art and Design (3d Studies),7-<8,307
+2023,Art and Design (3d Studies),8-<9,124
+2023,Art and Design (3d Studies),9>=,16
+2023,Art and Design (3d Studies),Unknown prior,47
+2023,Art and Design (3d Studies),All,1883
+2023,Art and Design (Critical Studies),2-<3,2
+2023,Art and Design (Critical Studies),3-<4,3
+2023,Art and Design (Critical Studies),4-<5,9
+2023,Art and Design (Critical Studies),5-<6,21
+2023,Art and Design (Critical Studies),6-<7,33
+2023,Art and Design (Critical Studies),7-<8,21
+2023,Art and Design (Critical Studies),8-<9,18
+2023,Art and Design (Critical Studies),9>=,1
+2023,Art and Design (Critical Studies),Unknown prior,12
+2023,Art and Design (Critical Studies),All,120
+2023,Art and Design (Fine Art),<1,1
+2023,Art and Design (Fine Art),1-<2,3
+2023,Art and Design (Fine Art),2-<3,31
+2023,Art and Design (Fine Art),3-<4,314
+2023,Art and Design (Fine Art),4-<5,1432
+2023,Art and Design (Fine Art),5-<6,2956
+2023,Art and Design (Fine Art),6-<7,3473
+2023,Art and Design (Fine Art),7-<8,2971
+2023,Art and Design (Fine Art),8-<9,1806
+2023,Art and Design (Fine Art),9>=,254
+2023,Art and Design (Fine Art),Unknown prior,321
+2023,Art and Design (Fine Art),All,13562
+2023,History of Art,2-<3,1
+2023,History of Art,3-<4,2
+2023,History of Art,4-<5,13
+2023,History of Art,5-<6,75
+2023,History of Art,6-<7,130
+2023,History of Art,7-<8,196
+2023,History of Art,8-<9,180
+2023,History of Art,9>=,47
+2023,History of Art,Unknown prior,34
+2023,History of Art,All,678
+2023,Geography,<1,2
+2023,Geography,2-<3,5
+2023,Geography,3-<4,144
+2023,Geography,4-<5,2049
+2023,Geography,5-<6,7002
+2023,Geography,6-<7,10204
+2023,Geography,7-<8,8836
+2023,Geography,8-<9,5302
+2023,Geography,9>=,518
+2023,Geography,Unknown prior,429
+2023,Geography,All,34491
+2023,History,<1,4
+2023,History,1-<2,2
+2023,History,2-<3,15
+2023,History,3-<4,266
+2023,History,4-<5,2794
+2023,History,5-<6,8397
+2023,History,6-<7,11706
+2023,History,7-<8,10927
+2023,History,8-<9,7806
+2023,History,9>=,1123
+2023,History,Unknown prior,623
+2023,History,All,43663
+2023,Economics,<1,4
+2023,Economics,2-<3,6
+2023,Economics,3-<4,145
+2023,Economics,4-<5,1793
+2023,Economics,5-<6,6503
+2023,Economics,6-<7,10050
+2023,Economics,7-<8,9488
+2023,Economics,8-<9,6882
+2023,Economics,9>=,1143
+2023,Economics,Unknown prior,1212
+2023,Economics,All,37226
+2023,Religious Studies,2-<3,9
+2023,Religious Studies,3-<4,151
+2023,Religious Studies,4-<5,1296
+2023,Religious Studies,5-<6,3284
+2023,Religious Studies,6-<7,3865
+2023,Religious Studies,7-<8,3190
+2023,Religious Studies,8-<9,2150
+2023,Religious Studies,9>=,415
+2023,Religious Studies,Unknown prior,183
+2023,Religious Studies,All,14543
+2023,Law,1-<2,1
+2023,Law,2-<3,6
+2023,Law,3-<4,189
+2023,Law,4-<5,1676
+2023,Law,5-<6,4263
+2023,Law,6-<7,4269
+2023,Law,7-<8,2396
+2023,Law,8-<9,744
+2023,Law,9>=,26
+2023,Law,Unknown prior,144
+2023,Law,All,13714
+2023,Logic / Philosophy,2-<3,1
+2023,Logic / Philosophy,3-<4,14
+2023,Logic / Philosophy,4-<5,196
+2023,Logic / Philosophy,5-<6,659
+2023,Logic / Philosophy,6-<7,956
+2023,Logic / Philosophy,7-<8,889
+2023,Logic / Philosophy,8-<9,739
+2023,Logic / Philosophy,9>=,112
+2023,Logic / Philosophy,Unknown prior,73
+2023,Logic / Philosophy,All,3639
+2023,Government and Politics,<1,2
+2023,Government and Politics,1-<2,1
+2023,Government and Politics,2-<3,9
+2023,Government and Politics,3-<4,179
+2023,Government and Politics,4-<5,1552
+2023,Government and Politics,5-<6,4111
+2023,Government and Politics,6-<7,5370
+2023,Government and Politics,7-<8,4699
+2023,Government and Politics,8-<9,3297
+2023,Government and Politics,9>=,465
+2023,Government and Politics,Unknown prior,427
+2023,Government and Politics,All,20112
+2023,Psychology,<1,1
+2023,Psychology,1-<2,3
+2023,Psychology,2-<3,30
+2023,Psychology,3-<4,509
+2023,Psychology,4-<5,5316
+2023,Psychology,5-<6,17819
+2023,Psychology,6-<7,23711
+2023,Psychology,7-<8,18105
+2023,Psychology,8-<9,8464
+2023,Psychology,9>=,559
+2023,Psychology,Unknown prior,1185
+2023,Psychology,All,75702
+2023,Sociology,<1,1
+2023,Sociology,1-<2,4
+2023,Sociology,2-<3,60
+2023,Sociology,3-<4,984
+2023,Sociology,4-<5,7162
+2023,Sociology,5-<6,14454
+2023,Sociology,6-<7,12588
+2023,Sociology,7-<8,6655
+2023,Sociology,8-<9,1976
+2023,Sociology,9>=,48
+2023,Sociology,Unknown prior,465
+2023,Sociology,All,44397
+2023,English Language and Literature,2-<3,3
+2023,English Language and Literature,3-<4,79
+2023,English Language and Literature,4-<5,778
+2023,English Language and Literature,5-<6,1808
+2023,English Language and Literature,6-<7,1897
+2023,English Language and Literature,7-<8,1356
+2023,English Language and Literature,8-<9,534
+2023,English Language and Literature,9>=,33
+2023,English Language and Literature,Unknown prior,95
+2023,English Language and Literature,All,6583
+2023,English Language,<1,1
+2023,English Language,2-<3,2
+2023,English Language,3-<4,172
+2023,English Language,4-<5,1462
+2023,English Language,5-<6,3717
+2023,English Language,6-<7,3863
+2023,English Language,7-<8,2446
+2023,English Language,8-<9,1012
+2023,English Language,9>=,47
+2023,English Language,Unknown prior,150
+2023,English Language,All,12872
+2023,English Literature,<1,1
+2023,English Literature,2-<3,5
+2023,English Literature,3-<4,188
+2023,English Literature,4-<5,1914
+2023,English Literature,5-<6,6110
+2023,English Literature,6-<7,8591
+2023,English Literature,7-<8,8480
+2023,English Literature,8-<9,6361
+2023,English Literature,9>=,968
+2023,English Literature,Unknown prior,574
+2023,English Literature,All,33192
+2023,Drama and Theatre Studies,2-<3,8
+2023,Drama and Theatre Studies,3-<4,125
+2023,Drama and Theatre Studies,4-<5,828
+2023,Drama and Theatre Studies,5-<6,1747
+2023,Drama and Theatre Studies,6-<7,2177
+2023,Drama and Theatre Studies,7-<8,1929
+2023,Drama and Theatre Studies,8-<9,1146
+2023,Drama and Theatre Studies,9>=,172
+2023,Drama and Theatre Studies,Unknown prior,164
+2023,Drama and Theatre Studies,All,8296
+2023,Media/Film/Tv Studies,1-<2,2
+2023,Media/Film/Tv Studies,2-<3,26
+2023,Media/Film/Tv Studies,3-<4,545
+2023,Media/Film/Tv Studies,4-<5,3038
+2023,Media/Film/Tv Studies,5-<6,4670
+2023,Media/Film/Tv Studies,6-<7,3641
+2023,Media/Film/Tv Studies,7-<8,1666
+2023,Media/Film/Tv Studies,8-<9,425
+2023,Media/Film/Tv Studies,9>=,15
+2023,Media/Film/Tv Studies,Unknown prior,159
+2023,Media/Film/Tv Studies,All,14187
+2023,Film Studies,2-<3,8
+2023,Film Studies,3-<4,242
+2023,Film Studies,4-<5,1404
+2023,Film Studies,5-<6,2166
+2023,Film Studies,6-<7,1749
+2023,Film Studies,7-<8,953
+2023,Film Studies,8-<9,311
+2023,Film Studies,9>=,11
+2023,Film Studies,Unknown prior,96
+2023,Film Studies,All,6940
+2023,French,<1,1
+2023,French,1-<2,1
+2023,French,2-<3,2
+2023,French,3-<4,16
+2023,French,4-<5,146
+2023,French,5-<6,564
+2023,French,6-<7,1098
+2023,French,7-<8,1706
+2023,French,8-<9,2061
+2023,French,9>=,498
+2023,French,Unknown prior,215
+2023,French,All,6308
+2023,German,2-<3,2
+2023,German,3-<4,6
+2023,German,4-<5,30
+2023,German,5-<6,158
+2023,German,6-<7,336
+2023,German,7-<8,559
+2023,German,8-<9,765
+2023,German,9>=,138
+2023,German,Unknown prior,125
+2023,German,All,2119
+2023,Italian,2-<3,1
+2023,Italian,3-<4,21
+2023,Italian,4-<5,78
+2023,Italian,5-<6,141
+2023,Italian,6-<7,143
+2023,Italian,7-<8,124
+2023,Italian,8-<9,117
+2023,Italian,9>=,41
+2023,Italian,Unknown prior,50
+2023,Italian,All,716
+2023,Modern Greek,1-<2,1
+2023,Modern Greek,3-<4,4
+2023,Modern Greek,4-<5,8
+2023,Modern Greek,5-<6,11
+2023,Modern Greek,6-<7,15
+2023,Modern Greek,7-<8,16
+2023,Modern Greek,8-<9,9
+2023,Modern Greek,Unknown prior,3
+2023,Modern Greek,All,67
+2023,Portuguese,1-<2,1
+2023,Portuguese,2-<3,1
+2023,Portuguese,3-<4,10
+2023,Portuguese,4-<5,40
+2023,Portuguese,5-<6,49
+2023,Portuguese,6-<7,71
+2023,Portuguese,7-<8,49
+2023,Portuguese,8-<9,11
+2023,Portuguese,9>=,1
+2023,Portuguese,Unknown prior,11
+2023,Portuguese,All,244
+2023,Spanish,2-<3,3
+2023,Spanish,3-<4,45
+2023,Spanish,4-<5,295
+2023,Spanish,5-<6,882
+2023,Spanish,6-<7,1505
+2023,Spanish,7-<8,1831
+2023,Spanish,8-<9,1973
+2023,Spanish,9>=,418
+2023,Spanish,Unknown prior,258
+2023,Spanish,All,7210
+2023,Arabic,2-<3,4
+2023,Arabic,3-<4,23
+2023,Arabic,4-<5,58
+2023,Arabic,5-<6,103
+2023,Arabic,6-<7,87
+2023,Arabic,7-<8,40
+2023,Arabic,8-<9,30
+2023,Arabic,9>=,2
+2023,Arabic,Unknown prior,34
+2023,Arabic,All,381
+2023,Chinese,1-<2,1
+2023,Chinese,2-<3,4
+2023,Chinese,3-<4,16
+2023,Chinese,4-<5,65
+2023,Chinese,5-<6,97
+2023,Chinese,6-<7,138
+2023,Chinese,7-<8,146
+2023,Chinese,8-<9,114
+2023,Chinese,9>=,34
+2023,Chinese,Unknown prior,450
+2023,Chinese,All,1065
+2023,Japanese,3-<4,3
+2023,Japanese,4-<5,2
+2023,Japanese,5-<6,10
+2023,Japanese,6-<7,21
+2023,Japanese,7-<8,20
+2023,Japanese,8-<9,38
+2023,Japanese,9>=,5
+2023,Japanese,Unknown prior,24
+2023,Japanese,All,123
+2023,Modern Hebrew,4-<5,1
+2023,Modern Hebrew,5-<6,7
+2023,Modern Hebrew,6-<7,13
+2023,Modern Hebrew,7-<8,4
+2023,Modern Hebrew,8-<9,9
+2023,Modern Hebrew,9>=,1
+2023,Modern Hebrew,Unknown prior,1
+2023,Modern Hebrew,All,36
+2023,Punjabi,3-<4,3
+2023,Punjabi,4-<5,4
+2023,Punjabi,5-<6,16
+2023,Punjabi,6-<7,20
+2023,Punjabi,7-<8,9
+2023,Punjabi,8-<9,6
+2023,Punjabi,All,58
+2023,Polish,1-<2,1
+2023,Polish,2-<3,3
+2023,Polish,3-<4,10
+2023,Polish,4-<5,51
+2023,Polish,5-<6,103
+2023,Polish,6-<7,145
+2023,Polish,7-<8,109
+2023,Polish,8-<9,58
+2023,Polish,9>=,3
+2023,Polish,Unknown prior,9
+2023,Polish,All,492
+2023,Russian,1-<2,1
+2023,Russian,2-<3,1
+2023,Russian,3-<4,14
+2023,Russian,4-<5,23
+2023,Russian,5-<6,65
+2023,Russian,6-<7,77
+2023,Russian,7-<8,119
+2023,Russian,8-<9,127
+2023,Russian,9>=,52
+2023,Russian,Unknown prior,142
+2023,Russian,All,621
+2023,Turkish,2-<3,7
+2023,Turkish,3-<4,24
+2023,Turkish,4-<5,49
+2023,Turkish,5-<6,89
+2023,Turkish,6-<7,83
+2023,Turkish,7-<8,53
+2023,Turkish,8-<9,19
+2023,Turkish,9>=,1
+2023,Turkish,Unknown prior,25
+2023,Turkish,All,350
+2023,Urdu,3-<4,10
+2023,Urdu,4-<5,35
+2023,Urdu,5-<6,42
+2023,Urdu,6-<7,41
+2023,Urdu,7-<8,29
+2023,Urdu,8-<9,13
+2023,Urdu,9>=,3
+2023,Urdu,Unknown prior,9
+2023,Urdu,All,182
+2023,Persian,2-<3,4
+2023,Persian,3-<4,5
+2023,Persian,4-<5,14
+2023,Persian,5-<6,11
+2023,Persian,6-<7,13
+2023,Persian,7-<8,4
+2023,Persian,8-<9,6
+2023,Persian,Unknown prior,32
+2023,Persian,All,89
+2023,Ancient History,3-<4,4
+2023,Ancient History,4-<5,59
+2023,Ancient History,5-<6,183
+2023,Ancient History,6-<7,216
+2023,Ancient History,7-<8,182
+2023,Ancient History,8-<9,121
+2023,Ancient History,9>=,17
+2023,Ancient History,Unknown prior,12
+2023,Ancient History,All,794
+2023,Classical Civilisation,<1,1
+2023,Classical Civilisation,3-<4,24
+2023,Classical Civilisation,4-<5,203
+2023,Classical Civilisation,5-<6,528
+2023,Classical Civilisation,6-<7,937
+2023,Classical Civilisation,7-<8,987
+2023,Classical Civilisation,8-<9,805
+2023,Classical Civilisation,9>=,126
+2023,Classical Civilisation,Unknown prior,81
+2023,Classical Civilisation,All,3692
+2023,Classical Greek,6-<7,2
+2023,Classical Greek,7-<8,8
+2023,Classical Greek,8-<9,82
+2023,Classical Greek,9>=,64
+2023,Classical Greek,Unknown prior,3
+2023,Classical Greek,All,159
+2023,Latin,4-<5,2
+2023,Latin,5-<6,9
+2023,Latin,6-<7,23
+2023,Latin,7-<8,104
+2023,Latin,8-<9,540
+2023,Latin,9>=,249
+2023,Latin,Unknown prior,11
+2023,Latin,All,938
+2023,Other Classical Languages,5-<6,1
+2023,Other Classical Languages,6-<7,7
+2023,Other Classical Languages,7-<8,5
+2023,Other Classical Languages,8-<9,11
+2023,Other Classical Languages,9>=,1
+2023,Other Classical Languages,Unknown prior,2
+2023,Other Classical Languages,All,27
+2023,Music,3-<4,8
+2023,Music,4-<5,130
+2023,Music,5-<6,403
+2023,Music,6-<7,810
+2023,Music,7-<8,973
+2023,Music,8-<9,1117
+2023,Music,9>=,98
+2023,Music,Unknown prior,82
+2023,Music,All,3621
+2023,Music Technology,2-<3,2
+2023,Music Technology,3-<4,15
+2023,Music Technology,4-<5,146
+2023,Music Technology,5-<6,311
+2023,Music Technology,6-<7,319
+2023,Music Technology,7-<8,281
+2023,Music Technology,8-<9,149
+2023,Music Technology,9>=,4
+2023,Music Technology,Unknown prior,32
+2023,Music Technology,All,1259
+2023,Physical Education / Sports Studies,3-<4,49
+2023,Physical Education / Sports Studies,4-<5,721
+2023,Physical Education / Sports Studies,5-<6,2779
+2023,Physical Education / Sports Studies,6-<7,4004
+2023,Physical Education / Sports Studies,7-<8,2951
+2023,Physical Education / Sports Studies,8-<9,1192
+2023,Physical Education / Sports Studies,9>=,77
+2023,Physical Education / Sports Studies,Unknown prior,153
+2023,Physical Education / Sports Studies,All,11926
+2023,Dance,3-<4,10
+2023,Dance,4-<5,83
+2023,Dance,5-<6,252
+2023,Dance,6-<7,296
+2023,Dance,7-<8,205
+2023,Dance,8-<9,95
+2023,Dance,9>=,5
+2023,Dance,Unknown prior,8
+2023,Dance,All,954
+2023,Accounting / Finance,2-<3,1
+2023,Accounting / Finance,3-<4,13
+2023,Accounting / Finance,4-<5,233
+2023,Accounting / Finance,5-<6,686
+2023,Accounting / Finance,6-<7,696
+2023,Accounting / Finance,7-<8,370
+2023,Accounting / Finance,8-<9,98
+2023,Accounting / Finance,9>=,2
+2023,Accounting / Finance,Unknown prior,32
+2023,Accounting / Finance,All,2131
+2023,Design and Technology (Textiles Technology),3-<4,11
+2023,Design and Technology (Textiles Technology),4-<5,64
+2023,Design and Technology (Textiles Technology),5-<6,108
+2023,Design and Technology (Textiles Technology),6-<7,162
+2023,Design and Technology (Textiles Technology),7-<8,103
+2023,Design and Technology (Textiles Technology),8-<9,58
+2023,Design and Technology (Textiles Technology),9>=,6
+2023,Design and Technology (Textiles Technology),Unknown prior,5
+2023,Design and Technology (Textiles Technology),All,517
+2023,Design and Technology (Engineering),1-<2,1
+2023,Design and Technology (Engineering),2-<3,1
+2023,Design and Technology (Engineering),3-<4,10
+2023,Design and Technology (Engineering),4-<5,54
+2023,Design and Technology (Engineering),5-<6,168
+2023,Design and Technology (Engineering),6-<7,159
+2023,Design and Technology (Engineering),7-<8,83
+2023,Design and Technology (Engineering),8-<9,56
+2023,Design and Technology (Engineering),9>=,10
+2023,Design and Technology (Engineering),Unknown prior,7
+2023,Design and Technology (Engineering),All,549
+2023,Design and Technology (Product Design),<1,1
+2023,Design and Technology (Product Design),2-<3,10
+2023,Design and Technology (Product Design),3-<4,199
+2023,Design and Technology (Product Design),4-<5,1086
+2023,Design and Technology (Product Design),5-<6,2109
+2023,Design and Technology (Product Design),6-<7,2124
+2023,Design and Technology (Product Design),7-<8,1463
+2023,Design and Technology (Product Design),8-<9,766
+2023,Design and Technology (Product Design),9>=,61
+2023,Design and Technology (Product Design),Unknown prior,109
+2023,Design and Technology (Product Design),All,7928
+2024,Biology,1-<2,1
+2024,Biology,2-<3,5
+2024,Biology,3-<4,95
+2024,Biology,4-<5,1306
+2024,Biology,5-<6,7883
+2024,Biology,6-<7,17567
+2024,Biology,7-<8,19256
+2024,Biology,8-<9,15075
+2024,Biology,9>=,1377
+2024,Biology,Unknown prior,1882
+2024,Biology,All,64447
+2024,Chemistry,<1,2
+2024,Chemistry,1-<2,1
+2024,Chemistry,2-<3,4
+2024,Chemistry,3-<4,63
+2024,Chemistry,4-<5,750
+2024,Chemistry,5-<6,4724
+2024,Chemistry,6-<7,11971
+2024,Chemistry,7-<8,16424
+2024,Chemistry,8-<9,16647
+2024,Chemistry,9>=,1773
+2024,Chemistry,Unknown prior,2010
+2024,Chemistry,All,54369
+2024,Physics,<1,2
+2024,Physics,2-<3,3
+2024,Physics,3-<4,54
+2024,Physics,4-<5,720
+2024,Physics,5-<6,4198
+2024,Physics,6-<7,9348
+2024,Physics,7-<8,11119
+2024,Physics,8-<9,10316
+2024,Physics,9>=,1057
+2024,Physics,Unknown prior,1610
+2024,Physics,All,38427
+2024,Electronics,3-<4,5
+2024,Electronics,4-<5,68
+2024,Electronics,5-<6,162
+2024,Electronics,6-<7,167
+2024,Electronics,7-<8,103
+2024,Electronics,8-<9,59
+2024,Electronics,9>=,6
+2024,Electronics,Unknown prior,10
+2024,Electronics,All,580
+2024,Environmental Science,3-<4,10
+2024,Environmental Science,4-<5,185
+2024,Environmental Science,5-<6,573
+2024,Environmental Science,6-<7,561
+2024,Environmental Science,7-<8,353
+2024,Environmental Science,8-<9,124
+2024,Environmental Science,9>=,2
+2024,Environmental Science,Unknown prior,38
+2024,Environmental Science,All,1846
+2024,Geology,3-<4,7
+2024,Geology,4-<5,75
+2024,Geology,5-<6,253
+2024,Geology,6-<7,306
+2024,Geology,7-<8,227
+2024,Geology,8-<9,120
+2024,Geology,9>=,12
+2024,Geology,Unknown prior,14
+2024,Geology,All,1014
+2024,Mathematics,<1,4
+2024,Mathematics,1-<2,1
+2024,Mathematics,2-<3,11
+2024,Mathematics,3-<4,140
+2024,Mathematics,4-<5,1751
+2024,Mathematics,5-<6,9506
+2024,Mathematics,6-<7,21871
+2024,Mathematics,7-<8,27652
+2024,Mathematics,8-<9,26065
+2024,Mathematics,9>=,2849
+2024,Mathematics,Unknown prior,3932
+2024,Mathematics,All,93782
+2024,Mathematics (Statistics),2-<3,1
+2024,Mathematics (Statistics),3-<4,7
+2024,Mathematics (Statistics),4-<5,124
+2024,Mathematics (Statistics),5-<6,322
+2024,Mathematics (Statistics),6-<7,293
+2024,Mathematics (Statistics),7-<8,102
+2024,Mathematics (Statistics),8-<9,23
+2024,Mathematics (Statistics),Unknown prior,17
+2024,Mathematics (Statistics),All,889
+2024,Mathematics (Further),<1,1
+2024,Mathematics (Further),2-<3,4
+2024,Mathematics (Further),3-<4,12
+2024,Mathematics (Further),4-<5,62
+2024,Mathematics (Further),5-<6,494
+2024,Mathematics (Further),6-<7,1727
+2024,Mathematics (Further),7-<8,4274
+2024,Mathematics (Further),8-<9,7868
+2024,Mathematics (Further),9>=,1108
+2024,Mathematics (Further),Unknown prior,886
+2024,Mathematics (Further),All,16436
+2024,Computer Studies / Computing,<1,1
+2024,Computer Studies / Computing,1-<2,1
+2024,Computer Studies / Computing,2-<3,6
+2024,Computer Studies / Computing,3-<4,89
+2024,Computer Studies / Computing,4-<5,961
+2024,Computer Studies / Computing,5-<6,3477
+2024,Computer Studies / Computing,6-<7,5319
+2024,Computer Studies / Computing,7-<8,4782
+2024,Computer Studies / Computing,8-<9,3286
+2024,Computer Studies / Computing,9>=,234
+2024,Computer Studies / Computing,Unknown prior,681
+2024,Computer Studies / Computing,All,18837
+2024,Business Studies:Single,1-<2,2
+2024,Business Studies:Single,2-<3,30
+2024,Business Studies:Single,3-<4,665
+2024,Business Studies:Single,4-<5,5592
+2024,Business Studies:Single,5-<6,13752
+2024,Business Studies:Single,6-<7,11846
+2024,Business Studies:Single,7-<8,5568
+2024,Business Studies:Single,8-<9,1451
+2024,Business Studies:Single,9>=,75
+2024,Business Studies:Single,Unknown prior,1102
+2024,Business Studies:Single,All,40083
+2024,Art and Design,1-<2,1
+2024,Art and Design,2-<3,13
+2024,Art and Design,3-<4,178
+2024,Art and Design,4-<5,751
+2024,Art and Design,5-<6,1340
+2024,Art and Design,6-<7,1403
+2024,Art and Design,7-<8,991
+2024,Art and Design,8-<9,553
+2024,Art and Design,9>=,48
+2024,Art and Design,Unknown prior,126
+2024,Art and Design,All,5404
+2024,Art and Design (Graphics),<1,1
+2024,Art and Design (Graphics),2-<3,21
+2024,Art and Design (Graphics),3-<4,214
+2024,Art and Design (Graphics),4-<5,999
+2024,Art and Design (Graphics),5-<6,1606
+2024,Art and Design (Graphics),6-<7,1296
+2024,Art and Design (Graphics),7-<8,690
+2024,Art and Design (Graphics),8-<9,230
+2024,Art and Design (Graphics),9>=,15
+2024,Art and Design (Graphics),Unknown prior,132
+2024,Art and Design (Graphics),All,5204
+2024,Art and Design (Photography),<1,2
+2024,Art and Design (Photography),1-<2,5
+2024,Art and Design (Photography),2-<3,60
+2024,Art and Design (Photography),3-<4,663
+2024,Art and Design (Photography),4-<5,2348
+2024,Art and Design (Photography),5-<6,3109
+2024,Art and Design (Photography),6-<7,2131
+2024,Art and Design (Photography),7-<8,823
+2024,Art and Design (Photography),8-<9,219
+2024,Art and Design (Photography),9>=,25
+2024,Art and Design (Photography),Unknown prior,282
+2024,Art and Design (Photography),All,9667
+2024,Art and Design (Textiles),1-<2,1
+2024,Art and Design (Textiles),2-<3,6
+2024,Art and Design (Textiles),3-<4,132
+2024,Art and Design (Textiles),4-<5,564
+2024,Art and Design (Textiles),5-<6,980
+2024,Art and Design (Textiles),6-<7,940
+2024,Art and Design (Textiles),7-<8,546
+2024,Art and Design (Textiles),8-<9,171
+2024,Art and Design (Textiles),9>=,7
+2024,Art and Design (Textiles),Unknown prior,109
+2024,Art and Design (Textiles),All,3456
+2024,Art and Design (3d Studies),1-<2,2
+2024,Art and Design (3d Studies),2-<3,9
+2024,Art and Design (3d Studies),3-<4,80
+2024,Art and Design (3d Studies),4-<5,361
+2024,Art and Design (3d Studies),5-<6,586
+2024,Art and Design (3d Studies),6-<7,506
+2024,Art and Design (3d Studies),7-<8,277
+2024,Art and Design (3d Studies),8-<9,101
+2024,Art and Design (3d Studies),9>=,9
+2024,Art and Design (3d Studies),Unknown prior,43
+2024,Art and Design (3d Studies),All,1974
+2024,Art and Design (Critical Studies),2-<3,1
+2024,Art and Design (Critical Studies),3-<4,9
+2024,Art and Design (Critical Studies),4-<5,26
+2024,Art and Design (Critical Studies),5-<6,31
+2024,Art and Design (Critical Studies),6-<7,34
+2024,Art and Design (Critical Studies),7-<8,21
+2024,Art and Design (Critical Studies),8-<9,6
+2024,Art and Design (Critical Studies),Unknown prior,15
+2024,Art and Design (Critical Studies),All,143
+2024,Art and Design (Fine Art),<1,1
+2024,Art and Design (Fine Art),1-<2,3
+2024,Art and Design (Fine Art),2-<3,24
+2024,Art and Design (Fine Art),3-<4,338
+2024,Art and Design (Fine Art),4-<5,1560
+2024,Art and Design (Fine Art),5-<6,3214
+2024,Art and Design (Fine Art),6-<7,3596
+2024,Art and Design (Fine Art),7-<8,2833
+2024,Art and Design (Fine Art),8-<9,1653
+2024,Art and Design (Fine Art),9>=,192
+2024,Art and Design (Fine Art),Unknown prior,434
+2024,Art and Design (Fine Art),All,13848
+2024,History of Art,3-<4,6
+2024,History of Art,4-<5,25
+2024,History of Art,5-<6,82
+2024,History of Art,6-<7,170
+2024,History of Art,7-<8,201
+2024,History of Art,8-<9,169
+2024,History of Art,9>=,43
+2024,History of Art,Unknown prior,54
+2024,History of Art,All,750
+2024,Geography,2-<3,7
+2024,Geography,3-<4,210
+2024,Geography,4-<5,2387
+2024,Geography,5-<6,7727
+2024,Geography,6-<7,9954
+2024,Geography,7-<8,7738
+2024,Geography,8-<9,4265
+2024,Geography,9>=,323
+2024,Geography,Unknown prior,413
+2024,Geography,All,33024
+2024,History,2-<3,14
+2024,History,3-<4,352
+2024,History,4-<5,3282
+2024,History,5-<6,9360
+2024,History,6-<7,11843
+2024,History,7-<8,9821
+2024,History,8-<9,6373
+2024,History,9>=,765
+2024,History,Unknown prior,692
+2024,History,All,42502
+2024,Economics,<1,1
+2024,Economics,1-<2,1
+2024,Economics,2-<3,10
+2024,Economics,3-<4,195
+2024,Economics,4-<5,2144
+2024,Economics,5-<6,7556
+2024,Economics,6-<7,10765
+2024,Economics,7-<8,9135
+2024,Economics,8-<9,6232
+2024,Economics,9>=,756
+2024,Economics,Unknown prior,1424
+2024,Economics,All,38219
+2024,Religious Studies,<1,1
+2024,Religious Studies,2-<3,4
+2024,Religious Studies,3-<4,187
+2024,Religious Studies,4-<5,1566
+2024,Religious Studies,5-<6,3511
+2024,Religious Studies,6-<7,3804
+2024,Religious Studies,7-<8,3060
+2024,Religious Studies,8-<9,1736
+2024,Religious Studies,9>=,257
+2024,Religious Studies,Unknown prior,180
+2024,Religious Studies,All,14306
+2024,Law,2-<3,6
+2024,Law,3-<4,236
+2024,Law,4-<5,2018
+2024,Law,5-<6,4714
+2024,Law,6-<7,4104
+2024,Law,7-<8,2002
+2024,Law,8-<9,546
+2024,Law,9>=,11
+2024,Law,Unknown prior,155
+2024,Law,All,13792
+2024,Logic / Philosophy,2-<3,1
+2024,Logic / Philosophy,3-<4,34
+2024,Logic / Philosophy,4-<5,235
+2024,Logic / Philosophy,5-<6,689
+2024,Logic / Philosophy,6-<7,934
+2024,Logic / Philosophy,7-<8,852
+2024,Logic / Philosophy,8-<9,656
+2024,Logic / Philosophy,9>=,94
+2024,Logic / Philosophy,Unknown prior,75
+2024,Logic / Philosophy,All,3570
+2024,Government and Politics,2-<3,5
+2024,Government and Politics,3-<4,276
+2024,Government and Politics,4-<5,1903
+2024,Government and Politics,5-<6,4611
+2024,Government and Politics,6-<7,5254
+2024,Government and Politics,7-<8,4330
+2024,Government and Politics,8-<9,2592
+2024,Government and Politics,9>=,319
+2024,Government and Politics,Unknown prior,493
+2024,Government and Politics,All,19783
+2024,Psychology,1-<2,1
+2024,Psychology,2-<3,27
+2024,Psychology,3-<4,624
+2024,Psychology,4-<5,6111
+2024,Psychology,5-<6,19711
+2024,Psychology,6-<7,23358
+2024,Psychology,7-<8,15541
+2024,Psychology,8-<9,6590
+2024,Psychology,9>=,372
+2024,Psychology,Unknown prior,1394
+2024,Psychology,All,73729
+2024,Sociology,<1,1
+2024,Sociology,1-<2,4
+2024,Sociology,2-<3,37
+2024,Sociology,3-<4,1203
+2024,Sociology,4-<5,8006
+2024,Sociology,5-<6,14453
+2024,Sociology,6-<7,10791
+2024,Sociology,7-<8,5061
+2024,Sociology,8-<9,1298
+2024,Sociology,9>=,38
+2024,Sociology,Unknown prior,576
+2024,Sociology,All,41468
+2024,English Language and Literature,<1,1
+2024,English Language and Literature,2-<3,5
+2024,English Language and Literature,3-<4,112
+2024,English Language and Literature,4-<5,1005
+2024,English Language and Literature,5-<6,2075
+2024,English Language and Literature,6-<7,2031
+2024,English Language and Literature,7-<8,1167
+2024,English Language and Literature,8-<9,430
+2024,English Language and Literature,9>=,21
+2024,English Language and Literature,Unknown prior,93
+2024,English Language and Literature,All,6940
+2024,English Language,1-<2,1
+2024,English Language,2-<3,9
+2024,English Language,3-<4,227
+2024,English Language,4-<5,1867
+2024,English Language,5-<6,4052
+2024,English Language,6-<7,3551
+2024,English Language,7-<8,2058
+2024,English Language,8-<9,726
+2024,English Language,9>=,32
+2024,English Language,Unknown prior,175
+2024,English Language,All,12698
+2024,English Literature,2-<3,14
+2024,English Literature,3-<4,323
+2024,English Literature,4-<5,2806
+2024,English Literature,5-<6,7735
+2024,English Literature,6-<7,9737
+2024,English Literature,7-<8,8370
+2024,English Literature,8-<9,5539
+2024,English Literature,9>=,695
+2024,English Literature,Unknown prior,595
+2024,English Literature,All,35814
+2024,Drama and Theatre Studies,1-<2,1
+2024,Drama and Theatre Studies,2-<3,11
+2024,Drama and Theatre Studies,3-<4,133
+2024,Drama and Theatre Studies,4-<5,797
+2024,Drama and Theatre Studies,5-<6,1808
+2024,Drama and Theatre Studies,6-<7,2182
+2024,Drama and Theatre Studies,7-<8,1674
+2024,Drama and Theatre Studies,8-<9,942
+2024,Drama and Theatre Studies,9>=,99
+2024,Drama and Theatre Studies,Unknown prior,184
+2024,Drama and Theatre Studies,All,7831
+2024,Media/Film/Tv Studies,<1,1
+2024,Media/Film/Tv Studies,1-<2,1
+2024,Media/Film/Tv Studies,2-<3,23
+2024,Media/Film/Tv Studies,3-<4,687
+2024,Media/Film/Tv Studies,4-<5,3280
+2024,Media/Film/Tv Studies,5-<6,4613
+2024,Media/Film/Tv Studies,6-<7,3164
+2024,Media/Film/Tv Studies,7-<8,1274
+2024,Media/Film/Tv Studies,8-<9,273
+2024,Media/Film/Tv Studies,9>=,3
+2024,Media/Film/Tv Studies,Unknown prior,225
+2024,Media/Film/Tv Studies,All,13544
+2024,Film Studies,2-<3,20
+2024,Film Studies,3-<4,358
+2024,Film Studies,4-<5,1487
+2024,Film Studies,5-<6,2306
+2024,Film Studies,6-<7,1876
+2024,Film Studies,7-<8,890
+2024,Film Studies,8-<9,264
+2024,Film Studies,9>=,13
+2024,Film Studies,Unknown prior,116
+2024,Film Studies,All,7330
+2024,French,2-<3,5
+2024,French,3-<4,29
+2024,French,4-<5,188
+2024,French,5-<6,660
+2024,French,6-<7,1315
+2024,French,7-<8,1791
+2024,French,8-<9,2216
+2024,French,9>=,349
+2024,French,Unknown prior,234
+2024,French,All,6787
+2024,German,3-<4,7
+2024,German,4-<5,43
+2024,German,5-<6,169
+2024,German,6-<7,383
+2024,German,7-<8,581
+2024,German,8-<9,745
+2024,German,9>=,127
+2024,German,Unknown prior,136
+2024,German,All,2191
+2024,Italian,1-<2,1
+2024,Italian,2-<3,1
+2024,Italian,3-<4,21
+2024,Italian,4-<5,68
+2024,Italian,5-<6,139
+2024,Italian,6-<7,157
+2024,Italian,7-<8,113
+2024,Italian,8-<9,95
+2024,Italian,9>=,21
+2024,Italian,Unknown prior,36
+2024,Italian,All,652
+2024,Modern Greek,3-<4,3
+2024,Modern Greek,4-<5,6
+2024,Modern Greek,5-<6,11
+2024,Modern Greek,6-<7,25
+2024,Modern Greek,7-<8,15
+2024,Modern Greek,8-<9,13
+2024,Modern Greek,9>=,1
+2024,Modern Greek,Unknown prior,5
+2024,Modern Greek,All,79
+2024,Portuguese,2-<3,3
+2024,Portuguese,3-<4,14
+2024,Portuguese,4-<5,50
+2024,Portuguese,5-<6,53
+2024,Portuguese,6-<7,44
+2024,Portuguese,7-<8,34
+2024,Portuguese,8-<9,13
+2024,Portuguese,9>=,1
+2024,Portuguese,Unknown prior,13
+2024,Portuguese,All,225
+2024,Spanish,2-<3,7
+2024,Spanish,3-<4,60
+2024,Spanish,4-<5,398
+2024,Spanish,5-<6,956
+2024,Spanish,6-<7,1662
+2024,Spanish,7-<8,1891
+2024,Spanish,8-<9,1948
+2024,Spanish,9>=,308
+2024,Spanish,Unknown prior,257
+2024,Spanish,All,7487
+2024,Arabic,1-<2,1
+2024,Arabic,2-<3,9
+2024,Arabic,3-<4,16
+2024,Arabic,4-<5,84
+2024,Arabic,5-<6,105
+2024,Arabic,6-<7,99
+2024,Arabic,7-<8,80
+2024,Arabic,8-<9,42
+2024,Arabic,9>=,1
+2024,Arabic,Unknown prior,39
+2024,Arabic,All,476
+2024,Chinese,<1,2
+2024,Chinese,1-<2,2
+2024,Chinese,2-<3,7
+2024,Chinese,3-<4,20
+2024,Chinese,4-<5,76
+2024,Chinese,5-<6,150
+2024,Chinese,6-<7,191
+2024,Chinese,7-<8,173
+2024,Chinese,8-<9,175
+2024,Chinese,9>=,38
+2024,Chinese,Unknown prior,399
+2024,Chinese,All,1233
+2024,Japanese,3-<4,1
+2024,Japanese,4-<5,3
+2024,Japanese,5-<6,11
+2024,Japanese,6-<7,24
+2024,Japanese,7-<8,31
+2024,Japanese,8-<9,40
+2024,Japanese,9>=,3
+2024,Japanese,Unknown prior,18
+2024,Japanese,All,131
+2024,Modern Hebrew,4-<5,1
+2024,Modern Hebrew,5-<6,11
+2024,Modern Hebrew,6-<7,11
+2024,Modern Hebrew,7-<8,9
+2024,Modern Hebrew,8-<9,9
+2024,Modern Hebrew,9>=,3
+2024,Modern Hebrew,Unknown prior,4
+2024,Modern Hebrew,All,48
+2024,Punjabi,3-<4,6
+2024,Punjabi,4-<5,15
+2024,Punjabi,5-<6,30
+2024,Punjabi,6-<7,24
+2024,Punjabi,7-<8,16
+2024,Punjabi,8-<9,5
+2024,Punjabi,Unknown prior,3
+2024,Punjabi,All,99
+2024,Polish,1-<2,1
+2024,Polish,2-<3,4
+2024,Polish,3-<4,11
+2024,Polish,4-<5,64
+2024,Polish,5-<6,153
+2024,Polish,6-<7,175
+2024,Polish,7-<8,129
+2024,Polish,8-<9,56
+2024,Polish,9>=,4
+2024,Polish,Unknown prior,24
+2024,Polish,All,621
+2024,Russian,2-<3,3
+2024,Russian,3-<4,10
+2024,Russian,4-<5,27
+2024,Russian,5-<6,74
+2024,Russian,6-<7,110
+2024,Russian,7-<8,126
+2024,Russian,8-<9,159
+2024,Russian,9>=,36
+2024,Russian,Unknown prior,276
+2024,Russian,All,821
+2024,Turkish,2-<3,4
+2024,Turkish,3-<4,16
+2024,Turkish,4-<5,54
+2024,Turkish,5-<6,93
+2024,Turkish,6-<7,88
+2024,Turkish,7-<8,49
+2024,Turkish,8-<9,11
+2024,Turkish,9>=,1
+2024,Turkish,Unknown prior,31
+2024,Turkish,All,347
+2024,Urdu,3-<4,14
+2024,Urdu,4-<5,22
+2024,Urdu,5-<6,31
+2024,Urdu,6-<7,47
+2024,Urdu,7-<8,40
+2024,Urdu,8-<9,11
+2024,Urdu,Unknown prior,8
+2024,Urdu,All,173
+2024,Persian,<1,1
+2024,Persian,2-<3,4
+2024,Persian,3-<4,2
+2024,Persian,4-<5,15
+2024,Persian,5-<6,12
+2024,Persian,6-<7,16
+2024,Persian,7-<8,15
+2024,Persian,8-<9,9
+2024,Persian,9>=,1
+2024,Persian,Unknown prior,35
+2024,Persian,All,110
+2024,Ancient History,3-<4,10
+2024,Ancient History,4-<5,89
+2024,Ancient History,5-<6,251
+2024,Ancient History,6-<7,254
+2024,Ancient History,7-<8,180
+2024,Ancient History,8-<9,99
+2024,Ancient History,9>=,10
+2024,Ancient History,Unknown prior,8
+2024,Ancient History,All,901
+2024,Classical Civilisation,2-<3,1
+2024,Classical Civilisation,3-<4,36
+2024,Classical Civilisation,4-<5,275
+2024,Classical Civilisation,5-<6,738
+2024,Classical Civilisation,6-<7,1040
+2024,Classical Civilisation,7-<8,999
+2024,Classical Civilisation,8-<9,730
+2024,Classical Civilisation,9>=,84
+2024,Classical Civilisation,Unknown prior,96
+2024,Classical Civilisation,All,3999
+2024,Classical Greek,5-<6,1
+2024,Classical Greek,6-<7,3
+2024,Classical Greek,7-<8,21
+2024,Classical Greek,8-<9,99
+2024,Classical Greek,9>=,58
+2024,Classical Greek,Unknown prior,4
+2024,Classical Greek,All,186
+2024,Latin,5-<6,6
+2024,Latin,6-<7,47
+2024,Latin,7-<8,148
+2024,Latin,8-<9,514
+2024,Latin,9>=,195
+2024,Latin,Unknown prior,15
+2024,Latin,All,925
+2024,Other Classical Languages,5-<6,4
+2024,Other Classical Languages,6-<7,2
+2024,Other Classical Languages,7-<8,9
+2024,Other Classical Languages,8-<9,13
+2024,Other Classical Languages,9>=,1
+2024,Other Classical Languages,All,29
+2024,Music,2-<3,3
+2024,Music,3-<4,22
+2024,Music,4-<5,157
+2024,Music,5-<6,457
+2024,Music,6-<7,844
+2024,Music,7-<8,996
+2024,Music,8-<9,1031
+2024,Music,9>=,63
+2024,Music,Unknown prior,98
+2024,Music,All,3671
+2024,Music Technology,2-<3,3
+2024,Music Technology,3-<4,39
+2024,Music Technology,4-<5,137
+2024,Music Technology,5-<6,298
+2024,Music Technology,6-<7,360
+2024,Music Technology,7-<8,236
+2024,Music Technology,8-<9,127
+2024,Music Technology,9>=,8
+2024,Music Technology,Unknown prior,60
+2024,Music Technology,All,1268
+2024,Physical Education / Sports Studies,2-<3,1
+2024,Physical Education / Sports Studies,3-<4,76
+2024,Physical Education / Sports Studies,4-<5,895
+2024,Physical Education / Sports Studies,5-<6,3138
+2024,Physical Education / Sports Studies,6-<7,3914
+2024,Physical Education / Sports Studies,7-<8,2522
+2024,Physical Education / Sports Studies,8-<9,917
+2024,Physical Education / Sports Studies,9>=,69
+2024,Physical Education / Sports Studies,Unknown prior,174
+2024,Physical Education / Sports Studies,All,11706
+2024,Dance,3-<4,15
+2024,Dance,4-<5,108
+2024,Dance,5-<6,267
+2024,Dance,6-<7,280
+2024,Dance,7-<8,162
+2024,Dance,8-<9,66
+2024,Dance,9>=,4
+2024,Dance,Unknown prior,11
+2024,Dance,All,913
+2024,Accounting / Finance,2-<3,1
+2024,Accounting / Finance,3-<4,22
+2024,Accounting / Finance,4-<5,316
+2024,Accounting / Finance,5-<6,818
+2024,Accounting / Finance,6-<7,673
+2024,Accounting / Finance,7-<8,337
+2024,Accounting / Finance,8-<9,75
+2024,Accounting / Finance,9>=,2
+2024,Accounting / Finance,Unknown prior,40
+2024,Accounting / Finance,All,2284
+2024,Design and Technology (Textiles Technology),2-<3,1
+2024,Design and Technology (Textiles Technology),3-<4,14
+2024,Design and Technology (Textiles Technology),4-<5,60
+2024,Design and Technology (Textiles Technology),5-<6,112
+2024,Design and Technology (Textiles Technology),6-<7,144
+2024,Design and Technology (Textiles Technology),7-<8,110
+2024,Design and Technology (Textiles Technology),8-<9,41
+2024,Design and Technology (Textiles Technology),9>=,3
+2024,Design and Technology (Textiles Technology),Unknown prior,3
+2024,Design and Technology (Textiles Technology),All,488
+2024,Design and Technology (Engineering),1-<2,1
+2024,Design and Technology (Engineering),2-<3,3
+2024,Design and Technology (Engineering),3-<4,13
+2024,Design and Technology (Engineering),4-<5,59
+2024,Design and Technology (Engineering),5-<6,149
+2024,Design and Technology (Engineering),6-<7,136
+2024,Design and Technology (Engineering),7-<8,85
+2024,Design and Technology (Engineering),8-<9,57
+2024,Design and Technology (Engineering),9>=,13
+2024,Design and Technology (Engineering),Unknown prior,10
+2024,Design and Technology (Engineering),All,526
+2024,Design and Technology (Product Design),1-<2,1
+2024,Design and Technology (Product Design),2-<3,11
+2024,Design and Technology (Product Design),3-<4,210
+2024,Design and Technology (Product Design),4-<5,1117
+2024,Design and Technology (Product Design),5-<6,2205
+2024,Design and Technology (Product Design),6-<7,2040
+2024,Design and Technology (Product Design),7-<8,1390
+2024,Design and Technology (Product Design),8-<9,718
+2024,Design and Technology (Product Design),9>=,64
+2024,Design and Technology (Product Design),Unknown prior,165
+2024,Design and Technology (Product Design),All,7921
+2025,Biology,<1,1
+2025,Biology,1-<2,3
+2025,Biology,2-<3,13
+2025,Biology,3-<4,131
+2025,Biology,4-<5,1963
+2025,Biology,5-<6,9844
+2025,Biology,6-<7,18295
+2025,Biology,7-<8,17192
+2025,Biology,8-<9,11273
+2025,Biology,9>=,779
+2025,Biology,Unknown prior,1846
+2025,Biology,All,61340
+2025,Chemistry,<1,1
+2025,Chemistry,1-<2,2
+2025,Chemistry,2-<3,11
+2025,Chemistry,3-<4,107
+2025,Chemistry,4-<5,1208
+2025,Chemistry,5-<6,6725
+2025,Chemistry,6-<7,13944
+2025,Chemistry,7-<8,16375
+2025,Chemistry,8-<9,13439
+2025,Chemistry,9>=,1089
+2025,Chemistry,Unknown prior,1990
+2025,Chemistry,All,54891
+2025,Physics,<1,3
+2025,Physics,2-<3,10
+2025,Physics,3-<4,114
+2025,Physics,4-<5,1199
+2025,Physics,5-<6,5609
+2025,Physics,6-<7,10581
+2025,Physics,7-<8,11326
+2025,Physics,8-<9,8727
+2025,Physics,9>=,718
+2025,Physics,Unknown prior,1584
+2025,Physics,All,39871
+2025,Electronics,3-<4,13
+2025,Electronics,4-<5,121
+2025,Electronics,5-<6,183
+2025,Electronics,6-<7,168
+2025,Electronics,7-<8,91
+2025,Electronics,8-<9,43
+2025,Electronics,9>=,3
+2025,Electronics,Unknown prior,10
+2025,Electronics,All,632
+2025,Environmental Science,2-<3,2
+2025,Environmental Science,3-<4,41
+2025,Environmental Science,4-<5,281
+2025,Environmental Science,5-<6,727
+2025,Environmental Science,6-<7,577
+2025,Environmental Science,7-<8,299
+2025,Environmental Science,8-<9,86
+2025,Environmental Science,9>=,4
+2025,Environmental Science,Unknown prior,42
+2025,Environmental Science,All,2059
+2025,Geology,2-<3,1
+2025,Geology,3-<4,14
+2025,Geology,4-<5,112
+2025,Geology,5-<6,255
+2025,Geology,6-<7,279
+2025,Geology,7-<8,165
+2025,Geology,8-<9,74
+2025,Geology,9>=,2
+2025,Geology,Unknown prior,11
+2025,Geology,All,913
+2025,Mathematics,<1,6
+2025,Mathematics,1-<2,2
+2025,Mathematics,2-<3,28
+2025,Mathematics,3-<4,277
+2025,Mathematics,4-<5,3036
+2025,Mathematics,5-<6,13547
+2025,Mathematics,6-<7,25757
+2025,Mathematics,7-<8,27568
+2025,Mathematics,8-<9,21616
+2025,Mathematics,9>=,1941
+2025,Mathematics,Unknown prior,3800
+2025,Mathematics,All,97578
+2025,Mathematics (Statistics),3-<4,22
+2025,Mathematics (Statistics),4-<5,203
+2025,Mathematics (Statistics),5-<6,424
+2025,Mathematics (Statistics),6-<7,291
+2025,Mathematics (Statistics),7-<8,81
+2025,Mathematics (Statistics),8-<9,19
+2025,Mathematics (Statistics),Unknown prior,22
+2025,Mathematics (Statistics),All,1062
+2025,Mathematics (Further),<1,1
+2025,Mathematics (Further),2-<3,1
+2025,Mathematics (Further),3-<4,21
+2025,Mathematics (Further),4-<5,139
+2025,Mathematics (Further),5-<6,770
+2025,Mathematics (Further),6-<7,2394
+2025,Mathematics (Further),7-<8,5124
+2025,Mathematics (Further),8-<9,7443
+2025,Mathematics (Further),9>=,828
+2025,Mathematics (Further),Unknown prior,953
+2025,Mathematics (Further),All,17674
+2025,Computer Studies / Computing,2-<3,3
+2025,Computer Studies / Computing,3-<4,149
+2025,Computer Studies / Computing,4-<5,1299
+2025,Computer Studies / Computing,5-<6,3961
+2025,Computer Studies / Computing,6-<7,5300
+2025,Computer Studies / Computing,7-<8,4301
+2025,Computer Studies / Computing,8-<9,2579
+2025,Computer Studies / Computing,9>=,148
+2025,Computer Studies / Computing,Unknown prior,621
+2025,Computer Studies / Computing,All,18361
+2025,Business Studies:Single,<1,3
+2025,Business Studies:Single,1-<2,2
+2025,Business Studies:Single,2-<3,53
+2025,Business Studies:Single,3-<4,1093
+2025,Business Studies:Single,4-<5,7851
+2025,Business Studies:Single,5-<6,15153
+2025,Business Studies:Single,6-<7,10694
+2025,Business Studies:Single,7-<8,4003
+2025,Business Studies:Single,8-<9,873
+2025,Business Studies:Single,9>=,51
+2025,Business Studies:Single,Unknown prior,1030
+2025,Business Studies:Single,All,40806
+2025,Art and Design,2-<3,34
+2025,Art and Design,3-<4,264
+2025,Art and Design,4-<5,911
+2025,Art and Design,5-<6,1380
+2025,Art and Design,6-<7,1361
+2025,Art and Design,7-<8,796
+2025,Art and Design,8-<9,361
+2025,Art and Design,9>=,36
+2025,Art and Design,Unknown prior,147
+2025,Art and Design,All,5290
+2025,Art and Design (Graphics),1-<2,2
+2025,Art and Design (Graphics),2-<3,30
+2025,Art and Design (Graphics),3-<4,358
+2025,Art and Design (Graphics),4-<5,1264
+2025,Art and Design (Graphics),5-<6,1640
+2025,Art and Design (Graphics),6-<7,1161
+2025,Art and Design (Graphics),7-<8,525
+2025,Art and Design (Graphics),8-<9,130
+2025,Art and Design (Graphics),9>=,13
+2025,Art and Design (Graphics),Unknown prior,132
+2025,Art and Design (Graphics),All,5255
+2025,Art and Design (Photography),<1,2
+2025,Art and Design (Photography),1-<2,6
+2025,Art and Design (Photography),2-<3,73
+2025,Art and Design (Photography),3-<4,1034
+2025,Art and Design (Photography),4-<5,2925
+2025,Art and Design (Photography),5-<6,2993
+2025,Art and Design (Photography),6-<7,1764
+2025,Art and Design (Photography),7-<8,638
+2025,Art and Design (Photography),8-<9,137
+2025,Art and Design (Photography),9>=,18
+2025,Art and Design (Photography),Unknown prior,247
+2025,Art and Design (Photography),All,9837
+2025,Art and Design (Textiles),1-<2,2
+2025,Art and Design (Textiles),2-<3,12
+2025,Art and Design (Textiles),3-<4,181
+2025,Art and Design (Textiles),4-<5,711
+2025,Art and Design (Textiles),5-<6,1002
+2025,Art and Design (Textiles),6-<7,813
+2025,Art and Design (Textiles),7-<8,413
+2025,Art and Design (Textiles),8-<9,134
+2025,Art and Design (Textiles),9>=,7
+2025,Art and Design (Textiles),Unknown prior,101
+2025,Art and Design (Textiles),All,3376
+2025,Art and Design (3d Studies),1-<2,2
+2025,Art and Design (3d Studies),2-<3,8
+2025,Art and Design (3d Studies),3-<4,125
+2025,Art and Design (3d Studies),4-<5,490
+2025,Art and Design (3d Studies),5-<6,721
+2025,Art and Design (3d Studies),6-<7,551
+2025,Art and Design (3d Studies),7-<8,250
+2025,Art and Design (3d Studies),8-<9,95
+2025,Art and Design (3d Studies),9>=,12
+2025,Art and Design (3d Studies),Unknown prior,59
+2025,Art and Design (3d Studies),All,2313
+2025,Art and Design (Critical Studies),1-<2,2
+2025,Art and Design (Critical Studies),2-<3,3
+2025,Art and Design (Critical Studies),3-<4,10
+2025,Art and Design (Critical Studies),4-<5,24
+2025,Art and Design (Critical Studies),5-<6,27
+2025,Art and Design (Critical Studies),6-<7,30
+2025,Art and Design (Critical Studies),7-<8,18
+2025,Art and Design (Critical Studies),8-<9,4
+2025,Art and Design (Critical Studies),9>=,3
+2025,Art and Design (Critical Studies),Unknown prior,17
+2025,Art and Design (Critical Studies),All,138
+2025,Art and Design (Fine Art),1-<2,1
+2025,Art and Design (Fine Art),2-<3,42
+2025,Art and Design (Fine Art),3-<4,462
+2025,Art and Design (Fine Art),4-<5,1931
+2025,Art and Design (Fine Art),5-<6,3451
+2025,Art and Design (Fine Art),6-<7,3369
+2025,Art and Design (Fine Art),7-<8,2245
+2025,Art and Design (Fine Art),8-<9,1118
+2025,Art and Design (Fine Art),9>=,130
+2025,Art and Design (Fine Art),Unknown prior,341
+2025,Art and Design (Fine Art),All,13090
+2025,History of Art,3-<4,9
+2025,History of Art,4-<5,61
+2025,History of Art,5-<6,123
+2025,History of Art,6-<7,194
+2025,History of Art,7-<8,181
+2025,History of Art,8-<9,154
+2025,History of Art,9>=,25
+2025,History of Art,Unknown prior,50
+2025,History of Art,All,797
+2025,Geography,<1,1
+2025,Geography,2-<3,11
+2025,Geography,3-<4,290
+2025,Geography,4-<5,3223
+2025,Geography,5-<6,8673
+2025,Geography,6-<7,9315
+2025,Geography,7-<8,6106
+2025,Geography,8-<9,2738
+2025,Geography,9>=,181
+2025,Geography,Unknown prior,395
+2025,Geography,All,30933
+2025,History,1-<2,1
+2025,History,2-<3,23
+2025,History,3-<4,543
+2025,History,4-<5,4215
+2025,History,5-<6,10061
+2025,History,6-<7,11137
+2025,History,7-<8,8161
+2025,History,8-<9,4789
+2025,History,9>=,498
+2025,History,Unknown prior,636
+2025,History,All,40064
+2025,Economics,<1,4
+2025,Economics,1-<2,2
+2025,Economics,2-<3,21
+2025,Economics,3-<4,338
+2025,Economics,4-<5,3354
+2025,Economics,5-<6,9643
+2025,Economics,6-<7,11436
+2025,Economics,7-<8,8569
+2025,Economics,8-<9,5158
+2025,Economics,9>=,545
+2025,Economics,Unknown prior,1341
+2025,Economics,All,40411
+2025,Religious Studies,1-<2,1
+2025,Religious Studies,2-<3,15
+2025,Religious Studies,3-<4,369
+2025,Religious Studies,4-<5,1993
+2025,Religious Studies,5-<6,3841
+2025,Religious Studies,6-<7,3729
+2025,Religious Studies,7-<8,2428
+2025,Religious Studies,8-<9,1341
+2025,Religious Studies,9>=,158
+2025,Religious Studies,Unknown prior,173
+2025,Religious Studies,All,14048
+2025,Law,2-<3,9
+2025,Law,3-<4,438
+2025,Law,4-<5,2831
+2025,Law,5-<6,5178
+2025,Law,6-<7,3599
+2025,Law,7-<8,1405
+2025,Law,8-<9,308
+2025,Law,9>=,6
+2025,Law,Unknown prior,187
+2025,Law,All,13961
+2025,Logic / Philosophy,<1,1
+2025,Logic / Philosophy,2-<3,8
+2025,Logic / Philosophy,3-<4,59
+2025,Logic / Philosophy,4-<5,340
+2025,Logic / Philosophy,5-<6,816
+2025,Logic / Philosophy,6-<7,979
+2025,Logic / Philosophy,7-<8,727
+2025,Logic / Philosophy,8-<9,531
+2025,Logic / Philosophy,9>=,50
+2025,Logic / Philosophy,Unknown prior,60
+2025,Logic / Philosophy,All,3571
+2025,Government and Politics,<1,1
+2025,Government and Politics,1-<2,2
+2025,Government and Politics,2-<3,16
+2025,Government and Politics,3-<4,433
+2025,Government and Politics,4-<5,2762
+2025,Government and Politics,5-<6,5332
+2025,Government and Politics,6-<7,5236
+2025,Government and Politics,7-<8,3741
+2025,Government and Politics,8-<9,1942
+2025,Government and Politics,9>=,221
+2025,Government and Politics,Unknown prior,437
+2025,Government and Politics,All,20123
+2025,Psychology,<1,1
+2025,Psychology,2-<3,46
+2025,Psychology,3-<4,1002
+2025,Psychology,4-<5,8649
+2025,Psychology,5-<6,22015
+2025,Psychology,6-<7,21809
+2025,Psychology,7-<8,11944
+2025,Psychology,8-<9,4237
+2025,Psychology,9>=,207
+2025,Psychology,Unknown prior,1394
+2025,Psychology,All,71304
+2025,Sociology,2-<3,82
+2025,Sociology,3-<4,1902
+2025,Sociology,4-<5,10252
+2025,Sociology,5-<6,14835
+2025,Sociology,6-<7,9183
+2025,Sociology,7-<8,3465
+2025,Sociology,8-<9,747
+2025,Sociology,9>=,11
+2025,Sociology,Unknown prior,531
+2025,Sociology,All,41008
+2025,English Language and Literature,2-<3,5
+2025,English Language and Literature,3-<4,239
+2025,English Language and Literature,4-<5,1195
+2025,English Language and Literature,5-<6,2111
+2025,English Language and Literature,6-<7,1697
+2025,English Language and Literature,7-<8,907
+2025,English Language and Literature,8-<9,261
+2025,English Language and Literature,9>=,9
+2025,English Language and Literature,Unknown prior,102
+2025,English Language and Literature,All,6526
+2025,English Language,<1,1
+2025,English Language,1-<2,1
+2025,English Language,2-<3,15
+2025,English Language,3-<4,421
+2025,English Language,4-<5,2351
+2025,English Language,5-<6,4095
+2025,English Language,6-<7,3134
+2025,English Language,7-<8,1507
+2025,English Language,8-<9,468
+2025,English Language,9>=,13
+2025,English Language,Unknown prior,169
+2025,English Language,All,12175
+2025,English Literature,2-<3,25
+2025,English Literature,3-<4,583
+2025,English Literature,4-<5,3997
+2025,English Literature,5-<6,8543
+2025,English Literature,6-<7,9241
+2025,English Literature,7-<8,6756
+2025,English Literature,8-<9,3987
+2025,English Literature,9>=,453
+2025,English Literature,Unknown prior,588
+2025,English Literature,All,34173
+2025,Drama and Theatre Studies,2-<3,13
+2025,Drama and Theatre Studies,3-<4,242
+2025,Drama and Theatre Studies,4-<5,988
+2025,Drama and Theatre Studies,5-<6,1942
+2025,Drama and Theatre Studies,6-<7,1935
+2025,Drama and Theatre Studies,7-<8,1322
+2025,Drama and Theatre Studies,8-<9,694
+2025,Drama and Theatre Studies,9>=,68
+2025,Drama and Theatre Studies,Unknown prior,162
+2025,Drama and Theatre Studies,All,7366
+2025,Media/Film/Tv Studies,<1,1
+2025,Media/Film/Tv Studies,1-<2,1
+2025,Media/Film/Tv Studies,2-<3,37
+2025,Media/Film/Tv Studies,3-<4,1040
+2025,Media/Film/Tv Studies,4-<5,3937
+2025,Media/Film/Tv Studies,5-<6,4813
+2025,Media/Film/Tv Studies,6-<7,2786
+2025,Media/Film/Tv Studies,7-<8,1053
+2025,Media/Film/Tv Studies,8-<9,196
+2025,Media/Film/Tv Studies,9>=,3
+2025,Media/Film/Tv Studies,Unknown prior,186
+2025,Media/Film/Tv Studies,All,14053
+2025,Film Studies,<1,1
+2025,Film Studies,1-<2,2
+2025,Film Studies,2-<3,23
+2025,Film Studies,3-<4,430
+2025,Film Studies,4-<5,1804
+2025,Film Studies,5-<6,2308
+2025,Film Studies,6-<7,1584
+2025,Film Studies,7-<8,668
+2025,Film Studies,8-<9,169
+2025,Film Studies,9>=,2
+2025,Film Studies,Unknown prior,132
+2025,Film Studies,All,7123
+2025,French,2-<3,3
+2025,French,3-<4,28
+2025,French,4-<5,250
+2025,French,5-<6,783
+2025,French,6-<7,1458
+2025,French,7-<8,1649
+2025,French,8-<9,1687
+2025,French,9>=,225
+2025,French,Unknown prior,197
+2025,French,All,6280
+2025,German,3-<4,11
+2025,German,4-<5,86
+2025,German,5-<6,192
+2025,German,6-<7,415
+2025,German,7-<8,518
+2025,German,8-<9,612
+2025,German,9>=,92
+2025,German,Unknown prior,100
+2025,German,All,2026
+2025,Italian,1-<2,1
+2025,Italian,2-<3,2
+2025,Italian,3-<4,22
+2025,Italian,4-<5,64
+2025,Italian,5-<6,111
+2025,Italian,6-<7,124
+2025,Italian,7-<8,89
+2025,Italian,8-<9,64
+2025,Italian,9>=,17
+2025,Italian,Unknown prior,35
+2025,Italian,All,529
+2025,Modern Greek,2-<3,1
+2025,Modern Greek,3-<4,2
+2025,Modern Greek,4-<5,8
+2025,Modern Greek,5-<6,13
+2025,Modern Greek,6-<7,11
+2025,Modern Greek,7-<8,18
+2025,Modern Greek,8-<9,12
+2025,Modern Greek,9>=,1
+2025,Modern Greek,Unknown prior,5
+2025,Modern Greek,All,71
+2025,Portuguese,2-<3,5
+2025,Portuguese,3-<4,9
+2025,Portuguese,4-<5,49
+2025,Portuguese,5-<6,67
+2025,Portuguese,6-<7,39
+2025,Portuguese,7-<8,22
+2025,Portuguese,8-<9,7
+2025,Portuguese,Unknown prior,18
+2025,Portuguese,All,216
+2025,Spanish,<1,1
+2025,Spanish,2-<3,16
+2025,Spanish,3-<4,71
+2025,Spanish,4-<5,465
+2025,Spanish,5-<6,1329
+2025,Spanish,6-<7,1907
+2025,Spanish,7-<8,1807
+2025,Spanish,8-<9,1544
+2025,Spanish,9>=,208
+2025,Spanish,Unknown prior,223
+2025,Spanish,All,7571
+2025,Arabic,<1,1
+2025,Arabic,1-<2,2
+2025,Arabic,2-<3,8
+2025,Arabic,3-<4,29
+2025,Arabic,4-<5,100
+2025,Arabic,5-<6,120
+2025,Arabic,6-<7,90
+2025,Arabic,7-<8,64
+2025,Arabic,8-<9,27
+2025,Arabic,9>=,2
+2025,Arabic,Unknown prior,25
+2025,Arabic,All,468
+2025,Chinese,<1,3
+2025,Chinese,2-<3,11
+2025,Chinese,3-<4,31
+2025,Chinese,4-<5,84
+2025,Chinese,5-<6,169
+2025,Chinese,6-<7,167
+2025,Chinese,7-<8,145
+2025,Chinese,8-<9,133
+2025,Chinese,9>=,34
+2025,Chinese,Unknown prior,470
+2025,Chinese,All,1247
+2025,Japanese,3-<4,3
+2025,Japanese,4-<5,8
+2025,Japanese,5-<6,13
+2025,Japanese,6-<7,31
+2025,Japanese,7-<8,32
+2025,Japanese,8-<9,31
+2025,Japanese,9>=,3
+2025,Japanese,Unknown prior,26
+2025,Japanese,All,147
+2025,Modern Hebrew,4-<5,5
+2025,Modern Hebrew,5-<6,13
+2025,Modern Hebrew,6-<7,11
+2025,Modern Hebrew,7-<8,9
+2025,Modern Hebrew,8-<9,4
+2025,Modern Hebrew,9>=,3
+2025,Modern Hebrew,Unknown prior,1
+2025,Modern Hebrew,All,46
+2025,Punjabi,3-<4,6
+2025,Punjabi,4-<5,19
+2025,Punjabi,5-<6,30
+2025,Punjabi,6-<7,26
+2025,Punjabi,7-<8,14
+2025,Punjabi,8-<9,5
+2025,Punjabi,Unknown prior,3
+2025,Punjabi,All,103
+2025,Polish,2-<3,3
+2025,Polish,3-<4,13
+2025,Polish,4-<5,84
+2025,Polish,5-<6,186
+2025,Polish,6-<7,228
+2025,Polish,7-<8,127
+2025,Polish,8-<9,52
+2025,Polish,9>=,3
+2025,Polish,Unknown prior,15
+2025,Polish,All,711
+2025,Russian,1-<2,3
+2025,Russian,2-<3,9
+2025,Russian,3-<4,29
+2025,Russian,4-<5,73
+2025,Russian,5-<6,118
+2025,Russian,6-<7,176
+2025,Russian,7-<8,135
+2025,Russian,8-<9,131
+2025,Russian,9>=,28
+2025,Russian,Unknown prior,202
+2025,Russian,All,904
+2025,Turkish,1-<2,2
+2025,Turkish,2-<3,4
+2025,Turkish,3-<4,28
+2025,Turkish,4-<5,96
+2025,Turkish,5-<6,112
+2025,Turkish,6-<7,82
+2025,Turkish,7-<8,44
+2025,Turkish,8-<9,13
+2025,Turkish,Unknown prior,29
+2025,Turkish,All,410
+2025,Urdu,1-<2,1
+2025,Urdu,2-<3,2
+2025,Urdu,3-<4,8
+2025,Urdu,4-<5,31
+2025,Urdu,5-<6,53
+2025,Urdu,6-<7,37
+2025,Urdu,7-<8,32
+2025,Urdu,8-<9,11
+2025,Urdu,Unknown prior,13
+2025,Urdu,All,188
+2025,Persian,3-<4,10
+2025,Persian,4-<5,17
+2025,Persian,5-<6,19
+2025,Persian,6-<7,13
+2025,Persian,7-<8,9
+2025,Persian,8-<9,6
+2025,Persian,9>=,1
+2025,Persian,Unknown prior,29
+2025,Persian,All,104
+2025,Ancient History,2-<3,1
+2025,Ancient History,3-<4,20
+2025,Ancient History,4-<5,133
+2025,Ancient History,5-<6,251
+2025,Ancient History,6-<7,271
+2025,Ancient History,7-<8,164
+2025,Ancient History,8-<9,65
+2025,Ancient History,9>=,7
+2025,Ancient History,Unknown prior,15
+2025,Ancient History,All,927
+2025,Classical Civilisation,2-<3,3
+2025,Classical Civilisation,3-<4,66
+2025,Classical Civilisation,4-<5,387
+2025,Classical Civilisation,5-<6,826
+2025,Classical Civilisation,6-<7,1043
+2025,Classical Civilisation,7-<8,866
+2025,Classical Civilisation,8-<9,543
+2025,Classical Civilisation,9>=,51
+2025,Classical Civilisation,Unknown prior,92
+2025,Classical Civilisation,All,3877
+2025,Classical Greek,6-<7,1
+2025,Classical Greek,7-<8,12
+2025,Classical Greek,8-<9,118
+2025,Classical Greek,9>=,58
+2025,Classical Greek,Unknown prior,3
+2025,Classical Greek,All,192
+2025,Latin,3-<4,1
+2025,Latin,4-<5,1
+2025,Latin,5-<6,14
+2025,Latin,6-<7,66
+2025,Latin,7-<8,163
+2025,Latin,8-<9,511
+2025,Latin,9>=,161
+2025,Latin,Unknown prior,13
+2025,Latin,All,930
+2025,Other Classical Languages,3-<4,1
+2025,Other Classical Languages,5-<6,6
+2025,Other Classical Languages,6-<7,17
+2025,Other Classical Languages,7-<8,11
+2025,Other Classical Languages,8-<9,12
+2025,Other Classical Languages,9>=,1
+2025,Other Classical Languages,Unknown prior,1
+2025,Other Classical Languages,All,49
+2025,Music,2-<3,2
+2025,Music,3-<4,38
+2025,Music,4-<5,202
+2025,Music,5-<6,551
+2025,Music,6-<7,848
+2025,Music,7-<8,937
+2025,Music,8-<9,798
+2025,Music,9>=,35
+2025,Music,Unknown prior,84
+2025,Music,All,3495
+2025,Music Technology,2-<3,1
+2025,Music Technology,3-<4,51
+2025,Music Technology,4-<5,204
+2025,Music Technology,5-<6,373
+2025,Music Technology,6-<7,302
+2025,Music Technology,7-<8,207
+2025,Music Technology,8-<9,94
+2025,Music Technology,9>=,5
+2025,Music Technology,Unknown prior,46
+2025,Music Technology,All,1283
+2025,Physical Education / Sports Studies,<1,1
+2025,Physical Education / Sports Studies,2-<3,3
+2025,Physical Education / Sports Studies,3-<4,131
+2025,Physical Education / Sports Studies,4-<5,1324
+2025,Physical Education / Sports Studies,5-<6,3691
+2025,Physical Education / Sports Studies,6-<7,3759
+2025,Physical Education / Sports Studies,7-<8,1961
+2025,Physical Education / Sports Studies,8-<9,609
+2025,Physical Education / Sports Studies,9>=,32
+2025,Physical Education / Sports Studies,Unknown prior,170
+2025,Physical Education / Sports Studies,All,11681
+2025,Dance,2-<3,3
+2025,Dance,3-<4,33
+2025,Dance,4-<5,153
+2025,Dance,5-<6,338
+2025,Dance,6-<7,235
+2025,Dance,7-<8,118
+2025,Dance,8-<9,42
+2025,Dance,9>=,1
+2025,Dance,Unknown prior,8
+2025,Dance,All,931
+2025,Accounting / Finance,2-<3,3
+2025,Accounting / Finance,3-<4,41
+2025,Accounting / Finance,4-<5,422
+2025,Accounting / Finance,5-<6,827
+2025,Accounting / Finance,6-<7,611
+2025,Accounting / Finance,7-<8,212
+2025,Accounting / Finance,8-<9,51
+2025,Accounting / Finance,9>=,1
+2025,Accounting / Finance,Unknown prior,43
+2025,Accounting / Finance,All,2211
+2025,Design and Technology (Textiles Technology),3-<4,15
+2025,Design and Technology (Textiles Technology),4-<5,76
+2025,Design and Technology (Textiles Technology),5-<6,150
+2025,Design and Technology (Textiles Technology),6-<7,107
+2025,Design and Technology (Textiles Technology),7-<8,84
+2025,Design and Technology (Textiles Technology),8-<9,25
+2025,Design and Technology (Textiles Technology),9>=,1
+2025,Design and Technology (Textiles Technology),Unknown prior,6
+2025,Design and Technology (Textiles Technology),All,464
+2025,Design and Technology (Engineering),2-<3,2
+2025,Design and Technology (Engineering),3-<4,20
+2025,Design and Technology (Engineering),4-<5,81
+2025,Design and Technology (Engineering),5-<6,131
+2025,Design and Technology (Engineering),6-<7,147
+2025,Design and Technology (Engineering),7-<8,76
+2025,Design and Technology (Engineering),8-<9,55
+2025,Design and Technology (Engineering),9>=,7
+2025,Design and Technology (Engineering),Unknown prior,11
+2025,Design and Technology (Engineering),All,530
+2025,Design and Technology (Product Design),<1,1
+2025,Design and Technology (Product Design),2-<3,17
+2025,Design and Technology (Product Design),3-<4,344
+2025,Design and Technology (Product Design),4-<5,1454
+2025,Design and Technology (Product Design),5-<6,2341
+2025,Design and Technology (Product Design),6-<7,2068
+2025,Design and Technology (Product Design),7-<8,1134
+2025,Design and Technology (Product Design),8-<9,488
+2025,Design and Technology (Product Design),9>=,31
+2025,Design and Technology (Product Design),Unknown prior,143
+2025,Design and Technology (Product Design),All,8021

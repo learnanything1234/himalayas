@@ -1,0 +1,15 @@
+{
+  "name": "alevel-predictor",
+  "version": "0.1.0",
+  "description": "Predicts A-level grades from GCSE prior attainment using DfE KS5 transition matrices",
+  "type": "module",
+  "engines": { "node": ">=22.5" },
+  "scripts": {
+    "build-db": "node scripts/build-db.mjs",
+    "build-web": "node scripts/build-web.mjs",
+    "build": "node scripts/build-db.mjs && node scripts/build-web.mjs",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
