@@ -663,6 +663,17 @@ class Component extends DCLogic {
 
   componentWillUnmount() { clearTimeout(this._timer); }
 
+  // Any change to the inputs hides the current forecast, so it never shows a
+  // prediction that's out of sync with what's on screen. They press "Predict
+  // grades" again to recompute.
+  edit(updater) {
+    clearTimeout(this._timer);
+    this.setState(s => {
+      const patch = typeof updater === 'function' ? updater(s) : updater;
+      return { ...patch, computed: false, loading: false, showError: false };
+    });
+  }
+
   gradeColor(v) {
     if (v === 0) return 'oklch(0.7 0.01 255)';
     if (v >= 7) return 'oklch(0.5 0.14 155)';
@@ -922,15 +933,15 @@ class Component extends DCLogic {
         color: this.gradeColor(v),
         bg: v > 0 ? 'oklch(0.97 0.02 240)' : 'oklch(0.985 0.004 245)',
         border: v > 0 ? 'oklch(0.85 0.05 240)' : 'oklch(0.92 0.01 250)',
-        inc: () => this.setState(s => ({ grades: { ...s.grades, [g.key]: Math.min(9, (s.grades[g.key] || 0) + 1) } })),
-        dec: () => this.setState(s => ({ grades: { ...s.grades, [g.key]: Math.max(0, (s.grades[g.key] || 0) - 1) } })),
+        inc: () => this.edit(s => ({ grades: { ...s.grades, [g.key]: Math.min(9, (s.grades[g.key] || 0) + 1) } })),
+        dec: () => this.edit(s => ({ grades: { ...s.grades, [g.key]: Math.max(0, (s.grades[g.key] || 0) - 1) } })),
       };
     });
 
     const alevelRows = st.alevels.map((val, i) => ({
       value: val,
-      onChange: (e) => this.setState(s => { const a = [...s.alevels]; a[i] = e.target.value; return { alevels: a }; }),
-      remove: () => this.setState(s => {
+      onChange: (e) => this.edit(s => { const a = [...s.alevels]; a[i] = e.target.value; return { alevels: a }; }),
+      remove: () => this.edit(s => {
         if (s.alevels.length <= 1) { const a = [...s.alevels]; a[i] = ''; return { alevels: a }; }
         return { alevels: s.alevels.filter((_, j) => j !== i) };
       }),
@@ -942,19 +953,19 @@ class Component extends DCLogic {
       alevelRows,
       alevelOptions: SUBJECTS.map(s => ({ id: s.id, name: s.name })),
       canAddAlevel: st.alevels.length < 5,
-      addAlevel: () => this.setState(s => ({ alevels: [...s.alevels, ''] })),
+      addAlevel: () => this.edit(s => ({ alevels: [...s.alevels, ''] })),
       months: MONTHS.map((m, i) => ({ num: i + 1, name: m })),
       monthVal: st.month,
-      setMonth: (e) => this.setState({ month: parseInt(e.target.value, 10) }),
+      setMonth: (e) => this.edit({ month: parseInt(e.target.value, 10) }),
       disBg: st.dis ? 'oklch(0.55 0.14 250)' : 'oklch(0.88 0.01 250)',
       disKnob: st.dis ? '25px' : '3px',
-      toggleDis: () => this.setState(s => ({ dis: !s.dis })),
+      toggleDis: () => this.edit(s => ({ dis: !s.dis })),
       ealBg: st.eal ? 'oklch(0.55 0.14 250)' : 'oklch(0.88 0.01 250)',
       ealKnob: st.eal ? '25px' : '3px',
-      toggleEal: () => this.setState(s => ({ eal: !s.eal })),
+      toggleEal: () => this.edit(s => ({ eal: !s.eal })),
       attVal: st.att,
       attLabel: st.att + '%',
-      setAtt: (e) => this.setState({ att: parseInt(e.target.value, 10) }),
+      setAtt: (e) => this.edit({ att: parseInt(e.target.value, 10) }),
       adjTable: SUBJECTS.filter(s => ['furthermaths','physics','chemistry','maths','psychology','sociology','media'].includes(s.id)).map(s => ({
         name: s.name, val: (s.adj > 0 ? '+' : '') + s.adj.toFixed(2),
         color: s.adj < 0 ? 'oklch(0.55 0.12 25)' : (s.adj > 0 ? 'oklch(0.5 0.12 155)' : 'oklch(0.5 0.02 255)'),
@@ -1016,6 +1027,8 @@ class Component extends DCLogic {
       chosen.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0].id);
     }
     const months = [1,2,3,4,5,6,7,8,9,10,11,12];
+    // Fill the inputs only — the user presses "Predict grades" when ready.
+    clearTimeout(this._timer);
     this.setState({
       grades,
       alevels: chosen,
@@ -1023,7 +1036,8 @@ class Component extends DCLogic {
       eal: Math.random() < 0.15,
       month: months[Math.floor(Math.random() * 12)],
       att: 88 + Math.floor(Math.random() * 12),
-    }, () => this.startPredict());
+      computed: false, loading: false, showError: false, results: [],
+    });
   }
 }
 </script>
